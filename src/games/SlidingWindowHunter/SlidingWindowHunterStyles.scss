@@ -1,0 +1,326 @@
+.sliding-window-hunter {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: 'Arial', sans-serif;
+  // padding-top: 440px;
+  h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+  }
+
+  .game-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    .stats {
+      display: flex;
+      gap: 1rem;
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      font-weight: bold;
+      color: #fd7e14;
+    }
+
+    .window-controls {
+      label {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: clamp(0.9rem, 2vw, 1rem);
+        color: #333;
+
+        select {
+          padding: clamp(0.3rem, 1.5vw, 0.5rem) clamp(0.5rem, 2vw, 0.75rem);
+          border: 2px solid #fd7e14;
+          border-radius: 6px;
+          font-size: clamp(0.8rem, 2vw, 1rem);
+          background: white;
+          color: #fd7e14;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .array-section {
+    margin-bottom: 2rem;
+
+    h3 {
+      font-size: clamp(1.1rem, 3vw, 1.3rem);
+      color: #333;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .array-display {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+      margin-bottom: 1rem;
+
+      .array-element {
+        background: white;
+        border: 2px solid #dee2e6;
+        border-radius: 8px;
+        padding: 0.75rem 1rem;
+        font-weight: bold;
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+        color: #333;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        min-width: 50px;
+        text-align: center;
+
+        &.in-window {
+          border-color: #fd7e14;
+          background: linear-gradient(135deg, #fd7e14, #ffc107);
+          color: white;
+          transform: scale(1.1);
+          box-shadow: 0 4px 8px rgba(253, 126, 20, 0.3);
+          animation: windowPulse 1s ease-in-out infinite alternate;
+        }
+      }
+    }
+  }
+
+  .window-section {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+
+    h3 {
+      font-size: clamp(1.1rem, 3vw, 1.3rem);
+      color: #333;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .window-display {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      margin-bottom: 1rem;
+
+      .window-element {
+        background: linear-gradient(135deg, #fd7e14, #ffc107);
+        color: white;
+        border-radius: 8px;
+        padding: 0.75rem 1rem;
+        font-weight: bold;
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+        box-shadow: 0 2px 4px rgba(253, 126, 20, 0.3);
+        min-width: 50px;
+        text-align: center;
+      }
+    }
+
+    .window-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1rem;
+
+      .stat {
+        background: white;
+        padding: 1rem;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        span:first-child {
+          display: block;
+          font-weight: bold;
+          color: #fd7e14;
+          margin-bottom: 0.5rem;
+          font-size: clamp(0.8rem, 2vw, 1rem);
+        }
+
+        span:last-child {
+          font-size: clamp(1.2rem, 3vw, 1.5rem);
+          font-weight: bold;
+          color: #333;
+        }
+      }
+    }
+  }
+
+  .controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+
+    button {
+      padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1rem, 3vw, 1.5rem);
+      border: 2px solid #fd7e14;
+      border-radius: 8px;
+      font-size: clamp(0.8rem, 2vw, 1rem);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background: #fd7e14;
+      color: white;
+      min-width: 120px;
+
+      &:hover:not(:disabled) {
+        background: #e55a00;
+        transform: translateY(-2px);
+      }
+
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  .result-section {
+    margin-bottom: 2rem;
+
+    .result-display {
+      background: linear-gradient(135deg, #28a745, #20c997);
+      color: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+
+      h3 {
+        font-size: clamp(1.2rem, 3vw, 1.5rem);
+        margin-bottom: 1rem;
+        text-align: center;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+      }
+
+      p {
+        margin: 0.5rem 0;
+        font-size: clamp(0.9rem, 2vw, 1rem);
+        text-align: center;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+
+  .explanation {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    h3 {
+      font-size: clamp(1.1rem, 3vw, 1.3rem);
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      color: #666;
+      line-height: 1.6;
+      font-size: clamp(0.9rem, 2vw, 1rem);
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}
+
+@keyframes windowPulse {
+  0% {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(253, 126, 20, 0.3);
+  }
+  100% {
+    transform: scale(1.15);
+    box-shadow: 0 6px 12px rgba(253, 126, 20, 0.5);
+  }
+}
+
+// Tablet responsive
+@media (max-width: 768px) {
+  .sliding-window-hunter {
+    padding: 0.75rem;
+
+    .game-info {
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+    }
+
+    .array-display {
+      gap: 0.4rem;
+
+      .array-element {
+        padding: 0.6rem 0.8rem;
+        min-width: 45px;
+      }
+    }
+
+    .window-section {
+      .window-stats {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 0.75rem;
+      }
+    }
+
+    .controls {
+      gap: 0.75rem;
+    }
+  }
+}
+
+// Mobile responsive
+@media (max-width: 480px) {
+  .sliding-window-hunter {
+    padding: 0.5rem;
+
+    .array-display {
+      gap: 0.3rem;
+
+      .array-element {
+        padding: 0.5rem 0.7rem;
+        min-width: 40px;
+        font-size: 0.9rem;
+      }
+    }
+
+    .window-section {
+      .window-display {
+        gap: 0.3rem;
+
+        .window-element {
+          padding: 0.5rem 0.7rem;
+          min-width: 40px;
+          font-size: 0.9rem;
+        }
+      }
+
+      .window-stats {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+
+        .stat {
+          padding: 0.75rem;
+        }
+      }
+    }
+
+    .controls {
+      flex-direction: column;
+      align-items: center;
+
+      button {
+        width: 200px;
+      }
+    }
+  }
+} 

@@ -1,0 +1,349 @@
+.maze-escape {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: 'Arial', sans-serif;
+  // padding-top: 150px;
+  h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+  }
+
+  .controls {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+
+    select, button {
+      padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1rem, 3vw, 1.5rem);
+      border: 2px solid #6f42c1;
+      border-radius: 8px;
+      font-size: clamp(0.8rem, 2vw, 1rem);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      min-width: 100px;
+
+      &:hover:not(:disabled) {
+        background-color: #6f42c1;
+        color: white;
+      }
+
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+    }
+
+    select {
+      background-color: white;
+      color: #6f42c1;
+    }
+
+    button {
+      background-color: #6f42c1;
+      color: white;
+      border: none;
+
+      &:nth-child(2) {
+        background-color: #28a745;
+        border-color: #28a745;
+
+        &:hover:not(:disabled) {
+          background-color: #218838;
+        }
+      }
+    }
+  }
+
+  .maze-container {
+    display: flex;
+    justify-content: center;
+    margin: 1.5rem 0;
+    width: 100%;
+
+    .maze {
+      border: 3px solid #333;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      background: #f8f9fa;
+      max-width: 100%;
+      max-height: clamp(300px, 60vh, 500px);
+
+      .maze-row {
+        display: flex;
+
+        .maze-cell {
+          width: clamp(25px, 6vw, 40px);
+          height: clamp(25px, 6vw, 40px);
+          border: 1px solid #dee2e6;
+          transition: all 0.3s ease;
+
+          &.wall {
+            background-color: #343a40;
+            border-color: #495057;
+          }
+
+          &.start {
+            background: linear-gradient(45deg, #28a745, #20c997);
+            border-color: #28a745;
+            position: relative;
+
+            &::after {
+              content: 'S';
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              color: white;
+              font-weight: bold;
+              font-size: clamp(0.8rem, 2vw, 1.2rem);
+            }
+          }
+
+          &.end {
+            background: linear-gradient(45deg, #dc3545, #fd7e14);
+            border-color: #dc3545;
+            position: relative;
+
+            &::after {
+              content: 'E';
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              color: white;
+              font-weight: bold;
+              font-size: clamp(0.8rem, 2vw, 1.2rem);
+            }
+          }
+
+          &.path {
+            background: linear-gradient(45deg, #007bff, #6610f2);
+            border-color: #007bff;
+            animation: pathPulse 1s ease-in-out infinite alternate;
+          }
+
+          &.empty {
+            background-color: #ffffff;
+            border-color: #dee2e6;
+          }
+        }
+      }
+    }
+  }
+
+  .legend {
+    display: flex;
+    justify-content: center;
+    gap: clamp(1rem, 3vw, 2rem);
+    margin: 1.5rem 0;
+    flex-wrap: wrap;
+    width: 100%;
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      .legend-color {
+        width: clamp(15px, 4vw, 20px);
+        height: clamp(15px, 4vw, 20px);
+        border-radius: 4px;
+        border: 1px solid #dee2e6;
+
+        &.start {
+          background: linear-gradient(45deg, #28a745, #20c997);
+        }
+
+        &.end {
+          background: linear-gradient(45deg, #dc3545, #fd7e14);
+        }
+
+        &.path {
+          background: linear-gradient(45deg, #007bff, #6610f2);
+        }
+
+        &.wall {
+          background-color: #343a40;
+        }
+      }
+
+      span {
+        font-size: clamp(0.8rem, 2vw, 0.9rem);
+        color: #495057;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .info {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f8f9fa;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    width: 100%;
+
+    p {
+      margin: 0;
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
+      font-weight: 600;
+      color: #495057;
+
+      &:first-child {
+        color: #6f42c1;
+      }
+
+      &:last-child {
+        color: #28a745;
+      }
+    }
+  }
+}
+
+@keyframes pathPulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7);
+  }
+  100% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(0, 123, 255, 0);
+  }
+}
+
+// Tablet responsive
+@media (max-width: 768px) {
+  .maze-escape {
+    padding: 0.75rem;
+
+    .controls {
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+
+      select, button {
+        min-width: 80px;
+      }
+    }
+
+    .maze-container {
+      margin: 1rem 0;
+
+      .maze {
+        max-height: clamp(250px, 50vh, 400px);
+      }
+    }
+
+    .legend {
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    .info {
+      padding: 0.75rem;
+      margin-top: 1rem;
+    }
+  }
+}
+
+// Mobile responsive
+@media (max-width: 480px) {
+  .maze-escape {
+    padding: 0.5rem;
+
+    h2 {
+      margin-bottom: 1rem;
+    }
+
+    .controls {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+
+      select, button {
+        width: 200px;
+        min-width: unset;
+      }
+    }
+
+    .maze-container {
+      margin: 1rem 0;
+
+      .maze {
+        max-height: clamp(200px, 45vh, 300px);
+
+        .maze-row .maze-cell {
+          width: clamp(20px, 5vw, 30px);
+          height: clamp(20px, 5vw, 30px);
+        }
+      }
+    }
+
+    .legend {
+      gap: 0.75rem;
+      margin: 1rem 0;
+
+      .legend-item {
+        .legend-color {
+          width: 15px;
+          height: 15px;
+        }
+
+        span {
+          font-size: 0.8rem;
+        }
+      }
+    }
+
+    .info {
+      flex-direction: column;
+      gap: 0.5rem;
+      text-align: center;
+      padding: 0.75rem;
+    }
+  }
+}
+
+// Extra small mobile
+@media (max-width: 360px) {
+  .maze-escape {
+    .controls {
+      select, button {
+        width: 180px;
+        font-size: 0.8rem;
+      }
+    }
+
+    .maze-container .maze {
+      max-height: clamp(150px, 40vh, 250px);
+
+      .maze-row .maze-cell {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    .legend {
+      .legend-item {
+        .legend-color {
+          width: 12px;
+          height: 12px;
+        }
+
+        span {
+          font-size: 0.7rem;
+        }
+      }
+    }
+  }
+} 

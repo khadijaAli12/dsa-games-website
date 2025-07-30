@@ -1,0 +1,276 @@
+.bitmask-dungeon {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: 'Arial', sans-serif;
+//   padding-top: 500px;
+  h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+  }
+
+  .game-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    .level-info {
+      display: flex;
+      gap: 1rem;
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      font-weight: bold;
+      color: #6f42c1;
+    }
+
+    .target-display {
+      text-align: center;
+
+      h3 {
+        font-size: clamp(1.2rem, 3vw, 1.5rem);
+        color: #333;
+        margin-bottom: 0.5rem;
+      }
+
+      .binary-target {
+        font-family: 'Courier New', monospace;
+        background: #f8f9fa;
+        padding: 0.5rem;
+        border-radius: 4px;
+        font-size: clamp(0.8rem, 2vw, 1rem);
+        color: #495057;
+      }
+    }
+  }
+
+  .keys-container {
+    margin-bottom: 2rem;
+
+    h3 {
+      font-size: clamp(1.1rem, 3vw, 1.3rem);
+      color: #333;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .keys-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1rem;
+
+      .key {
+        background: white;
+        border: 2px solid #dee2e6;
+        border-radius: 8px;
+        padding: 1rem;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        &.selected {
+          border-color: #6f42c1;
+          background: linear-gradient(135deg, #6f42c1, #8e44ad);
+          color: white;
+          transform: scale(1.05);
+        }
+
+        .key-value {
+          font-size: clamp(1.2rem, 3vw, 1.5rem);
+          font-weight: bold;
+          margin-bottom: 0.5rem;
+        }
+
+        .key-binary {
+          font-family: 'Courier New', monospace;
+          font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+
+  .selected-sum {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    text-align: center;
+
+    h3 {
+      font-size: clamp(1.1rem, 3vw, 1.3rem);
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .binary-sum {
+      font-family: 'Courier New', monospace;
+      background: white;
+      padding: 0.5rem;
+      border-radius: 4px;
+      font-size: clamp(0.8rem, 2vw, 1rem);
+      color: #495057;
+      margin-bottom: 1rem;
+    }
+
+    .result {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      font-weight: bold;
+      padding: 0.5rem;
+      border-radius: 4px;
+
+      &.correct {
+        color: #28a745;
+        background: rgba(40, 167, 69, 0.1);
+      }
+
+      &.incorrect {
+        color: #dc3545;
+        background: rgba(220, 53, 69, 0.1);
+      }
+    }
+  }
+
+  .controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+
+    button {
+      padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1rem, 3vw, 1.5rem);
+      border: 2px solid #6f42c1;
+      border-radius: 8px;
+      font-size: clamp(0.8rem, 2vw, 1rem);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background: #6f42c1;
+      color: white;
+      min-width: 120px;
+
+      &:hover:not(:disabled) {
+        background: #5a32a3;
+        transform: translateY(-2px);
+      }
+
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  .explanation {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    h3 {
+      font-size: clamp(1.1rem, 3vw, 1.3rem);
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: #666;
+      line-height: 1.6;
+      font-size: clamp(0.9rem, 2vw, 1rem);
+    }
+  }
+}
+
+// Tablet responsive
+@media (max-width: 768px) {
+  .bitmask-dungeon {
+    padding: 0.75rem;
+
+    .game-info {
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+    }
+
+    .keys-grid {
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 0.75rem;
+    }
+
+    .controls {
+      gap: 0.75rem;
+    }
+  }
+}
+
+// Mobile responsive
+@media (max-width: 480px) {
+  .bitmask-dungeon {
+    padding: 0.5rem;
+
+    .keys-grid {
+      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+      gap: 0.5rem;
+
+      .key {
+        padding: 0.75rem;
+
+        .key-value {
+          font-size: 1.1rem;
+        }
+
+        .key-binary {
+          font-size: 0.6rem;
+        }
+      }
+    }
+
+    .controls {
+      flex-direction: column;
+      align-items: center;
+
+      button {
+        width: 200px;
+      }
+    }
+  }
+}
+
+// Extra small mobile
+@media (max-width: 360px) {
+  .bitmask-dungeon {
+    .keys-grid {
+      grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+
+      .key {
+        padding: 0.5rem;
+
+        .key-value {
+          font-size: 1rem;
+        }
+
+        .key-binary {
+          font-size: 0.5rem;
+        }
+      }
+    }
+
+    .controls button {
+      width: 180px;
+      font-size: 0.8rem;
+    }
+  }
+} 

@@ -1,0 +1,334 @@
+.recursion-portal {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: 'Arial', sans-serif;
+  // padding-top: 840px;
+  h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+  }
+
+  .game-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    .stats {
+      display: flex;
+      gap: 1rem;
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      font-weight: bold;
+      color: #6610f2;
+    }
+  }
+
+  .portal-container {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+    min-height: 400px;
+
+    .portal-stack {
+      position: relative;
+      width: 100%;
+      height: 400px;
+      border: 3px solid #333;
+      border-radius: 8px;
+      background: #f8f9fa;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+
+      .portal-level {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: clamp(200px, 40vw, 300px);
+        height: clamp(150px, 30vw, 200px);
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        transition: all 0.5s ease;
+
+        .portal-content {
+          text-align: center;
+          padding: 1rem;
+
+          h3 {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+          }
+
+          .recursion-data {
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            line-height: 1.4;
+
+            p {
+              margin: 0.5rem 0;
+              text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+
+    button {
+      padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1rem, 3vw, 1.5rem);
+      border: 2px solid #6610f2;
+      border-radius: 8px;
+      font-size: clamp(0.8rem, 2vw, 1rem);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      min-width: 120px;
+
+      &.enter-btn {
+        background: #6610f2;
+        color: white;
+
+        &:hover:not(:disabled) {
+          background: #520dc2;
+          transform: translateY(-2px);
+        }
+      }
+
+      &.exit-btn {
+        background: #dc3545;
+        color: white;
+        border-color: #dc3545;
+
+        &:hover:not(:disabled) {
+          background: #c82333;
+          transform: translateY(-2px);
+        }
+      }
+
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  .recursion-info {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+
+    h3 {
+      font-size: clamp(1.1rem, 3vw, 1.3rem);
+      color: #333;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .recursion-stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 1rem;
+
+      .stat {
+        background: white;
+        padding: 1rem;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        span:first-child {
+          display: block;
+          font-weight: bold;
+          color: #6610f2;
+          margin-bottom: 0.5rem;
+        }
+
+        span:last-child {
+          font-size: clamp(1.2rem, 3vw, 1.5rem);
+          font-weight: bold;
+          color: #333;
+        }
+      }
+    }
+  }
+
+  .portal-history {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+
+    h3 {
+      font-size: clamp(1.1rem, 3vw, 1.3rem);
+      color: #333;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .history-path {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+
+      .history-step {
+        background: linear-gradient(135deg, #6610f2, #8e44ad);
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-weight: bold;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        animation: stepAppear 0.5s ease-out;
+      }
+    }
+  }
+
+  .explanation {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    h3 {
+      font-size: clamp(1.1rem, 3vw, 1.3rem);
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      color: #666;
+      line-height: 1.6;
+      font-size: clamp(0.9rem, 2vw, 1rem);
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}
+
+@keyframes stepAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+// Tablet responsive
+@media (max-width: 768px) {
+  .recursion-portal {
+    padding: 0.75rem;
+
+    .game-info {
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+    }
+
+    .portal-container {
+      .portal-stack {
+        height: 300px;
+
+        .portal-level {
+          width: clamp(180px, 35vw, 250px);
+          height: clamp(120px, 25vw, 160px);
+        }
+      }
+    }
+
+    .controls {
+      gap: 0.75rem;
+    }
+
+    .recursion-info {
+      .recursion-stats {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 0.75rem;
+      }
+    }
+  }
+}
+
+// Mobile responsive
+@media (max-width: 480px) {
+  .recursion-portal {
+    padding: 0.5rem;
+
+    .portal-container {
+      .portal-stack {
+        height: 250px;
+
+        .portal-level {
+          width: clamp(150px, 30vw, 200px);
+          height: clamp(100px, 20vw, 130px);
+
+          .portal-content {
+            padding: 0.5rem;
+
+            h3 {
+              font-size: 1rem;
+            }
+
+            .recursion-data {
+              font-size: 0.8rem;
+            }
+          }
+        }
+      }
+    }
+
+    .controls {
+      flex-direction: column;
+      align-items: center;
+
+      button {
+        width: 200px;
+      }
+    }
+
+    .recursion-info {
+      .recursion-stats {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+
+        .stat {
+          padding: 0.75rem;
+        }
+      }
+    }
+
+    .portal-history {
+      .history-path {
+        .history-step {
+          padding: 0.4rem 0.8rem;
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+} 

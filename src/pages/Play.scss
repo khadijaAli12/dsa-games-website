@@ -1,0 +1,240 @@
+.play-page {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  padding-top: 990px;
+  .play-header {
+    text-align: center;
+    padding: 2rem 0;
+    min-height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    h1 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: #333;
+      margin-bottom: 1rem;
+    }
+    
+    p {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      color: #666;
+    }
+  }
+
+  .games-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    width: 100%;
+    
+    .game-card {
+      display: flex;
+      align-items: center;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.3s ease;
+      min-height: 120px;
+      
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        
+        .play-arrow {
+          transform: translateX(5px);
+        }
+      }
+      
+      .game-icon {
+        width: clamp(60px, 15vw, 80px);
+        height: clamp(60px, 15vw, 80px);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: clamp(1.5rem, 4vw, 2rem);
+        margin-right: 1.5rem;
+        color: white;
+        flex-shrink: 0;
+      }
+      
+      .game-info {
+        flex: 1;
+        
+        h3 {
+          font-size: clamp(1.2rem, 3vw, 1.5rem);
+          color: #333;
+          margin-bottom: 0.5rem;
+        }
+        
+        p {
+          color: #666;
+          line-height: 1.6;
+          font-size: clamp(0.9rem, 2vw, 1rem);
+        }
+      }
+      
+      .play-arrow {
+        font-size: clamp(1.5rem, 4vw, 2rem);
+        color: #007bff;
+        transition: transform 0.3s ease;
+        flex-shrink: 0;
+      }
+    }
+  }
+
+  .coming-soon {
+    text-align: center;
+    padding: 3rem 0;
+    width: 100%;
+    
+    h2 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      color: #333;
+      margin-bottom: 2rem;
+    }
+    
+    .upcoming-games {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1.5rem;
+      width: 100%;
+      
+      .upcoming-game {
+        padding: 1.5rem;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        opacity: 0.7;
+        
+        .game-icon {
+          font-size: clamp(2rem, 5vw, 3rem);
+          margin-bottom: 1rem;
+        }
+        
+        h4 {
+          font-size: clamp(1rem, 2.5vw, 1.2rem);
+          color: #333;
+          margin-bottom: 0.5rem;
+        }
+        
+        p {
+          color: #666;
+          font-size: clamp(0.8rem, 2vw, 0.9rem);
+        }
+      }
+    }
+  }
+}
+
+// Tablet responsive
+@media (max-width: 768px) {
+  .play-page {
+    padding: 0 0.5rem;
+
+    .play-header {
+      padding: 1.5rem 0;
+      min-height: 25vh;
+    }
+
+    .games-container {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-bottom: 2rem;
+      
+      .game-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+        
+        .game-icon {
+          margin-right: 0;
+          margin-bottom: 1rem;
+        }
+        
+        .play-arrow {
+          margin-top: 1rem;
+        }
+      }
+    }
+
+    .coming-soon {
+      padding: 2rem 0;
+    }
+  }
+}
+
+// Mobile responsive
+@media (max-width: 480px) {
+  .play-page {
+    padding: 0 0.25rem;
+
+    .play-header {
+      padding: 1rem 0;
+      min-height: 20vh;
+    }
+
+    .games-container {
+      margin-bottom: 1.5rem;
+      
+      .game-card {
+        padding: 1rem;
+        min-height: 100px;
+        
+        .game-info {
+          h3 {
+            margin-bottom: 0.25rem;
+          }
+        }
+      }
+    }
+
+    .coming-soon {
+      padding: 1.5rem 0;
+      
+      .upcoming-games {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
+        
+        .upcoming-game {
+          padding: 1rem;
+        }
+      }
+    }
+  }
+}
+
+// Extra small mobile
+@media (max-width: 360px) {
+  .play-page {
+    .games-container {
+      .game-card {
+        .game-icon {
+          width: 50px;
+          height: 50px;
+          font-size: 1.2rem;
+        }
+        
+        .game-info {
+          h3 {
+            font-size: 1rem;
+          }
+          
+          p {
+            font-size: 0.8rem;
+          }
+        }
+      }
+    }
+  }
+} 

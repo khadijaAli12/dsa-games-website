@@ -1,0 +1,283 @@
+.coin-quest {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: 'Arial', sans-serif;
+  // padding-top: 440px;
+  h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+  }
+
+  .game-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    .stats {
+      display: flex;
+      gap: 1rem;
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      font-weight: bold;
+      color: #fd7e14;
+    }
+
+    .target-display {
+      text-align: center;
+
+      h3 {
+        font-size: clamp(1.2rem, 3vw, 1.5rem);
+        color: #333;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+  .coins-container {
+    margin-bottom: 2rem;
+
+    h3 {
+      font-size: clamp(1.1rem, 3vw, 1.3rem);
+      color: #333;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .coins-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: 1rem;
+      margin-bottom: 1rem;
+
+      .coin {
+        background: white;
+        border: 2px solid #dee2e6;
+        border-radius: 50%;
+        padding: 1.5rem;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        aspect-ratio: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        &.selected {
+          border-color: #fd7e14;
+          background: linear-gradient(135deg, #fd7e14, #ffc107);
+          color: white;
+          transform: scale(1.1);
+          box-shadow: 0 6px 16px rgba(253, 126, 20, 0.4);
+        }
+
+        .coin-value {
+          font-size: clamp(1.2rem, 3vw, 1.5rem);
+          font-weight: bold;
+          margin-bottom: 0.5rem;
+        }
+
+        .coin-icon {
+          font-size: clamp(1.5rem, 4vw, 2rem);
+        }
+      }
+    }
+  }
+
+  .selection-info {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    text-align: center;
+
+    h3 {
+      font-size: clamp(1.1rem, 3vw, 1.3rem);
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .selected-coins {
+      margin-bottom: 1rem;
+
+      .selected-coin {
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+        font-weight: bold;
+        color: #fd7e14;
+        margin: 0 0.25rem;
+      }
+    }
+
+    .total {
+      font-size: clamp(1.2rem, 3vw, 1.5rem);
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    .result {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      font-weight: bold;
+      padding: 0.5rem;
+      border-radius: 4px;
+
+      &.correct {
+        color: #28a745;
+        background: rgba(40, 167, 69, 0.1);
+      }
+
+      &.incorrect {
+        color: #dc3545;
+        background: rgba(220, 53, 69, 0.1);
+      }
+    }
+  }
+
+  .controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+
+    button {
+      padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1rem, 3vw, 1.5rem);
+      border: 2px solid #fd7e14;
+      border-radius: 8px;
+      font-size: clamp(0.8rem, 2vw, 1rem);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background: #fd7e14;
+      color: white;
+      min-width: 120px;
+
+      &:hover:not(:disabled) {
+        background: #e55a00;
+        transform: translateY(-2px);
+      }
+
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  .explanation {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    h3 {
+      font-size: clamp(1.1rem, 3vw, 1.3rem);
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: #666;
+      line-height: 1.6;
+      font-size: clamp(0.9rem, 2vw, 1rem);
+    }
+  }
+}
+
+// Tablet responsive
+@media (max-width: 768px) {
+  .coin-quest {
+    padding: 0.75rem;
+
+    .game-info {
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+    }
+
+    .coins-grid {
+      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+      gap: 0.75rem;
+
+      .coin {
+        padding: 1rem;
+      }
+    }
+
+    .controls {
+      gap: 0.75rem;
+    }
+  }
+}
+
+// Mobile responsive
+@media (max-width: 480px) {
+  .coin-quest {
+    padding: 0.5rem;
+
+    .coins-grid {
+      grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+      gap: 0.5rem;
+
+      .coin {
+        padding: 0.75rem;
+
+        .coin-value {
+          font-size: 1rem;
+        }
+
+        .coin-icon {
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    .controls {
+      flex-direction: column;
+      align-items: center;
+
+      button {
+        width: 200px;
+      }
+    }
+  }
+}
+
+// Extra small mobile
+@media (max-width: 360px) {
+  .coin-quest {
+    .coins-grid {
+      grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+
+      .coin {
+        padding: 0.5rem;
+
+        .coin-value {
+          font-size: 0.9rem;
+        }
+
+        .coin-icon {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    .controls button {
+      width: 180px;
+      font-size: 0.8rem;
+    }
+  }
+} 

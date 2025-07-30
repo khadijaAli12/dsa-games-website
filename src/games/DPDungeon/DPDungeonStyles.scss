@@ -1,0 +1,277 @@
+.dp-dungeon {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: 'Arial', sans-serif;
+  // padding-top: 440px;
+  h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1.5rem;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+  }
+
+  .game-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    .stats {
+      display: flex;
+      gap: 1rem;
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      font-weight: bold;
+      color: #6f42c1;
+    }
+  }
+
+  .grid-container {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+
+    .grid {
+      border: 3px solid #333;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      background: #f8f9fa;
+      max-width: 100%;
+      max-height: clamp(300px, 60vh, 500px);
+
+      .grid-row {
+        display: flex;
+
+        .grid-cell {
+          width: clamp(60px, 12vw, 80px);
+          height: clamp(60px, 12vw, 80px);
+          border: 1px solid #dee2e6;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          font-weight: bold;
+          font-size: clamp(0.8rem, 2vw, 1.2rem);
+          transition: all 0.3s ease;
+          position: relative;
+
+          &.player {
+            background: linear-gradient(45deg, #007bff, #6610f2);
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+          }
+
+          &.optimal {
+            background: linear-gradient(45deg, #28a745, #20c997);
+            color: white;
+            animation: optimalPulse 2s ease-in-out infinite;
+          }
+
+          &.normal {
+            background-color: #ffffff;
+            color: #333;
+          }
+
+          .cell-value {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            font-weight: bold;
+          }
+
+          .cell-cost {
+            font-size: clamp(0.7rem, 1.5vw, 0.9rem);
+            opacity: 0.8;
+            margin-top: 0.2rem;
+          }
+
+          .player-marker {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: clamp(1.5rem, 3vw, 2rem);
+          }
+        }
+      }
+    }
+  }
+
+  .controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+
+    button {
+      padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1rem, 3vw, 1.5rem);
+      border: 2px solid #6f42c1;
+      border-radius: 8px;
+      font-size: clamp(0.8rem, 2vw, 1rem);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      background: #6f42c1;
+      color: white;
+      min-width: 120px;
+
+      &:hover:not(:disabled) {
+        background: #5a32a3;
+        transform: translateY(-2px);
+      }
+
+      &:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  .legend {
+    display: flex;
+    justify-content: center;
+    gap: clamp(1rem, 3vw, 2rem);
+    margin: 2rem 0;
+    flex-wrap: wrap;
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      .legend-color {
+        width: clamp(15px, 4vw, 20px);
+        height: clamp(15px, 4vw, 20px);
+        border-radius: 4px;
+        border: 1px solid #dee2e6;
+
+        &.player {
+          background: linear-gradient(45deg, #007bff, #6610f2);
+        }
+
+        &.optimal {
+          background: linear-gradient(45deg, #28a745, #20c997);
+        }
+
+        &.normal {
+          background-color: #ffffff;
+        }
+      }
+
+      span {
+        font-size: clamp(0.8rem, 2vw, 0.9rem);
+        color: #495057;
+        font-weight: 500;
+      }
+    }
+  }
+
+  .explanation {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    h3 {
+      font-size: clamp(1.1rem, 3vw, 1.3rem);
+      color: #333;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: #666;
+      line-height: 1.6;
+      font-size: clamp(0.9rem, 2vw, 1rem);
+    }
+  }
+}
+
+@keyframes optimalPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(40, 167, 69, 0);
+  }
+}
+
+// Tablet responsive
+@media (max-width: 768px) {
+  .dp-dungeon {
+    padding: 0.75rem;
+
+    .game-info {
+      flex-direction: column;
+      text-align: center;
+      gap: 1rem;
+    }
+
+    .grid-container .grid {
+      max-height: clamp(250px, 50vh, 400px);
+
+      .grid-row .grid-cell {
+        width: clamp(50px, 10vw, 70px);
+        height: clamp(50px, 10vw, 70px);
+      }
+    }
+
+    .controls {
+      gap: 0.75rem;
+    }
+  }
+}
+
+// Mobile responsive
+@media (max-width: 480px) {
+  .dp-dungeon {
+    padding: 0.5rem;
+
+    .grid-container .grid {
+      max-height: clamp(200px, 45vh, 300px);
+
+      .grid-row .grid-cell {
+        width: clamp(40px, 8vw, 60px);
+        height: clamp(40px, 8vw, 60px);
+
+        .cell-value {
+          font-size: 0.9rem;
+        }
+
+        .cell-cost {
+          font-size: 0.6rem;
+        }
+      }
+    }
+
+    .controls {
+      flex-direction: column;
+      align-items: center;
+
+      button {
+        width: 200px;
+      }
+    }
+
+    .legend {
+      gap: 0.75rem;
+
+      .legend-item {
+        .legend-color {
+          width: 15px;
+          height: 15px;
+        }
+
+        span {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+} 
