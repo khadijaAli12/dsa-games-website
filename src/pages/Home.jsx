@@ -238,7 +238,7 @@ const Home = () => {
             <a href="#concepts">Concepts</a>
             <a href="#games">Games</a>
             <a href="#practice">Practice</a>
-            <Link to="/playground" className="nav-cta">
+            <Link to="/play" className="nav-cta">
               Start Playing
             </Link>
           </div>

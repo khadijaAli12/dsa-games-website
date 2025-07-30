@@ -10,17 +10,17 @@
 --background: #f5f3f3;
 --surface: linear-gradient(135deg, #0a133b 0%, #322242 50%, #3f1444 100%);
 --surface-hover: #633c3c;
---surface-dark: #0c0a0a;
+--surface-dark: #f8f0f0;
 --border: #ece9e9;
---border-light: #0f0f0f;
+--border-light: #ece7e7;
 
---text-primary: #070606;
---text-secondary: #4a5568;
---text-muted: #718096;
+--text-primary: #000000;
+--text-secondary: #000000;
+--text-muted: #f2f7ff;
 --text-white: #070606;
 --text-accent: #2123a1;
 
---gradient-primary: linear-gradient(135deg, #f4f3f8 0%, #ffffff 100%);
+--gradient-primary: linear-gradient(140deg, #fffefe 0%, #050404 100%);
 --gradient-secondary: linear-gradient(135deg, #9826a5 0%, #f5576c 100%);
 --gradient-accent: linear-gradient(135deg, #1a706a 0%, #610b26 100%);
 --gradient-hero: linear-gradient(135deg, #0a133b 0%, #322242 50%, #3f1444 100%);
@@ -359,7 +359,7 @@ background: var(--background);
             transition: all 0.3s ease;
 
             &.active {
-              background: var(--gradient-primary);
+              background:linear-gradient(90deg, #fbbf24, #f59e0b);;
               color: var(--text-white);
               border-color: transparent;
               transform: scale(1.1);
@@ -413,7 +413,7 @@ background: var(--background);
 // Concepts Section
 .concepts-section {
   padding: 5rem 2rem;
-  background: var(--background);
+  background:white;
 
   .concepts-grid {
     max-width: 1200px;
@@ -726,7 +726,7 @@ background: var(--background);
 // Features Section
 .features-section {
   padding: 5rem 2rem;
-  background: var(--background);
+  background: white;
 
   .features-grid {
     max-width: 1000px;
@@ -754,7 +754,7 @@ background: var(--background);
       h4 {
         font-size: 1.125rem;
         font-weight: 600;
-        color: var(--text-primary);
+        color:black;
         margin-bottom: 0.75rem;
       }
 
