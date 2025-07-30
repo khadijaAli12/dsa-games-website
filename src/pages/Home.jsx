@@ -1,178 +1,15 @@
-import React, { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import './Home.scss';
+import React, { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Navbar from '../components/Navbar';
 
 const Home = () => {
   const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start start", "end start"]
-  });
+  const navigate = useNavigate();
 
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-
-  const gameCategories = [
-    {
-      category: 'Arrays & Sorting',
-      icon: '📊',
-      description: 'Master array manipulation and sorting algorithms through interactive games',
-      level: 'Beginner',
-      games: [
-        {
-          name: 'Sort Hero',
-          icon: '🔁',
-          description: 'Master sorting algorithms through visual array manipulation',
-          path: '/play/sort-hero',
-          difficulty: 'Beginner',
-          concepts: ['Bubble Sort', 'Quick Sort', 'Merge Sort']
-        }
-      ]
-    },
-    {
-      category: 'Trees & Graph Traversal',
-      icon: '🌳',
-      description: 'Explore tree structures and graph algorithms with visual gameplay',
-      level: 'Intermediate',
-      games: [
-        {
-          name: 'Maze Escape',
-          icon: '🐀',
-          description: 'Navigate mazes using backtracking and pathfinding algorithms',
-          path: '/play/maze-escape',
-          difficulty: 'Intermediate',
-          concepts: ['DFS', 'BFS', 'Backtracking']
-        },
-        {
-          name: 'Graph Wars',
-          icon: '🛣️',
-          description: 'Explore graphs with BFS, DFS, and Dijkstra algorithms',
-          path: '/play/graph-wars',
-          difficulty: 'Advanced',
-          concepts: ['Graph Traversal', 'Shortest Path', 'MST']
-        },
-        {
-          name: 'Tree Climber',
-          icon: '⛏️',
-          description: 'Climb trees with various traversal algorithms',
-          path: '/play/tree-climber',
-          difficulty: 'Intermediate',
-          concepts: ['Tree Traversal', 'Binary Trees', 'AVL Trees']
-        }
-      ]
-    },
-    {
-      category: 'Dynamic Programming',
-      icon: '🧩',
-      description: 'Break down complex problems into optimal subproblems',
-      level: 'Advanced',
-      games: [
-        {
-          name: 'DP Dungeon',
-          icon: '📦',
-          description: 'Master dynamic programming through grid-based challenges',
-          path: '/play/dp-dungeon',
-          difficulty: 'Expert',
-          concepts: ['Memoization', 'Tabulation', 'State Optimization']
-        }
-      ]
-    },
-    {
-      category: 'Bit Manipulation',
-      icon: '🔢',
-      description: 'Master bitwise operations and binary number systems',
-      level: 'Advanced',
-      games: [
-        {
-          name: 'Bitmask Dungeon',
-          icon: '🔑',
-          description: 'Solve puzzles using bit manipulation and subset problems',
-          path: '/play/bitmask-dungeon',
-          difficulty: 'Advanced',
-          concepts: ['Bitwise Operations', 'Subset Generation', 'Bit Patterns']
-        }
-      ]
-    },
-    {
-      category: 'String Algorithms',
-      icon: '📝',
-      description: 'Pattern matching and string processing challenges',
-      level: 'Intermediate',
-      games: [
-        {
-          name: 'String Master',
-          icon: '🔤',
-          description: 'Master string algorithms through pattern matching games',
-          path: '/play/string-master',
-          difficulty: 'Intermediate',
-          concepts: ['KMP', 'Boyer-Moore', 'Suffix Arrays']
-        },
-        {
-          name: 'Regex Runner',
-          icon: '🎯',
-          description: 'Learn regular expressions through interactive challenges',
-          path: '/play/regex-runner',
-          difficulty: 'Beginner',
-          concepts: ['Pattern Matching', 'Automata', 'Text Processing']
-        }
-      ]
-    },
-    {
-      category: 'Mathematical Algorithms',
-      icon: '🧮',
-      description: 'Number theory and mathematical problem solving',
-      level: 'Intermediate',
-      games: [
-        {
-          name: 'Number Ninja',
-          icon: '🥷',
-          description: 'Solve mathematical puzzles using algorithmic thinking',
-          path: '/play/number-ninja',
-          difficulty: 'Intermediate',
-          concepts: ['Prime Numbers', 'GCD/LCM', 'Modular Arithmetic']
-        },
-        {
-          name: 'Crypto Quest',
-          icon: '🔐',
-          description: 'Learn cryptographic algorithms through puzzle solving',
-          path: '/play/crypto-quest',
-          difficulty: 'Advanced',
-          concepts: ['Encryption', 'Hashing', 'Digital Signatures']
-        }
-      ]
-    },
-    {
-      category: 'Data Structures',
-      icon: '🏗️',
-      description: 'Build and manipulate fundamental data structures',
-      level: 'Beginner',
-      games: [
-        {
-          name: 'Stack Attack',
-          icon: '📚',
-          description: 'Master stack operations through tower-building challenges',
-          path: '/play/stack-attack',
-          difficulty: 'Beginner',
-          concepts: ['LIFO Operations', 'Expression Evaluation', 'Recursion']
-        },
-        {
-          name: 'Queue Quest',
-          icon: '🚶‍♂️',
-          description: 'Learn queue operations through simulation games',
-          path: '/play/queue-quest',
-          difficulty: 'Beginner',
-          concepts: ['FIFO Operations', 'Priority Queues', 'Circular Queues']
-        },
-        {
-          name: 'Heap Heroes',
-          icon: '⛰️',
-          description: 'Build and maintain heap structures in challenging scenarios',
-          path: '/play/heap-heroes',
-          difficulty: 'Intermediate',
-          concepts: ['Min/Max Heap', 'Heap Sort', 'Priority Queues']
-        }
-      ]
-    }
+  const quickStats = [
+    { number: "12", label: "Interactive Games" },
+    { number: "7", label: "Categories" },
+    { number: "50+", label: "Algorithms" }
   ];
 
   const learningFeatures = [
@@ -182,14 +19,14 @@ const Home = () => {
       icon: '🎯'
     },
     {
-      title: 'Code Playground',
-      description: 'Practice implementations in multiple programming languages',
-      icon: '💻'
+      title: 'Gamified Learning',
+      description: 'Master concepts through engaging games and challenges',
+      icon: '🎮'
     },
     {
-      title: 'Complexity Analysis',
-      description: 'Learn time and space complexity with real examples',
-      icon: '📈'
+      title: 'Real-time Practice',
+      description: 'Code and test algorithms in our interactive playground',
+      icon: '💻'
     },
     {
       title: 'Progress Tracking',
@@ -198,124 +35,62 @@ const Home = () => {
     }
   ];
 
-  const fundamentalConcepts = [
-    {
-      concept: "Time Complexity",
-      notation: "O(n)",
-      explanation: "Measures how algorithm runtime grows with input size",
-      examples: ["O(1) - Constant", "O(log n) - Logarithmic", "O(n) - Linear", "O(n²) - Quadratic"]
-    },
-    {
-      concept: "Space Complexity", 
-      notation: "O(n)",
-      explanation: "Measures additional memory usage relative to input size",
-      examples: ["In-place - O(1)", "Recursive - O(h)", "Dynamic arrays - O(n)"]
-    },
-    {
-      concept: "Algorithm Design",
-      notation: "Paradigms",
-      explanation: "Different approaches to solving computational problems",
-      examples: ["Divide & Conquer", "Greedy", "Dynamic Programming", "Backtracking"]
-    }
-  ];
+  const handleNavigation = (path) => {
+    navigate(path); // useNavigate handles routing
+  };
 
   return (
-    <>
-      {/* Clean Navbar */}
-      <motion.nav 
-        className="navbar"
-        initial={{ y: -50, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6 }}
-      >
-        <div className="nav-container">
-          <div className="nav-logo">
-            <span className="logo-icon">⚡</span>
-            <span className="logo-text">DSAGames</span>
-          </div>
-          
-          <div className="nav-links">
-            <a href="#concepts">Concepts</a>
-            <a href="#games">Games</a>
-            <a href="#practice">Practice</a>
-            <Link to="/play" className="nav-cta">
-              Start Playing
-            </Link>
-          </div>
-        </div>
-      </motion.nav>
-
+    <div className="home-container">
+      <Navbar />
       <div className="home" ref={containerRef}>
         {/* Hero Section */}
-        <motion.section 
-          className="hero"
-          style={{ y }}
-        >
+        <section className="hero">
           <div className="hero-content">
-            <motion.div
-              className="hero-text"
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
+            <div className="hero-text">
               <div className="hero-badge">
                 Data Structures & Algorithms
               </div>
-              
+
               <h1 className="hero-title">
                 Master <span className="highlight">Computer Science</span><br />
                 Fundamentals
               </h1>
-              
+
               <p className="hero-subtitle">
-                Learn data structures and algorithms through interactive visualizations, 
+                Learn data structures and algorithms through interactive visualizations,
                 practical examples, and guided problem-solving exercises.
               </p>
-              
+
               <div className="hero-actions">
-                <Link to="/learn" className="primary-btn">
+                <button className="primary-btn" onClick={() => handleNavigation('/learn')}>
                   Start Learning
-                </Link>
-                <Link to="/concepts" className="secondary-btn">
+                </button>
+                <button className="secondary-btn" onClick={() => handleNavigation('/concepts')}>
                   Explore Concepts
-                </Link>
+                </button>
               </div>
 
               <div className="hero-stats">
-                <div className="stat">
-                  <span className="stat-number">12</span>
-                  <span className="stat-label">Interactive Games</span>
-                </div>
-                <div className="stat">
-                  <span className="stat-number">7</span>
-                  <span className="stat-label">Categories</span>
-                </div>
-                <div className="stat">
-                  <span className="stat-number">50+</span>
-                  <span className="stat-label">Algorithms</span>
-                </div>
+                {quickStats.map((stat, index) => (
+                  <div key={index} className="stat">
+                    <span className="stat-number">{stat.number}</span>
+                    <span className="stat-label">{stat.label}</span>
+                  </div>
+                ))}
               </div>
-            </motion.div>
+            </div>
 
-            <motion.div 
-              className="hero-visual"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
+            <div className="hero-visual">
               <div className="algorithm-demo">
                 <div className="demo-title">Binary Search Visualization</div>
                 <div className="array-visualization">
                   {[1, 3, 5, 7, 9, 11, 13, 15].map((num, index) => (
-                    <motion.div
+                    <div
                       key={index}
                       className={`array-element ${index === 4 ? 'active' : ''}`}
-                      initial={{ scale: 0 }}
-                      animate={{ scale: 1 }}
-                      transition={{ delay: index * 0.1 }}
                     >
                       {num}
-                    </motion.div>
+                    </div>
                   ))}
                 </div>
                 <div className="complexity-info">
@@ -323,155 +98,713 @@ const Home = () => {
                   <span>Space: O(1)</span>
                 </div>
               </div>
-            </motion.div>
-          </div>
-        </motion.section>
-
-        {/* Fundamental Concepts */}
-        <section className="concepts-section" id="concepts">
-          <div className="section-header">
-            <h2>Core Concepts</h2>
-            <p>Build a strong foundation in computational thinking</p>
-          </div>
-          
-          <div className="concepts-grid">
-            {fundamentalConcepts.map((item, index) => (
-              <motion.div
-                key={index}
-                className="concept-card"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <div className="concept-header">
-                  <h3>{item.concept}</h3>
-                  <span className="notation">{item.notation}</span>
-                </div>
-                <p className="concept-explanation">{item.explanation}</p>
-                <div className="concept-examples">
-                  {item.examples.map((example, i) => (
-                    <span key={i} className="example-tag">{example}</span>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
+            </div>
           </div>
         </section>
 
-        {/* Game Categories */}
-        <section className="games-section" id="games">
+        {/* Quick Access Section */}
+        <section className="quick-access-section">
           <div className="section-header">
-            <h2>Interactive Learning Games</h2>
-            <p>Master algorithms through hands-on gameplay across different categories</p>
+            <h2>Start Your Journey</h2>
+            <p>Choose your learning path and begin mastering algorithms</p>
           </div>
-          
-          <div className="categories-container">
-            {gameCategories.map((category, categoryIndex) => (
-              <motion.div
-                key={categoryIndex}
-                className="category-section"
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: categoryIndex * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <div className="category-header">
-                  <div className="category-info">
-                    <div className="category-icon">{category.icon}</div>
-                    <div className="category-details">
-                      <h3>{category.category}</h3>
-                      <p>{category.description}</p>
-                    </div>
-                  </div>
-                  <div className="category-level">{category.level}</div>
-                </div>
-                
-                <div className="games-grid">
-                  {category.games.map((game, gameIndex) => (
-                    <motion.div
-                      key={gameIndex}
-                      className="game-card"
-                      initial={{ opacity: 0, scale: 0.9 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: (categoryIndex * 0.1) + (gameIndex * 0.05) }}
-                      whileHover={{ y: -5, scale: 1.02 }}
-                      viewport={{ once: true }}
-                    >
-                      <div className="game-header">
-                        <div className="game-icon">{game.icon}</div>
-                        <div className="difficulty-badge">{game.difficulty}</div>
-                      </div>
-                      
-                      <div className="game-content">
-                        <h4>{game.name}</h4>
-                        <p>{game.description}</p>
-                        
-                        <div className="game-concepts">
-                          {game.concepts.map((concept, i) => (
-                            <span key={i} className="concept-tag">{concept}</span>
-                          ))}
-                        </div>
-                        
-                        <Link to={game.path} className="play-btn">
-                          Play Game →
-                        </Link>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-            ))}
+
+          <div className="quick-access-grid">
+            <div className="access-card primary" onClick={() => handleNavigation('/games')}>
+              <div className="card-icon">🎮</div>
+              <h3>Interactive Games</h3>
+              <p>Learn through engaging gameplay across 7 different categories</p>
+              <div className="card-cta">
+                Play Games →
+              </div>
+            </div>
+
+            <div className="access-card" onClick={() => handleNavigation('/concepts')}>
+              <div className="card-icon">📚</div>
+              <h3>Core Concepts</h3>
+              <p>Master fundamental concepts with visual explanations</p>
+              <div className="card-cta">
+                Learn Concepts →
+              </div>
+            </div>
+
+            <div className="access-card" onClick={() => handleNavigation('/practice')}>
+              <div className="card-icon">💻</div>
+              <h3>Code Practice</h3>
+              <p>Practice implementations in our interactive playground</p>
+              <div className="card-cta">
+                Start Coding →
+              </div>
+            </div>
           </div>
         </section>
-
         {/* Learning Features */}
         <section className="features-section">
           <div className="section-header">
-            <h2>How You'll Learn</h2>
+            <h2>Why Choose DSAGames?</h2>
             <p>Modern tools and methodologies for effective learning</p>
           </div>
           
           <div className="features-grid">
             {learningFeatures.map((feature, index) => (
-              <motion.div
-                key={index}
-                className="feature-card"
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
+              <div key={index} className="feature-card">
                 <div className="feature-icon">{feature.icon}</div>
                 <h4>{feature.title}</h4>
                 <p>{feature.description}</p>
-              </motion.div>
+              </div>
             ))}
           </div>
         </section>
 
         {/* Call to Action */}
-        <motion.section 
-          className="cta-section"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-        >
+        <section className="cta-section">
           <div className="cta-content">
             <h2>Ready to Master DSA?</h2>
             <p>Join thousands of students building strong algorithmic thinking skills</p>
             <div className="cta-buttons">
-              <Link to="/learn" className="primary-btn large">
-                Begin Your Journey
-              </Link>
-              <Link to="/practice" className="secondary-btn large">
-                Practice Problems
-              </Link>
+              <button className="primary-btn large" onClick={() => handleNavigation('/games')}>
+                Start with Games
+              </button>
+              <button className="secondary-btn large" onClick={() => handleNavigation('/concepts')}>
+                Learn Concepts First
+              </button>
             </div>
           </div>
-        </motion.section>
+        </section>
       </div>
-    </>
+
+      <style jsx>{`   
+:root {
+--primary-color: #7f80baff;
+--secondary-color: #8b0426;
+--accent-color: #8b5cf6;
+--success-color: #10b981;
+--warning-color: #f59e0b;
+--error-color: #ef4444;
+
+--background: #aea2e2ff;
+--surface: linear-gradient(135deg, #616576ff 0%, #322242 50%, #3f1444 100%);
+--surface-hover: #633c3c;
+--surface-dark: #f8f0f0;
+--border: #ece9e9;
+--border-light: #ece7e7;
+
+--text-primary: #000000;
+--text-secondary: #000000;
+--text-muted: #0a0a0aff;
+--text-white: #070606;
+--text-accent: #2123a1;
+
+--gradient-primary: linear-gradient(140deg, #6e2020ff 0%, #050404 100%);
+--gradient-secondary: linear-gradient(135deg, #9826a5 0%, #f5576c 100%);
+--gradient-accent: linear-gradient(135deg, #1a706a 0%, #610b26 100%);
+--gradient-hero: linear-gradient(135deg, #0a133b 0%, #322242 50%, #3f1444 100%);
+
+--shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+--shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+--shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+--shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+--shadow-colored: 0 10px 25px -3px rgb(102 102 241 / 0.2);
+
+--radius-sm: 0.375rem;
+--radius-md: 0.5rem;
+--radius-lg: 0.75rem;
+--radius-xl: 1rem;
+--radius-2xl: 1.5rem;
+}
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        .home-container {
+          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          line-height: 1.6;
+          color: var(--text-primary);
+          background: var(--background);
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+        /* Main Container */
+        .home {
+          // padding-top: 4rem;
+        }
+
+        /* Hero Section */
+        .hero {
+          min-height: 90vh;
+          display: flex;
+          align-items: center;
+          padding: 4rem 2rem;
+          background: linear-gradient(135deg, #8db5ddff 0%, #f6f7f8ff 100%);
+        }
+
+        .hero-content {
+          max-width: 1200px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 4rem;
+          align-items: center;
+        }
+
+        .hero-badge {
+          display: inline-block;
+          background: var(--primary-color);
+          color: var(--text-white);
+          padding: 0.375rem 0.75rem;
+          border-radius: var(--radius-md);
+          font-size: 0.8rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.025em;
+          margin-bottom: 1.5rem;
+        }
+
+        .hero-title {
+          font-size: clamp(2.5rem, 5vw, 3.5rem);
+          font-weight: 800;
+          line-height: 1.1;
+          margin-bottom: 1.5rem;
+          color: var(--text-primary);
+        }
+
+        .highlight {
+          color: var(--primary-color);
+          position: relative;
+        }
+
+        .highlight::after {
+          content: '';
+          position: absolute;
+          bottom: 0.1em;
+          left: 0;
+          width: 100%;
+          height: 0.1em;
+          background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+          opacity: 0.3;
+        }
+
+        .hero-subtitle {
+          font-size: 1.125rem;
+          color: var(--text-secondary);
+          margin-bottom: 2rem;
+          line-height: 1.7;
+        }
+
+        .hero-actions {
+          display: flex;
+          gap: 1rem;
+          margin-bottom: 3rem;
+        }
+
+        .hero-stats {
+          display: flex;
+          gap: 2rem;
+        }
+
+        .stat {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .stat-number {
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: var(--primary-color);
+        }
+
+        .stat-label {
+          font-size: 0.875rem;
+          color: var(--text-muted);
+          font-weight: 500;
+        }
+
+        .algorithm-demo {
+          background: var(--background);
+          border: 1px solid var(--border);
+          border-radius: var(--radius-lg);
+          padding: 2rem;
+          box-shadow: var(--shadow-xl);
+        }
+
+        .demo-title {
+          font-size: 1rem;
+          font-weight: 600;
+          color: var(--text-primary);
+          margin-bottom: 1.5rem;
+          text-align: center;
+        }
+
+        .array-visualization {
+          display: flex;
+          gap: 0.5rem;
+          justify-content: center;
+          margin-bottom: 1.5rem;
+        }
+
+        .array-element {
+          width: 3rem;
+          height: 3rem;
+          background: var(--surface);
+          border: 2px solid var(--border);
+          border-radius: var(--radius-md);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-weight: 600;
+          color: var(--text-primary);
+          transition: all 0.3s ease;
+        }
+
+        .array-element.active {
+          background: var(--primary-color);
+          color: var(--text-white);
+          border-color: var(--primary-color);
+          transform: scale(1.1);
+        }
+
+        .complexity-info {
+          display: flex;
+          justify-content: space-around;
+          gap: 1rem;
+        }
+
+        .complexity-info span {
+          background: var(--surface);
+          padding: 0.5rem 1rem;
+          border-radius: var(--radius-sm);
+          font-size: 0.875rem;
+          font-weight: 500;
+          color: var(--text-secondary);
+        }
+
+        /* Section Headers */
+        .section-header {
+          text-align: center;
+          margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+          font-size: clamp(2rem, 4vw, 2.5rem);
+          font-weight: 700;
+          color: var(--text-primary);
+          margin-bottom: 0.75rem;
+        }
+
+        .section-header p {
+          font-size: 1.125rem;
+          color: var(--text-secondary);
+          max-width: 600px;
+          margin: 0 auto;
+        }
+
+        /* Quick Access Section */
+        .quick-access-section {
+          padding: 5rem 2rem;
+          background: var(--surface);
+        }
+
+        .quick-access-grid {
+          max-width: 1200px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+          gap: 2rem;
+        }
+
+        .access-card {
+          background: var(--background);
+          border: 1px solid var(--border);
+          border-radius: var(--radius-lg);
+          padding: 2.5rem;
+          text-align: center;
+          transition: all 0.3s ease;
+          position: relative;
+          overflow: hidden;
+          cursor: pointer;
+        }
+
+        .access-card::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 4px;
+          background: var(--gradient-primary);
+          transform: scaleX(0);
+          transition: transform 0.3s ease;
+        }
+
+        .access-card:hover {
+          transform: translateY(-8px);
+          box-shadow: var(--shadow-xl);
+          border-color: var(--primary-color);
+        }
+
+        .access-card:hover::before {
+          transform: scaleX(1);
+        }
+
+        .access-card.primary {
+          background: var(--gradient-primary);
+          color: var(--text-white);
+          border: none;
+        }
+
+        .access-card.primary h3,
+        .access-card.primary p {
+          color: var(--text-white);
+        }
+
+        .card-icon {
+          font-size: 3rem;
+          margin-bottom: 1.5rem;
+        }
+
+        .access-card h3 {
+          font-size: 1.5rem;
+          font-weight: 700;
+          margin-bottom: 1rem;
+          color: var(--text-primary);
+        }
+
+        .access-card p {
+          color: var(--text-secondary);
+          margin-bottom: 2rem;
+          line-height: 1.6;
+        }
+
+        .card-cta {
+          color: var(--primary-color);
+          text-decoration: none;
+          font-weight: 600;
+          font-size: 1.1rem;
+          transition: all 0.2s ease;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          cursor: pointer;
+        }
+
+        .access-card.primary .card-cta {
+          color: var(--text-white);
+          background: rgba(255, 255, 255, 0.2);
+          padding: 0.75rem 1.5rem;
+          border-radius: var(--radius-md);
+          backdrop-filter: blur(10px);
+        }
+
+        .card-cta:hover {
+          transform: translateX(4px);
+        }
+
+        .access-card.primary .card-cta:hover {
+          background: rgba(255, 255, 255, 0.3);
+          transform: translateY(-2px);
+        }
+
+        /* Features Section */
+        .features-section {
+          padding: 5rem 2rem;
+          // background: var(--background);
+          background:  linear-gradient(135deg, #8db5ddff 0%, #f6f7f8ff 100%);
+        }
+
+        .features-grid {
+          max-width: 1000px;
+          margin: 0 auto;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+          gap: 2rem;
+        }
+
+        .feature-card {
+          text-align: center;
+          padding: 2rem 1.5rem;
+          border-radius: var(--radius-lg);
+          transition: all 0.2s ease;
+        }
+
+        .feature-card:hover {
+          transform: translateY(-4px);
+        }
+
+        .feature-icon {
+          font-size: 3rem;
+          margin-bottom: 1rem;
+          display: block;
+        }
+
+        .feature-card h4 {
+          font-size: 1.125rem;
+          font-weight: 600;
+          color: var(--text-primary);
+          margin-bottom: 0.75rem;
+        }
+
+        .feature-card p {
+          color: var(--text-secondary);
+          line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+          padding: 5rem 2rem;
+          background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+          color: var(--text-white);
+        }
+
+        .cta-content {
+          max-width: 800px;
+          margin: 0 auto;
+          text-align: center;
+        }
+
+        .cta-content h2 {
+          font-size: clamp(2rem, 4vw, 2.5rem);
+          font-weight: 700;
+          margin-bottom: 1rem;
+        }
+
+        .cta-content p {
+          font-size: 1.125rem;
+          margin-bottom: 2.5rem;
+          opacity: 0.9;
+        }
+
+        .cta-buttons {
+          display: flex;
+          gap: 1rem;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+
+        .cta-buttons .primary-btn {
+          background: var(--text-white);
+          color: var(--primary-color);
+        }
+
+        .cta-buttons .primary-btn:hover {
+          background: var(--surface);
+          transform: translateY(-2px);
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-buttons .secondary-btn {
+          background: transparent;
+          color: var(--text-white);
+          border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .cta-buttons .secondary-btn:hover {
+          background: rgba(255, 255, 255, 0.1);
+          border-color: var(--text-white);
+          transform: translateY(-2px);
+        }
+
+        /* Button Styles */
+        .primary-btn {
+          background: var(--primary-color);
+          color: var(--text-white);
+          padding: 0.875rem 1.75rem;
+          border-radius: var(--radius-md);
+          text-decoration: none;
+          font-weight: 600;
+          font-size: 1rem;
+          transition: all 0.2s ease;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          border: none;
+          cursor: pointer;
+        }
+
+        .primary-btn:hover {
+          background: var(--secondary-color);
+          transform: translateY(-2px);
+          box-shadow: var(--shadow-lg);
+        }
+
+        .primary-btn.large {
+          padding: 1rem 2rem;
+          font-size: 1.1rem;
+        }
+
+        .secondary-btn {
+          background: transparent;
+          color: var(--text-primary);
+          padding: 0.875rem 1.75rem;
+          border: 2px solid var(--border);
+          border-radius: var(--radius-md);
+          text-decoration: none;
+          font-weight: 600;
+          font-size: 1rem;
+          transition: all 0.2s ease;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+        }
+
+        .secondary-btn:hover {
+          border-color: var(--primary-color);
+          color: var(--primary-color);
+          transform: translateY(-2px);
+        }
+
+        .secondary-btn.large {
+          padding: 1rem 2rem;
+          font-size: 1.1rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+          .nav-container {
+            padding: 0 1.5rem;
+          }
+
+          .hero-content {
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            text-align: center;
+          }
+
+          .hero-stats {
+            justify-content: center;
+          }
+
+          .quick-access-grid,
+          .features-grid {
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          }
+        }
+
+        @media (max-width: 768px) {
+          .nav-container {
+            padding: 0 1rem;
+          }
+
+          .nav-links {
+            gap: 1rem;
+          }
+
+          .nav-links a {
+            font-size: 0.9rem;
+          }
+
+          .nav-cta {
+            padding: 0.4rem 0.8rem;
+            font-size: 0.85rem;
+          }
+
+          .hero {
+            padding: 3rem 1rem;
+            min-height: auto;
+          }
+
+          .hero-actions {
+            flex-direction: column;
+          }
+
+          .primary-btn,
+          .secondary-btn {
+            width: 100%;
+            max-width: 280px;
+            justify-content: center;
+          }
+
+          .hero-stats {
+            gap: 1.5rem;
+          }
+
+          .algorithm-demo {
+            padding: 1.5rem;
+          }
+
+          .array-element {
+            width: 2.5rem;
+            height: 2.5rem;
+            font-size: 0.9rem;
+          }
+
+          .quick-access-section,
+          .features-section,
+          .cta-section {
+            padding: 3rem 1rem;
+          }
+
+          .quick-access-grid {
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+          }
+
+          .access-card {
+            padding: 2rem;
+          }
+
+          .features-grid {
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+          }
+
+          .feature-card {
+            padding: 1.5rem 1rem;
+          }
+
+          .cta-buttons {
+            flex-direction: column;
+            align-items: center;
+          }
+
+          .cta-buttons .primary-btn,
+          .cta-buttons .secondary-btn {
+            width: 100%;
+            max-width: 280px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .nav-links {
+            gap: 0.5rem;
+          }
+
+          .nav-links a:not(.nav-cta) {
+            display: none;
+          }
+
+          .hero-badge {
+            font-size: 0.75rem;
+            padding: 0.3rem 0.6rem;
+          }
+
+          .hero-subtitle {
+            font-size: 1rem;
+          }
+
+          .hero-stats {
+            flex-direction: column;
+            gap: 1rem;
+          }
+
+          .access-card {
+            padding: 1.5rem;
+          }
+        }
+
+        /* Focus styles for accessibility */
+        button:focus-visible,
+        a:focus-visible,
+        .primary-btn:focus-visible,
+        .secondary-btn:focus-visible {
+          outline: 2px solid var(--primary-color);
+          outline-offset: 2px;
+        }
+      `}</style>
+    </div>
   );
 };
 
