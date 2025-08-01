@@ -1,156 +1,191 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
 import Navbar from '../components/Navbar';
+
 const GamesPage = () => {
+  const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState('all');
 
- const gameCategories = [
-  {
-    id: 'arrays-sorting',
-    category: 'Arrays & Sorting',
-    icon: '📊',
-    description: 'Master array manipulation and sorting algorithms through interactive games',
-    level: 'Beginner',
-    color: '#6366f1',
-    games: [
-      {
-        name: 'Sort Hero',
-        icon: '🔁',
-        description: 'Master sorting algorithms through visual array manipulation',
-        path: '/play/sort-hero',
-        difficulty: 'Beginner',
-        concepts: ['Bubble Sort', 'Quick Sort', 'Merge Sort']
-      },
-      {
-        name: 'Array Explorer',
-        icon: '🔍',
-        description: 'Navigate arrays with search and traversal algorithms',
-        path: '/play/array-explorer',
-        difficulty: 'Beginner',
-        concepts: ['Linear Search', 'Binary Search', 'Two Pointers']
-      }
-    ]
-  },
-  {
-    id: 'trees-graphs',
-    category: 'Trees & Graph Traversal',
-    icon: '🌳',
-    description: 'Explore tree structures and graph algorithms with visual gameplay',
-    level: 'Intermediate',
-    color: '#10b981',
-    games: [
-      {
-        name: 'Maze Escape',
-        icon: '🐀',
-        description: 'Navigate mazes using backtracking and pathfinding algorithms',
-        path: '/play/maze-escape',
-        difficulty: 'Intermediate',
-        concepts: ['DFS', 'BFS', 'Backtracking']
-      },
-      {
-        name: 'Graph Wars',
-        icon: '🛣️',
-        description: 'Explore graphs with BFS, DFS, and Dijkstra algorithms',
-        path: '/play/graph-wars',
-        difficulty: 'Advanced',
-        concepts: ['Graph Traversal', 'Shortest Path', 'MST']
-      },
-      {
-        name: 'Tree Climber',
-        icon: '⛏️',
-        description: 'Climb trees with various traversal algorithms',
-        path: '/play/tree-climber',
-        difficulty: 'Intermediate',
-        concepts: ['Tree Traversal', 'Binary Trees', 'AVL Trees']
-      }
-    ]
-  },
-  {
-    id: 'dynamic-programming',
-    category: 'Dynamic Programming',
-    icon: '🧩',
-    description: 'Break down complex problems into optimal subproblems',
-    level: 'Advanced',
-    color: '#8b5cf6',
-    games: [
-      {
-        name: 'DP Dungeon',
-        icon: '📦',
-        description: 'Master dynamic programming through grid-based challenges',
-        path: '/play/dp-dungeon',
-        difficulty: 'Expert',
-        concepts: ['Memoization', 'Tabulation', 'State Optimization']
-      }
-    ]
-  },
-  {
-    id: 'data-structures',
-    category: 'Data Structures',
-    icon: '🏗️',
-    description: 'Build and manipulate fundamental data structures',
-    level: 'Beginner',
-    color: '#f59e0b',
-    games: [
-      {
-        name: 'Stack Attack',
-        icon: '📚',
-        description: 'Master stack operations through tower-building challenges',
-        path: '/play/stack-attack',
-        difficulty: 'Beginner',
-        concepts: ['LIFO Operations', 'Expression Evaluation', 'Recursion']
-      },
-      {
-        name: 'Queue Quest',
-        icon: '🚶‍♂️',
-        description: 'Learn queue operations through simulation games',
-        path: '/play/queue-quest',
-        difficulty: 'Beginner',
-        concepts: ['FIFO Operations', 'Priority Queues', 'Circular Queues']
-      },
-      {
-        name: 'Heap Heroes',
-        icon: '⛰️',
-        description: 'Build and maintain heap structures in challenging scenarios',
-        path: '/play/heap-heroes',
-        difficulty: 'Intermediate',
-        concepts: ['Min/Max Heap', 'Heap Sort', 'Priority Queues']
-      }
-    ]
-  },
-  {
-    id: 'strings',
-    category: 'String Algorithms',
-    icon: '📝',
-    description: 'Pattern matching and string processing challenges',
-    level: 'Intermediate',
-    color: '#06b6d4',
-    games: [
-      {
-        name: 'String Master',
-        icon: '🔤',
-        description: 'Master string algorithms through pattern matching games',
-        path: '/play/string-master',
-        difficulty: 'Intermediate',
-        concepts: ['KMP', 'Boyer-Moore', 'Suffix Arrays']
-      },
-      {
-        name: 'Regex Runner',
-        icon: '🎯',
-        description: 'Learn regular expressions through interactive challenges',
-        path: '/play/regex-runner',
-        difficulty: 'Beginner',
-        concepts: ['Pattern Matching', 'Automata', 'Text Processing']
-      }
-    ]
-  }
-];
-
+  const gameCategories = [
+    {
+      id: 'arrays-sorting',
+      category: 'Arrays & Sorting',
+      icon: '📊',
+      description: 'Master array manipulation and sorting algorithms through interactive games',
+      level: 'Beginner',
+      color: '#6366f1',
+      games: [
+        {
+          name: 'Sort Hero',
+          icon: '🔁',
+          description: 'Master sorting algorithms through visual array manipulation',
+          path: '/games/sort-hero',
+          difficulty: 'Beginner',
+          concepts: ['Bubble Sort', 'Quick Sort', 'Merge Sort'],
+          rating: 4.8,
+          players: '2.1k'
+        },
+        {
+          name: 'Array Explorer',
+          icon: '🔍',
+          description: 'Navigate arrays with search and traversal algorithms',
+          path: '/games/array-explorer',
+          difficulty: 'Beginner',
+          concepts: ['Linear Search', 'Binary Search', 'Two Pointers'],
+          rating: 4.6,
+          players: '1.8k'
+        }
+      ]
+    },
+    {
+      id: 'trees-graphs',
+      category: 'Trees & Graph Traversal',
+      icon: '🌳',
+      description: 'Explore tree structures and graph algorithms with visual gameplay',
+      level: 'Intermediate',
+      color: '#10b981',
+      games: [
+        {
+          name: 'Maze Escape',
+          icon: '🐀',
+          description: 'Navigate mazes using backtracking and pathfinding algorithms',
+          path: '/games/maze-escape',
+          difficulty: 'Intermediate',
+          concepts: ['DFS', 'BFS', 'Backtracking'],
+          rating: 4.9,
+          players: '3.2k'
+        },
+        {
+          name: 'Graph Wars',
+          icon: '🛣️',
+          description: 'Explore graphs with BFS, DFS, and Dijkstra algorithms',
+          path: '/games/graph-wars',
+          difficulty: 'Advanced',
+          concepts: ['Graph Traversal', 'Shortest Path', 'MST'],
+          rating: 4.7,
+          players: '1.5k'
+        },
+        {
+          name: 'Tree Climber',
+          icon: '⛏️',
+          description: 'Climb trees with various traversal algorithms',
+          path: '/games/tree-climber',
+          difficulty: 'Intermediate',
+          concepts: ['Tree Traversal', 'Binary Trees', 'AVL Trees'],
+          rating: 4.5,
+          players: '1.9k'
+        }
+      ]
+    },
+    {
+      id: 'dynamic-programming',
+      category: 'Dynamic Programming',
+      icon: '🧩',
+      description: 'Break down complex problems into optimal subproblems',
+      level: 'Advanced',
+      color: '#8b5cf6',
+      games: [
+        {
+          name: 'DP Dungeon',
+          icon: '📦',
+          description: 'Master dynamic programming through grid-based challenges',
+          path: '/games/dp-dungeon',
+          difficulty: 'Expert',
+          concepts: ['Memoization', 'Tabulation', 'State Optimization'],
+          rating: 4.4,
+          players: '890'
+        }
+      ]
+    },
+    {
+      id: 'data-structures',
+      category: 'Data Structures',
+      icon: '🏗️',
+      description: 'Build and manipulate fundamental data structures',
+      level: 'Beginner',
+      color: '#f59e0b',
+      games: [
+        {
+          name: 'Stack Attack',
+          icon: '📚',
+          description: 'Master stack operations through tower-building challenges',
+          path: '/games/stack-attack',
+          difficulty: 'Beginner',
+          concepts: ['LIFO Operations', 'Expression Evaluation', 'Recursion'],
+          rating: 4.6,
+          players: '2.5k'
+        },
+        {
+          name: 'Queue Quest',
+          icon: '🚶‍♂️',
+          description: 'Learn queue operations through simulation games',
+          path: '/games/queue-quest',
+          difficulty: 'Beginner',
+          concepts: ['FIFO Operations', 'Priority Queues', 'Circular Queues'],
+          rating: 4.5,
+          players: '2.0k'
+        },
+        {
+          name: 'Heap Heroes',
+          icon: '⛰️',
+          description: 'Build and maintain heap structures in challenging scenarios',
+          path: '/games/heap-heroes',
+          difficulty: 'Intermediate',
+          concepts: ['Min/Max Heap', 'Heap Sort', 'Priority Queues'],
+          rating: 4.3,
+          players: '1.3k'
+        }
+      ]
+    },
+    {
+      id: 'strings',
+      category: 'String Algorithms',
+      icon: '📝',
+      description: 'Pattern matching and string processing challenges',
+      level: 'Intermediate',
+      color: '#06b6d4',
+      games: [
+        {
+          name: 'String Master',
+          icon: '🔤',
+          description: 'Master string algorithms through pattern matching games',
+          path: '/games/string-master',
+          difficulty: 'Intermediate',
+          concepts: ['KMP', 'Boyer-Moore', 'Suffix Arrays'],
+          rating: 4.4,
+          players: '1.2k'
+        },
+        {
+          name: 'Regex Runner',
+          icon: '🎯',
+          description: 'Learn regular expressions through interactive challenges',
+          path: '/games/regex-runner',
+          difficulty: 'Beginner',
+          concepts: ['Pattern Matching', 'Automata', 'Text Processing'],
+          rating: 4.2,
+          players: '1.6k'
+        }
+      ]
+    }
+  ];
 
   const handleNavigation = (path) => {
-    console.log(`Navigate to: ${path}`);
+    navigate(path);
   };
 
   const handlePlayGame = (gamePath) => {
-    console.log(`Starting game: ${gamePath}`);
+    if (gamePath) {
+      navigate(gamePath);
+    }
+  };
+
+  const handleStartWithSortHero = () => {
+    navigate('/games/sort-hero');
+  };
+
+  const handleLearnConcepts = () => {
+    navigate('/concepts');
   };
 
   const filteredCategories = selectedCategory === 'all' 
@@ -173,7 +208,7 @@ const GamesPage = () => {
 
   return (
     <div className="games-container">
-        <Navbar />
+      <Navbar />
 
       <div className="games-page">
         {/* Hero Section */}
@@ -238,7 +273,6 @@ const GamesPage = () => {
                 .slice(0, 3)
                 .map((game, index) => (
                   <div key={index} className="featured-card" onClick={() => handlePlayGame(game.path)}>
-                    {/* <div className="featured-badge">Featured</div> */}
                     <div className="game-header">
                       <div className="game-icon">{game.icon}</div>
                     </div>
@@ -327,17 +361,16 @@ const GamesPage = () => {
             <h2>Ready to Start Playing?</h2>
             <p>Join thousands of students mastering algorithms through interactive gameplay</p>
             <div className="cta-buttons">
-              <button className="primary-btn large" onClick={() => handlePlayGame('/play/sort-hero')}>
+              <button className="primary-btn large" onClick={handleStartWithSortHero}>
                 Start with Sort Hero
               </button>
-              <button className="secondary-btn large" onClick={() => handleNavigation('/concepts')}>
+              <button className="secondary-btn large" onClick={handleLearnConcepts}>
                 Learn Concepts First
               </button>
             </div>
           </div>
         </section>
       </div>
-
       <style jsx>{`
         :root {
 --primary-color: #7f80baff;
