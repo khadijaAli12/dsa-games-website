@@ -1,11 +1,11 @@
-/* TreeClimber.css */
+/* TreeClimber.css - Graph Wars Theme */
 
 .tree-climber {
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f8f9fa;
+  font-family: 'Arial', sans-serif;
   padding: 20px 0;
-  // padding-top: 60rem;
+  color: #333;
 }
 
 .container {
@@ -16,10 +16,9 @@
 
 .title {
   text-align: center;
-  color: white;
-  font-size: 2.5rem;
+  color: #333;
+  font-size: clamp(2rem, 5vw, 2.5rem);
   margin-bottom: 2rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
   font-weight: 700;
 }
 
@@ -28,11 +27,11 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2rem;
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(10px);
+  background: white;
   padding: 1.5rem;
-  border-radius: 15px;
-  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  border: 2px solid #dee2e6;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   flex-wrap: wrap;
   gap: 1rem;
 }
@@ -42,23 +41,24 @@
   gap: 2rem;
   font-size: 1.1rem;
   font-weight: 600;
-  color: white;
+  color: #495057;
 }
 
 .stats span {
-  background: rgba(255,255,255,0.2);
+  background: #f8f9fa;
   padding: 0.5rem 1rem;
   border-radius: 20px;
-  backdrop-filter: blur(5px);
+  border: 1px solid #dee2e6;
+  color: #6f42c1;
 }
 
 .traversal-selector select {
   padding: 0.75rem 1.5rem;
-  border: 2px solid rgba(255,255,255,0.3);
-  border-radius: 10px;
+  border: 2px solid #6f42c1;
+  border-radius: 8px;
   font-size: 1rem;
-  background: rgba(255,255,255,0.9);
-  color: #333;
+  background: white;
+  color: #6f42c1;
   cursor: pointer;
   outline: none;
   transition: all 0.3s ease;
@@ -66,19 +66,28 @@
 }
 
 .traversal-selector select:hover:not(:disabled) {
-  border-color: #28a745;
-  box-shadow: 0 0 10px rgba(40,167,69,0.3);
+  background: #f8f9fa;
+  transform: translateY(-2px);
+}
+
+.traversal-selector select:focus {
+  border-color: #5a32a3;
+  box-shadow: 0 0 0 3px rgba(111, 66, 193, 0.1);
 }
 
 .traversal-selector select:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+  background: #f8f9fa;
+  color: #6c757d;
+  border-color: #dee2e6;
 }
 
 .tree-container {
   background: white;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid #dee2e6;
   margin-bottom: 2rem;
   padding: 20px;
   overflow: hidden;
@@ -116,55 +125,77 @@
 
 .btn {
   padding: 0.875rem 2rem;
-  border: none;
-  border-radius: 10px;
+  border: 2px solid #6f42c1;
+  border-radius: 8px;
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   min-width: 150px;
   text-transform: capitalize;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  background: white;
+  color: #6f42c1;
 }
 
 .btn:hover:not(:disabled) {
+  background: #f8f9fa;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
 }
 
 .btn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
   transform: none;
+  background: #f8f9fa;
+  color: #6c757d;
+  border-color: #dee2e6;
 }
 
 .btn-primary {
-  background: linear-gradient(45deg, #28a745, #20c997);
+  background: #6f42c1;
   color: white;
+  border-color: #6f42c1;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #5a32a3;
+  border-color: #5a32a3;
 }
 
 .btn-secondary {
-  background: linear-gradient(45deg, #007bff, #0056b3);
+  background: #007bff;
   color: white;
+  border-color: #007bff;
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: #0056b3;
+  border-color: #0056b3;
 }
 
 .btn-tertiary {
-  background: linear-gradient(45deg, #6f42c1, #5a3a9a);
+  background: #28a745;
   color: white;
+  border-color: #28a745;
+}
+
+.btn-tertiary:hover:not(:disabled) {
+  background: #1e7e34;
+  border-color: #1e7e34;
 }
 
 .traversal-info {
-  background: rgba(255,255,255,0.95);
-  backdrop-filter: blur(10px);
+  background: white;
   padding: 2rem;
-  border-radius: 15px;
+  border-radius: 8px;
   margin-bottom: 2rem;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid #dee2e6;
 }
 
 .traversal-info h3 {
   font-size: 1.5rem;
-  color: #333;
+  color: #6f42c1;
   margin-bottom: 1.5rem;
   text-align: center;
   font-weight: 600;
@@ -179,7 +210,7 @@
 }
 
 .placeholder {
-  color: #666;
+  color: #6c757d;
   font-style: italic;
   font-size: 1.1rem;
 }
@@ -190,15 +221,15 @@
   padding: 0.75rem 1.25rem;
   border-radius: 25px;
   font-weight: bold;
-  box-shadow: 0 3px 10px rgba(40,167,69,0.3);
   display: flex;
   align-items: center;
   gap: 0.5rem;
   animation: nodeAppear 0.6s ease-out;
+  border: 2px solid #20c997;
 }
 
 .node-number {
-  background: rgba(255,255,255,0.3);
+  background: rgba(255, 255, 255, 0.3);
   width: 24px;
   height: 24px;
   border-radius: 50%;
@@ -214,22 +245,22 @@
 }
 
 .arrow {
-  color: #666;
+  color: #6c757d;
   font-size: 1.5rem;
   font-weight: bold;
 }
 
 .explanation {
-  background: rgba(255,255,255,0.95);
-  backdrop-filter: blur(10px);
+  background: white;
   padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 2px solid #dee2e6;
 }
 
 .explanation h3 {
   font-size: 1.5rem;
-  color: #333;
+  color: #6f42c1;
   margin-bottom: 1.5rem;
   text-align: center;
   font-weight: 600;
@@ -242,17 +273,17 @@
 }
 
 .algorithm {
-  background: white;
+  background: #f8f9fa;
   padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
   border-left: 4px solid #28a745;
   transition: transform 0.3s ease;
 }
 
 .algorithm:hover {
   transform: translateY(-3px);
-  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .algorithm:nth-child(2) {
@@ -275,13 +306,13 @@
 }
 
 .algorithm p {
-  color: #666;
+  color: #495057;
   margin-bottom: 0.5rem;
   line-height: 1.5;
 }
 
 .algorithm small {
-  color: #888;
+  color: #6c757d;
   font-style: italic;
 }
 
@@ -328,7 +359,7 @@
   }
   
   .title {
-    font-size: 2rem;
+    font-size: clamp(1.5rem, 4vw, 2rem);
     margin-bottom: 1.5rem;
   }
   
@@ -374,7 +405,7 @@
 
 @media (max-width: 480px) {
   .title {
-    font-size: 1.5rem;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
   }
   
   .tree-container {

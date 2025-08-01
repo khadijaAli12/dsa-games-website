@@ -1,0 +1,712 @@
+// ArrayExplorerStyles.scss - Graph Wars Theme
+
+.array-explorer {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: 'Arial', sans-serif;
+    background: #f8f9fa;
+    min-height: 100vh;
+    color: #333;
+  
+    .header {
+      text-align: center;
+      margin-bottom: 2rem;
+  
+      h2 {
+        font-size: clamp(2rem, 5vw, 3rem);
+        margin-bottom: 0.5rem;
+        color: #333;
+        font-weight: bold;
+      }
+  
+      p {
+        font-size: 1.2rem;
+        color: #666;
+        margin: 0;
+      }
+    }
+  
+    .game-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border: 2px solid #dee2e6;
+  
+      .mode-selector {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+  
+        label {
+          font-weight: 600;
+          color: #6f42c1;
+        }
+  
+        .mode-buttons {
+          display: flex;
+          gap: 0.5rem;
+  
+          button {
+            padding: 0.5rem 1rem;
+            border: 2px solid #6f42c1;
+            background: white;
+            color: #6f42c1;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+  
+            &:hover {
+              background: #f8f9fa;
+              transform: translateY(-2px);
+            }
+  
+            &.active {
+              background: #6f42c1;
+              color: white;
+              box-shadow: 0 4px 15px rgba(111, 66, 193, 0.3);
+            }
+          }
+        }
+  
+        .challenge-type {
+          margin-left: 1rem;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+  
+          label {
+            font-size: 0.9rem;
+          }
+  
+          select {
+            padding: 0.4rem 0.8rem;
+            border: 2px solid #dee2e6;
+            border-radius: 6px;
+            background: white;
+            color: #333;
+            font-size: 0.85rem;
+            cursor: pointer;
+  
+            &:focus {
+              border-color: #6f42c1;
+              outline: none;
+            }
+  
+            option {
+              background: white;
+              color: #333;
+            }
+          }
+        }
+      }
+  
+      .game-stats {
+        display: flex;
+        gap: 2rem;
+  
+        .stat {
+          text-align: center;
+  
+          .stat-label {
+            display: block;
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.25rem;
+          }
+  
+          .stat-value {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #6f42c1;
+          }
+        }
+      }
+    }
+  
+    .algorithm-info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border: 2px solid #dee2e6;
+  
+      .current-algorithm {
+        h3 {
+          color: #6f42c1;
+          margin-bottom: 1rem;
+          font-size: 1.5rem;
+        }
+  
+        p {
+          margin-bottom: 0.75rem;
+          line-height: 1.6;
+          color: #495057;
+        }
+  
+        .complexity-details {
+          margin-top: 1rem;
+          
+          .complexity-item {
+            background: #f8f9fa;
+            padding: 0.5rem;
+            margin-bottom: 0.5rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            border: 1px solid #dee2e6;
+          }
+        }
+      }
+  
+      .algorithm-steps {
+        h4 {
+          color: #6f42c1;
+          margin-bottom: 1rem;
+        }
+  
+        ol {
+          padding-left: 1.5rem;
+          
+          li {
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+            color: #495057;
+          }
+        }
+      }
+    }
+  
+    .controls {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      margin-bottom: 2rem;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border: 2px solid #dee2e6;
+  
+      .control-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+  
+        label {
+          font-weight: 600;
+          color: #6f42c1;
+          font-size: 0.9rem;
+        }
+  
+        select {
+          padding: 0.5rem;
+          border: 2px solid #dee2e6;
+          border-radius: 6px;
+          background: white;
+          color: #333;
+          font-size: 0.9rem;
+          cursor: pointer;
+  
+          &:focus {
+            border-color: #6f42c1;
+            outline: none;
+          }
+  
+          option {
+            background: white;
+            color: #333;
+          }
+  
+          &:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            background: #f8f9fa;
+          }
+        }
+      }
+  
+      .control-buttons {
+        display: flex;
+        gap: 1rem;
+        margin-left: auto;
+  
+        button {
+          padding: 0.75rem 1.5rem;
+          border: 2px solid #6f42c1;
+          border-radius: 8px;
+          background: white;
+          color: #6f42c1;
+          cursor: pointer;
+          font-weight: 600;
+          transition: all 0.3s ease;
+          min-width: 120px;
+  
+          &:hover:not(:disabled) {
+            background: #f8f9fa;
+            transform: translateY(-2px);
+          }
+  
+          &.primary {
+            background: #6f42c1;
+            color: white;
+            box-shadow: 0 4px 15px rgba(111, 66, 193, 0.3);
+  
+            &:hover:not(:disabled) {
+              background: #5a32a3;
+            }
+          }
+  
+          &:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+            background: #f8f9fa;
+            color: #6c757d;
+            border-color: #dee2e6;
+          }
+        }
+      }
+    }
+  
+    .search-target {
+      text-align: center;
+      margin-bottom: 2rem;
+  
+      h3 {
+        font-size: 1.8rem;
+        color: #6f42c1;
+        background: white;
+        padding: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        border: 2px solid #dee2e6;
+        margin: 0 0 1rem 0;
+      }
+  
+      .challenge-instructions {
+        background: #fff3cd;
+        border: 2px solid #ffeaa7;
+        padding: 1rem;
+        border-radius: 8px;
+        
+        p {
+          margin: 0;
+          font-size: 1.1rem;
+          font-weight: 500;
+          color: #856404;
+        }
+      }
+    }
+  
+    .visualization {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border: 2px solid #dee2e6;
+  
+      .array-display {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+        min-height: 200px;
+  
+        .array-element {
+          position: relative;
+          background: #ffffff;
+          border: 2px solid #dee2e6;
+          border-radius: 8px;
+          width: 60px;
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-end;
+          align-items: center;
+          padding: 0.5rem;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  
+          &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+          }
+  
+          .value {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: #333;
+            margin-bottom: 0.25rem;
+          }
+  
+          .index {
+            font-size: 0.8rem;
+            color: #6c757d;
+          }
+  
+          .pointer-label {
+            position: absolute;
+            top: -25px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+  
+            &.left {
+              background: #dc3545;
+              color: white;
+            }
+  
+            &.right {
+              background: #20c997;
+              color: white;
+            }
+          }
+  
+          &.checked {
+            background: linear-gradient(45deg, #ffc107, #fd7e14);
+            border-color: #fd7e14;
+            color: white;
+            animation: pulse 0.6s ease-in-out;
+          }
+  
+          &.in-range {
+            background: linear-gradient(45deg, #6f42c1, #8e44ad);
+            border-color: #8e44ad;
+            color: white;
+          }
+  
+          &.found {
+            background: linear-gradient(45deg, #28a745, #20c997);
+            border-color: #20c997;
+            color: white;
+            animation: celebration 1s ease-in-out;
+          }
+  
+          &.selected {
+            background: linear-gradient(45deg, #007bff, #6610f2);
+            border-color: #6610f2;
+            color: white;
+            box-shadow: 0 0 20px rgba(102, 16, 242, 0.6);
+            transform: translateY(-3px);
+          }
+  
+          &.left-pointer {
+            border-color: #dc3545;
+            box-shadow: 0 0 20px rgba(220, 53, 69, 0.5);
+          }
+  
+          &.right-pointer {
+            border-color: #20c997;
+            box-shadow: 0 0 20px rgba(32, 201, 151, 0.5);
+          }
+        }
+      }
+  
+      .legend {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+  
+        .legend-item {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          font-size: 0.9rem;
+          color: #495057;
+  
+          .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+            border: 2px solid #dee2e6;
+  
+            &.checked {
+              background: linear-gradient(45deg, #ffc107, #fd7e14);
+            }
+  
+            &.in-range {
+              background: linear-gradient(45deg, #6f42c1, #8e44ad);
+            }
+  
+            &.found {
+              background: linear-gradient(45deg, #28a745, #20c997);
+            }
+  
+            &.selected {
+              background: linear-gradient(45deg, #007bff, #6610f2);
+            }
+  
+            &.left-pointer {
+              background: #dc3545;
+            }
+  
+            &.right-pointer {
+              background: #20c997;
+            }
+          }
+        }
+      }
+    }
+  
+    .explanation-panel {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border: 2px solid #dee2e6;
+  
+      .current-step {
+        h4 {
+          color: #6f42c1;
+          margin-bottom: 1rem;
+          font-size: 1.3rem;
+        }
+  
+        p {
+          font-size: 1.1rem;
+          line-height: 1.6;
+          margin: 0;
+          color: #495057;
+        }
+      }
+  
+      .progress-bar {
+        margin-top: 1rem;
+        background: #f8f9fa;
+        height: 8px;
+        border-radius: 4px;
+        overflow: hidden;
+        border: 1px solid #dee2e6;
+  
+        .progress-fill {
+          height: 100%;
+          background: linear-gradient(90deg, #6f42c1, #8e44ad);
+          transition: width 0.3s ease;
+          border-radius: 4px;
+        }
+      }
+    }
+  
+    .educational-content {
+      display: grid;
+      gap: 2rem;
+  
+      .concept-explanation {
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        border: 2px solid #dee2e6;
+  
+        h3 {
+          color: #6f42c1;
+          margin-bottom: 1.5rem;
+          font-size: 1.5rem;
+        }
+  
+        .concepts {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 1.5rem;
+  
+          .concept {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+            position: relative;
+  
+            h4 {
+              color: #6f42c1;
+              margin-bottom: 1rem;
+              font-size: 1.2rem;
+            }
+  
+            p {
+              line-height: 1.6;
+              margin-bottom: 1rem;
+              color: #495057;
+            }
+  
+            .complexity-badge {
+              display: inline-block;
+              padding: 0.25rem 0.75rem;
+              border-radius: 20px;
+              font-size: 0.8rem;
+              font-weight: bold;
+              color: white;
+  
+              &.linear {
+                background: #fd7e14;
+              }
+  
+              &.binary {
+                background: #28a745;
+              }
+  
+              &.two-pointer {
+                background: #6f42c1;
+              }
+            }
+          }
+        }
+      }
+  
+      .performance-comparison {
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        border: 2px solid #dee2e6;
+  
+        h3 {
+          color: #6f42c1;
+          margin-bottom: 1.5rem;
+          font-size: 1.5rem;
+        }
+  
+        .comparison-table {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          gap: 1rem;
+  
+          .comparison-row {
+            display: contents;
+  
+            &.header span {
+              background: #6f42c1;
+              padding: 1rem;
+              border-radius: 8px;
+              font-weight: bold;
+              color: white;
+              text-align: center;
+            }
+  
+            &:not(.header) span {
+              background: #f8f9fa;
+              padding: 0.75rem;
+              border-radius: 6px;
+              text-align: center;
+              border: 1px solid #dee2e6;
+              color: #495057;
+            }
+          }
+        }
+      }
+  
+      .challenge-tips {
+        background: #fff3cd;
+        border: 2px solid #ffeaa7;
+        padding: 2rem;
+        border-radius: 8px;
+  
+        h3 {
+          color: #856404;
+          margin-bottom: 1.5rem;
+          font-size: 1.5rem;
+        }
+  
+        ul {
+          list-style: none;
+          padding: 0;
+  
+          li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(133, 100, 4, 0.2);
+            line-height: 1.6;
+            color: #856404;
+  
+            &:last-child {
+              border-bottom: none;
+            }
+          }
+        }
+      }
+    }
+  
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+  
+    @keyframes celebration {
+      0%, 100% { transform: scale(1) rotate(0deg); }
+      25% { transform: scale(1.1) rotate(-5deg); }
+      75% { transform: scale(1.1) rotate(5deg); }
+    }
+  
+    @media (max-width: 768px) {
+      padding: 1rem;
+  
+      .algorithm-info {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+  
+      .controls {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: stretch;
+  
+        .control-buttons {
+          margin-left: 0;
+          justify-content: center;
+        }
+      }
+  
+      .visualization .array-display {
+        gap: 0.25rem;
+  
+        .array-element {
+          width: 45px;
+          padding: 0.25rem;
+  
+          .value {
+            font-size: 1rem;
+          }
+  
+          .index {
+            font-size: 0.7rem;
+          }
+        }
+      }
+  
+      .educational-content .concepts {
+        grid-template-columns: 1fr;
+      }
+  
+      .performance-comparison .comparison-table {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+  
+        .comparison-row {
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          gap: 0.5rem;
+          margin-bottom: 0.5rem;
+        }
+      }
+  
+      .game-controls {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+      }
+    }
+  }
