@@ -348,7 +348,7 @@ const GamesPage = () => {
 --error-color: #ef4444;
 
 --background: #aea2e2ff;
---surface: linear-gradient(135deg, #616576ff 0%, #322242 50%, #3f1444 100%);
+--surface: linear-gradient(135deg, rgb(220, 221, 228) 0%, #e3e2e4 50%, #d8d5d8 100%);
 --surface-hover: #633c3c;
 --surface-dark: #f8f0f0;
 --border: #ece9e9;
@@ -392,7 +392,7 @@ const GamesPage = () => {
         }
         /* Page Layout */
         .games-page {
-          // padding-top: 4rem;
+          padding-top: 4rem;
         }
 
         /* Hero Section */

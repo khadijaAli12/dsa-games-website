@@ -8,7 +8,7 @@
 --error-color: #ef4444;
 
 --background: #f5f3f3;
---surface: linear-gradient(135deg, #0a133b 0%, #322242 50%, #3f1444 100%);
+--surface: linear-gradient(135deg, #dedfe4 0%, #ddc4f7 50%, #3f1444 100%);
 --surface-hover: #633c3c;
 --surface-dark: #f8f0f0;
 --border: #ece9e9;
@@ -168,8 +168,8 @@ background: var(--background);
   }
 // Main Container
 .home {
-// padding-top: 4rem;
-
+padding-top: 4rem;
+}
 // Hero Section
 .hero {
   min-height: 90vh;

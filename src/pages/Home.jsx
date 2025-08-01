@@ -228,7 +228,7 @@ const Home = () => {
         }
         /* Main Container */
         .home {
-          // padding-top: 4rem;
+           padding-top: 4rem;
         }
 
         /* Hero Section */
