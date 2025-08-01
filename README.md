@@ -1,11 +1,11 @@
 # DSA Games Website
 Learn Data Structures and Algorithms the fun way — through games!
 
-🌐 [Live Demo → dsagames.vercel.app](https://dsagames.vercel.app)
+ ## [LIVE Demo → dsagames.vercel.app](https://dsagames.vercel.app)
 
 ---
 
-## 🎮 What is DSA Games?
+##  What is DSA Games?
 
 DSA Games is not your average algorithm learning platform. It's a **gameified**, **interactive**, and **visual** playground where you can:
 
@@ -42,7 +42,7 @@ DSA Games is not your average algorithm learning platform. It's a **gameified**,
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/khadijaAli12/dsa-games-website.git
 cd dsa-games-website
 ```
 
@@ -69,4 +69,5 @@ npm run dev
 
 ## 🎯 Available Games
 ## 12+ games are available 
+Multiple core concepts of DSA are ## there
 ---
