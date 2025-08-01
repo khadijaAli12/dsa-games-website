@@ -1,4 +1,4 @@
-# 🧠 DSA Games Website 🚀  
+# DSA Games Website
 Learn Data Structures and Algorithms the fun way — through games!
 
 🌐 [Live Demo → dsagames.vercel.app](https://dsagames.vercel.app)
