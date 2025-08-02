@@ -11,7 +11,7 @@ import AlgorithmDesignPage from '../pages/Concept/AlgorithmDesignPage';
 import DataStructuresPage from '../pages/Concept/DataStructuresPage';
 import SortingAlgorithmsPage from '../pages/Concept/SortingAlgorithmsPage';
 import GraphAlgorithmsPage from '../pages/Concept/GraphAlgorithmsPage';
-
+import DSAPracticeHub from '../pages/practice';
 // Games
 import SortHero from '../games/SortHero/SortHero';
 // Add other games as you create them
@@ -63,6 +63,7 @@ const AppRoutes = () => {
       {/* String Algorithm Games */}
       {/* <Route path="/games/string-master" element={<StringMaster />} /> */}
       {/* <Route path="/games/regex-runner" element={<RegexRunner />} /> */}
+      <Route path="/practice" element={<DSAPracticeHub />} />
     </Routes>
   );
 };
