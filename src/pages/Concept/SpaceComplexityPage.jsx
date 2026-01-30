@@ -1,8 +1,10 @@
 import React from 'react';
+import Navbar from '../../components/Navbar';
 
 const SpaceComplexityPage = () => {
   return (
     <div className="space-complexity-container">
+      <Navbar />
       <div className="space-complexity-page">
         <section className="hero-section">
           <div className="hero-content">

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Navbar from '../../components/Navbar';
 
 const AlgorithmDesignPage = () => {
   const [activeExample, setActiveExample] = useState('merge-sort');
@@ -7,55 +8,55 @@ const AlgorithmDesignPage = () => {
     {
       name: 'Divide and Conquer',
       description: 'Break problems into smaller subproblems, solve recursively',
-      icon: '🔀',
+      icon: '',
       color: '#3b82f6'
     },
     {
       name: 'Greedy Algorithms',
       description: 'Make locally optimal choices at each step',
-      icon: '🎯',
+      icon: '',
       color: '#10b981'
     },
     {
       name: 'Dynamic Programming',
       description: 'Store results of subproblems to avoid redundant calculations',
-      icon: '📊',
+      icon: '',
       color: '#8b5cf6'
     },
     {
       name: 'Backtracking',
       description: 'Try partial solutions and abandon if they cannot lead to complete solution',
-      icon: '🔄',
+      icon: '',
       color: '#f59e0b'
     },
     {
       name: 'Two Pointers',
       description: 'Use two pointers to traverse data structures efficiently',
-      icon: '👉',
+      icon: '',
       color: '#ef4444'
     },
     {
       name: 'Sliding Window',
       description: 'Maintain a window of elements and slide it for optimal solutions',
-      icon: '🪟',
+      icon: '',
       color: '#06b6d4'
     },
     {
       name: 'Branch and Bound',
       description: 'Systematically enumerate solutions using bounding functions',
-      icon: '🌳',
+      icon: '',
       color: '#84cc16'
     },
     {
       name: 'Randomized',
       description: 'Use random numbers to make decisions or improve performance',
-      icon: '🎲',
+      icon: '',
       color: '#ec4899'
     },
     {
       name: 'Brute Force',
       description: 'Try all possible solutions until finding the correct one',
-      icon: '💪',
+      icon: '',
       color: '#6b7280'
     }
   ];

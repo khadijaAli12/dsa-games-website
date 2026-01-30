@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import Navbar from '../../components/Navbar';
 
 const TimeComplexityPage = () => {
   const [inputSize, setInputSize] = useState(10);

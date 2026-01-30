@@ -6,7 +6,7 @@ const Navbar = () => {
   const navigate = useNavigate();
 
   return (
-    <nav className="navbar">
+    <nav className="navbar" role="navigation" aria-label="Main navigation">
       <div className="nav-container">
         <div
           className="nav-logo"
@@ -14,17 +14,47 @@ const Navbar = () => {
           tabIndex="0"
           onClick={() => navigate('/')}
           onKeyDown={(e) => e.key === 'Enter' && navigate('/')}
+          aria-label="Navigate to home page"
         >
-          <span className="logo-icon">⚡</span>
           <span className="logo-text">DSAGames</span>
         </div>
 
         <div className="nav-links">
-          <NavLink to="/" className={({ isActive }) => (isActive ? 'active' : '')}>Home</NavLink>
-          <NavLink to="/concepts" className={({ isActive }) => (isActive ? 'active' : '')}>Concepts</NavLink>
-          <NavLink to="/games" className={({ isActive }) => (isActive ? 'active' : '')}>Games</NavLink>
-          <NavLink to="/practice" className={({ isActive }) => (isActive ? 'active' : '')}>Practice</NavLink>
-          <NavLink to="/playground" className="nav-cta">Start Playing</NavLink>
+          <NavLink 
+            to="/" 
+            className={({ isActive }) => (isActive ? 'active' : '')}
+            aria-current="page"
+          >
+            Home
+          </NavLink>
+          <NavLink 
+            to="/concepts" 
+            className={({ isActive }) => (isActive ? 'active' : '')}
+            aria-current="page"
+          >
+            Concepts
+          </NavLink>
+          <NavLink 
+            to="/games" 
+            className={({ isActive }) => (isActive ? 'active' : '')}
+            aria-current="page"
+          >
+            Games
+          </NavLink>
+          <NavLink 
+            to="/practice" 
+            className={({ isActive }) => (isActive ? 'active' : '')}
+            aria-current="page"
+          >
+            Practice
+          </NavLink>
+          <NavLink 
+            to="/playground" 
+            className="nav-cta"
+            aria-current="page"
+          >
+            Start Playing
+          </NavLink>
         </div>
       </div>
     </nav>

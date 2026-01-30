@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Navbar from '../../components/Navbar';
 
 const SortingAlgorithmsPage = () => {
   const [activeAlgorithm, setActiveAlgorithm] = useState('bubble-sort');
@@ -8,28 +9,28 @@ const SortingAlgorithmsPage = () => {
       id: 'simple',
       name: 'Simple Sorting',
       algorithms: [
-        { name: 'Bubble Sort', complexity: 'O(n²)', icon: '🫧', stable: true, inPlace: true },
-        { name: 'Selection Sort', complexity: 'O(n²)', icon: '🎯', stable: false, inPlace: true },
-        { name: 'Insertion Sort', complexity: 'O(n²)', icon: '📥', stable: true, inPlace: true }
+        { name: 'Bubble Sort', complexity: 'O(n²)', icon: '', stable: true, inPlace: true },
+        { name: 'Selection Sort', complexity: 'O(n²)', icon: '', stable: false, inPlace: true },
+        { name: 'Insertion Sort', complexity: 'O(n²)', icon: '', stable: true, inPlace: true }
       ]
     },
     {
       id: 'efficient',
       name: 'Efficient Sorting',
       algorithms: [
-        { name: 'Merge Sort', complexity: 'O(n log n)', icon: '🔀', stable: true, inPlace: false },
-        { name: 'Quick Sort', complexity: 'O(n log n)', icon: '⚡', stable: false, inPlace: true },
-        { name: 'Heap Sort', complexity: 'O(n log n)', icon: '🏔️', stable: false, inPlace: true }
+        { name: 'Merge Sort', complexity: 'O(n log n)', icon: '', stable: true, inPlace: false },
+        { name: 'Quick Sort', complexity: 'O(n log n)', icon: '', stable: false, inPlace: true },
+        { name: 'Heap Sort', complexity: 'O(n log n)', icon: '', stable: false, inPlace: true }
       ]
     },
     {
       id: 'specialized',
       name: 'Specialized Sorting',
       algorithms: [
-        { name: 'Counting Sort', complexity: 'O(n+k)', icon: '🔢', stable: true, inPlace: false },
-        { name: 'Radix Sort', complexity: 'O(d×n)', icon: '📊', stable: true, inPlace: false },
-        { name: 'Bucket Sort', complexity: 'O(n+k)', icon: '🪣', stable: true, inPlace: false },
-        { name: 'Shell Sort', complexity: 'O(n^1.5)', icon: '🐚', stable: false, inPlace: true }
+        { name: 'Counting Sort', complexity: 'O(n+k)', icon: '', stable: true, inPlace: false },
+        { name: 'Radix Sort', complexity: 'O(d×n)', icon: '', stable: true, inPlace: false },
+        { name: 'Bucket Sort', complexity: 'O(n+k)', icon: '', stable: true, inPlace: false },
+        { name: 'Shell Sort', complexity: 'O(n^1.5)', icon: '', stable: false, inPlace: true }
       ]
     }
   ];
@@ -727,6 +728,7 @@ int main() {
 
   return (
     <div className="sorting-algorithms-container">
+      <Navbar />
       <div className="sorting-algorithms-page">
         {/* Header Section */}
         <div className="header-section">

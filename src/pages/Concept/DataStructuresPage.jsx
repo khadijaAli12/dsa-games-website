@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Navbar from '../../components/Navbar';
 
 const DataStructuresPage = () => {
   const [activeStructure, setActiveStructure] = useState('array');
@@ -8,29 +9,29 @@ const DataStructuresPage = () => {
       id: 'linear',
       name: 'Linear Structures',
       items: [
-        { name: 'Arrays', icon: '📊', complexity: 'O(1) access', description: 'Fixed-size sequential collection of elements' },
-        { name: 'Linked Lists', icon: '🔗', complexity: 'O(n) access', description: 'Dynamic collection with pointer-based connections' },
-        { name: 'Stacks', icon: '📚', complexity: 'O(1) operations', description: 'LIFO (Last In, First Out) principle' },
-        { name: 'Queues', icon: '🚶‍♂️', complexity: 'O(1) operations', description: 'FIFO (First In, First Out) principle' }
+        { name: 'Arrays', icon: '', complexity: 'O(1) access', description: 'Fixed-size sequential collection of elements' },
+        { name: 'Linked Lists', icon: '', complexity: 'O(n) access', description: 'Dynamic collection with pointer-based connections' },
+        { name: 'Stacks', icon: '', complexity: 'O(1) operations', description: 'LIFO (Last In, First Out) principle' },
+        { name: 'Queues', icon: '', complexity: 'O(1) operations', description: 'FIFO (First In, First Out) principle' }
       ]
     },
     {
       id: 'non-linear',
       name: 'Non-Linear Structures',
       items: [
-        { name: 'Binary Trees', icon: '🌳', complexity: 'O(log n) search', description: 'Hierarchical structure with at most 2 children per node' },
-        { name: 'Heaps', icon: '⛰️', complexity: 'O(log n) insert', description: 'Complete binary tree with heap property' },
-        { name: 'Graphs', icon: '🕸️', complexity: 'O(V+E) traversal', description: 'Collection of vertices connected by edges' },
-        { name: 'Tries', icon: '🔤', complexity: 'O(m) search', description: 'Prefix tree for string operations' }
+        { name: 'Binary Trees', icon: '', complexity: 'O(log n) search', description: 'Hierarchical structure with at most 2 children per node' },
+        { name: 'Heaps', icon: '', complexity: 'O(log n) insert', description: 'Complete binary tree with heap property' },
+        { name: 'Graphs', icon: '', complexity: 'O(V+E) traversal', description: 'Collection of vertices connected by edges' },
+        { name: 'Tries', icon: '', complexity: 'O(m) search', description: 'Prefix tree for string operations' }
       ]
     },
     {
       id: 'hash-based',
       name: 'Hash-Based Structures',
       items: [
-        { name: 'Hash Tables', icon: '🗂️', complexity: 'O(1) average', description: 'Key-value pairs using hash functions' },
-        { name: 'Hash Sets', icon: '📋', complexity: 'O(1) lookup', description: 'Collection of unique elements using hash' },
-        { name: 'Bloom Filters', icon: '🌸', complexity: 'O(1) check', description: 'Probabilistic data structure for membership testing' }
+        { name: 'Hash Tables', icon: '', complexity: 'O(1) average', description: 'Key-value pairs using hash functions' },
+        { name: 'Hash Sets', icon: '', complexity: 'O(1) lookup', description: 'Collection of unique elements using hash' },
+        { name: 'Bloom Filters', icon: '', complexity: 'O(1) check', description: 'Probabilistic data structure for membership testing' }
       ]
     }
   ];
@@ -505,6 +506,7 @@ class BinarySearchTree {
 
   return (
     <div className="data-structures-container">
+      <Navbar />
       <div className="data-structures-page">
         {/* Header Section */}
         <div className="header-section">
