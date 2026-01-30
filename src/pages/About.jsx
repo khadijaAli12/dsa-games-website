@@ -23,22 +23,18 @@ const About = () => {
           <h2>What We Offer</h2>
           <div className="features-grid">
             <div className="feature-item">
-              <div className="feature-icon">🎮</div>
               <h3>Interactive Games</h3>
               <p>Learn algorithms through hands-on gameplay experiences</p>
             </div>
             <div className="feature-item">
-              <div className="feature-icon">👁️</div>
               <h3>Visual Learning</h3>
               <p>See algorithms in action with step-by-step visualizations</p>
             </div>
             <div className="feature-item">
-              <div className="feature-icon">📚</div>
               <h3>Educational Content</h3>
               <p>Comprehensive explanations and learning resources</p>
             </div>
             <div className="feature-item">
-              <div className="feature-icon">🚀</div>
               <h3>Progressive Learning</h3>
               <p>Start simple and advance to complex algorithms</p>
             </div>

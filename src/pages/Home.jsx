@@ -15,23 +15,19 @@ const Home = () => {
   const learningFeatures = [
     {
       title: 'Interactive Visualizations',
-      description: 'See algorithms in action with step-by-step visual explanations',
-      icon: '🎯'
+      description: 'See algorithms in action with step-by-step visual explanations'
     },
     {
       title: 'Gamified Learning',
-      description: 'Master concepts through engaging games and challenges',
-      icon: '🎮'
+      description: 'Master concepts through engaging games and challenges'
     },
     {
       title: 'Real-time Practice',
-      description: 'Code and test algorithms in our interactive playground',
-      icon: '💻'
+      description: 'Code and test algorithms in our interactive playground'
     },
     {
       title: 'Progress Tracking',
-      description: 'Monitor your learning journey and concept mastery',
-      icon: '📊'
+      description: 'Monitor your learning journey and concept mastery'
     }
   ];
 
@@ -111,7 +107,7 @@ const Home = () => {
 
           <div className="quick-access-grid">
             <div className="access-card primary" onClick={() => handleNavigation('/games')}>
-              <div className="card-icon">🎮</div>
+
               <h3>Interactive Games</h3>
               <p>Learn through engaging gameplay across 7 different categories</p>
               <div className="card-cta">
@@ -120,7 +116,7 @@ const Home = () => {
             </div>
 
             <div className="access-card" onClick={() => handleNavigation('/concepts')}>
-              <div className="card-icon">📚</div>
+
               <h3>Core Concepts</h3>
               <p>Master fundamental concepts with visual explanations</p>
               <div className="card-cta">
@@ -129,7 +125,7 @@ const Home = () => {
             </div>
 
             <div className="access-card" onClick={() => handleNavigation('/practice')}>
-              <div className="card-icon">💻</div>
+
               <h3>Code Practice</h3>
               <p>Practice implementations in our interactive playground</p>
               <div className="card-cta">
@@ -148,7 +144,7 @@ const Home = () => {
           <div className="features-grid">
             {learningFeatures.map((feature, index) => (
               <div key={index} className="feature-card">
-                <div className="feature-icon">{feature.icon}</div>
+                
                 <h4>{feature.title}</h4>
                 <p>{feature.description}</p>
               </div>

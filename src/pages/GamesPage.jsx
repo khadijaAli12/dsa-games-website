@@ -11,14 +11,12 @@ const GamesPage = () => {
     {
       id: 'arrays-sorting',
       category: 'Arrays & Sorting',
-      icon: '📊',
       description: 'Master array manipulation and sorting algorithms through interactive games',
       level: 'Beginner',
       color: '#6366f1',
       games: [
         {
           name: 'Sort Hero',
-          icon: '🔁',
           description: 'Master sorting algorithms through visual array manipulation',
           path: '/games/sort-hero',
           difficulty: 'Beginner',
@@ -28,7 +26,6 @@ const GamesPage = () => {
         },
         {
           name: 'Array Explorer',
-          icon: '🔍',
           description: 'Navigate arrays with search and traversal algorithms',
           path: '/games/array-explorer',
           difficulty: 'Beginner',
@@ -41,14 +38,12 @@ const GamesPage = () => {
     {
       id: 'trees-graphs',
       category: 'Trees & Graph Traversal',
-      icon: '🌳',
       description: 'Explore tree structures and graph algorithms with visual gameplay',
       level: 'Intermediate',
       color: '#10b981',
       games: [
         {
           name: 'Maze Escape',
-          icon: '🐀',
           description: 'Navigate mazes using backtracking and pathfinding algorithms',
           path: '/games/maze-escape',
           difficulty: 'Intermediate',
@@ -58,7 +53,6 @@ const GamesPage = () => {
         },
         {
           name: 'Graph Wars',
-          icon: '🛣️',
           description: 'Explore graphs with BFS, DFS, and Dijkstra algorithms',
           path: '/games/graph-wars',
           difficulty: 'Advanced',
@@ -68,7 +62,6 @@ const GamesPage = () => {
         },
         {
           name: 'Tree Climber',
-          icon: '⛏️',
           description: 'Climb trees with various traversal algorithms',
           path: '/games/tree-climber',
           difficulty: 'Intermediate',
@@ -81,14 +74,12 @@ const GamesPage = () => {
     {
       id: 'dynamic-programming',
       category: 'Dynamic Programming',
-      icon: '🧩',
       description: 'Break down complex problems into optimal subproblems',
       level: 'Advanced',
       color: '#8b5cf6',
       games: [
         {
           name: 'DP Dungeon',
-          icon: '📦',
           description: 'Master dynamic programming through grid-based challenges',
           path: '/games/dp-dungeon',
           difficulty: 'Expert',
@@ -101,14 +92,12 @@ const GamesPage = () => {
     {
       id: 'data-structures',
       category: 'Data Structures',
-      icon: '🏗️',
       description: 'Build and manipulate fundamental data structures',
       level: 'Beginner',
       color: '#f59e0b',
       games: [
         {
           name: 'Stack Attack',
-          icon: '📚',
           description: 'Master stack operations through tower-building challenges',
           path: '/games/stack-attack',
           difficulty: 'Beginner',
@@ -118,7 +107,6 @@ const GamesPage = () => {
         },
         {
           name: 'Queue Quest',
-          icon: '🚶‍♂️',
           description: 'Learn queue operations through simulation games',
           path: '/games/queue-quest',
           difficulty: 'Beginner',
@@ -128,7 +116,6 @@ const GamesPage = () => {
         },
         {
           name: 'Heap Heroes',
-          icon: '⛰️',
           description: 'Build and maintain heap structures in challenging scenarios',
           path: '/games/heap-heroes',
           difficulty: 'Intermediate',
@@ -141,14 +128,12 @@ const GamesPage = () => {
     {
       id: 'strings',
       category: 'String Algorithms',
-      icon: '📝',
       description: 'Pattern matching and string processing challenges',
       level: 'Intermediate',
       color: '#06b6d4',
       games: [
         {
           name: 'String Master',
-          icon: '🔤',
           description: 'Master string algorithms through pattern matching games',
           path: '/games/string-master',
           difficulty: 'Intermediate',
@@ -158,7 +143,6 @@ const GamesPage = () => {
         },
         {
           name: 'Regex Runner',
-          icon: '🎯',
           description: 'Learn regular expressions through interactive challenges',
           path: '/games/regex-runner',
           difficulty: 'Beginner',
@@ -251,7 +235,7 @@ const GamesPage = () => {
                   onClick={() => setSelectedCategory(category.id)}
                   style={{ '--category-color': category.color }}
                 >
-                  <span className="filter-icon">{category.icon}</span>
+
                   {category.category}
                 </button>
               ))}
@@ -274,7 +258,6 @@ const GamesPage = () => {
                 .map((game, index) => (
                   <div key={index} className="featured-card" onClick={() => handlePlayGame(game.path)}>
                     <div className="game-header">
-                      <div className="game-icon">{game.icon}</div>
                     </div>
                     <div className="game-content">
                       <h4>{game.name}</h4>
@@ -321,7 +304,7 @@ const GamesPage = () => {
                       onClick={() => handlePlayGame(game.path)}
                     >
                       <div className="game-header">
-                        <div className="game-icon">{game.icon}</div>
+
                         <div className="difficulty-badge" style={{ backgroundColor: getDifficultyColor(game.difficulty) }}>
                           {game.difficulty}
                         </div>

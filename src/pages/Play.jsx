@@ -7,84 +7,72 @@ const Play = () => {
     {
       id: 'sort-hero',
       name: 'Sort Hero',
-      icon: '🔁',
       description: 'Master sorting algorithms through visual array manipulation',
       path: '/play/sort-hero'
     },
     {
       id: 'maze-escape',
       name: 'Maze Escape',
-      icon: '🐀',
       description: 'Navigate mazes using backtracking and pathfinding algorithms',
       path: '/play/maze-escape'
     },
     {
       id: 'bitmask-dungeon',
       name: 'Bitmask Dungeon',
-      icon: '🔑',
       description: 'Solve puzzles using bit manipulation and subset problems',
       path: '/play/bitmask-dungeon'
     },
     {
       id: 'graph-wars',
       name: 'Graph Wars',
-      icon: '🛣️',
       description: 'Explore graphs with BFS, DFS, and Dijkstra algorithms',
       path: '/play/graph-wars'
     },
     {
       id: 'dp-dungeon',
       name: 'DP Dungeon',
-      icon: '📦',
       description: 'Master dynamic programming through grid-based challenges',
       path: '/play/dp-dungeon'
     },
     {
       id: 'coin-quest',
       name: 'Coin Quest',
-      icon: '🪙',
       description: 'Learn greedy algorithms through coin optimization',
       path: '/play/coin-quest'
     },
     {
       id: 'network-hacker',
       name: 'Network Hacker',
-      icon: '🌐',
       description: 'Connect networks using Union-Find and disjoint sets',
       path: '/play/network-hacker'
     },
     {
       id: 'tree-climber',
       name: 'Tree Climber',
-      icon: '⛏️',
       description: 'Climb trees with various traversal algorithms',
       path: '/play/tree-climber'
     },
     {
       id: 'recursion-portal',
       name: 'Recursion Portal',
-      icon: '🔄',
       description: 'Enter recursive dimensions and understand call stacks',
       path: '/play/recursion-portal'
     },
     {
       id: 'stack-survivor',
       name: 'Stack Survivor',
-      icon: '🧮',
       description: 'Evaluate expressions using stack-based logic',
       path: '/play/stack-survivor'
     },
     {
       id: 'sliding-window-hunter',
       name: 'Sliding Window Hunter',
-      icon: '🧩',
       description: 'Hunt targets using sliding window techniques',
       path: '/play/sliding-window-hunter'
     },
     {
       id: 'hashmap-heist',
       name: 'HashMap Heist',
-      icon: '🎯',
       description: 'Crack codes using hashing and frequency analysis',
       path: '/play/hashmap-heist'
     }
@@ -100,7 +88,7 @@ const Play = () => {
       <div className="games-container">
         {games.map((game) => (
           <Link key={game.id} to={game.path} className="game-card">
-            <div className="game-icon">{game.icon}</div>
+
             <div className="game-info">
               <h3>{game.name}</h3>
               <p>{game.description}</p>
@@ -114,17 +102,17 @@ const Play = () => {
         <h2>More Games Coming Soon!</h2>
         <div className="upcoming-games">
           <div className="upcoming-game">
-            <div className="game-icon">🎲</div>
+
             <h4>Probability Puzzles</h4>
             <p>Learn probability through interactive challenges</p>
           </div>
           <div className="upcoming-game">
-            <div className="game-icon">🔗</div>
+
             <h4>Linked List Lab</h4>
             <p>Master linked list operations and manipulations</p>
           </div>
           <div className="upcoming-game">
-            <div className="game-icon">⚖️</div>
+
             <h4>Balance Quest</h4>
             <p>Balance trees and understand self-balancing structures</p>
           </div>
