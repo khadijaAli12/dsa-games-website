@@ -11,6 +11,9 @@ import AlgorithmDesignPage from '../pages/Concept/AlgorithmDesignPage';
 import DataStructuresPage from '../pages/Concept/DataStructuresPage';
 import SortingAlgorithmsPage from '../pages/Concept/SortingAlgorithmsPage';
 import GraphAlgorithmsPage from '../pages/Concept/GraphAlgorithmsPage';
+import SearchAlgorithmsPage from '../pages/Concept/SearchAlgorithmsPage';
+import StringAlgorithmsPage from '../pages/Concept/StringAlgorithmsPage';
+import MathematicalAlgorithmsPage from '../pages/Concept/MathematicalAlgorithmsPage';
 import DSAPracticeHub from '../pages/practice';
 // Games
 import SortHero from '../games/SortHero/SortHero';
@@ -41,6 +44,9 @@ const AppRoutes = () => {
       <Route path="/concepts/data-structures" element={<DataStructuresPage />} />
       <Route path="/concepts/sorting-algorithms" element={<SortingAlgorithmsPage />} />
       <Route path="/concepts/graph-algorithms" element={<GraphAlgorithmsPage />} />
+      <Route path="/concepts/search-algorithms" element={<SearchAlgorithmsPage />} />
+      <Route path="/concepts/string-algorithms" element={<StringAlgorithmsPage />} />
+      <Route path="/concepts/mathematical-algorithms" element={<MathematicalAlgorithmsPage />} />
       
       {/* Game Routes */}
       {/* Arrays & Sorting Games */}

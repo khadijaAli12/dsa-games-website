@@ -1,5 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { sortLogic } from './SortLogic';
+import AlgorithmQuiz from '../../components/AlgorithmQuiz';
+import AlgorithmChallenge from '../../components/AlgorithmChallenge';
+import PerformanceComparison from '../../components/PerformanceComparison';
+import SkillTracker from '../../components/SkillTracker';
+import CurriculumProgression from '../../components/CurriculumProgression';
 import './SortStyles.scss';
 
 const SortHero = () => {
@@ -15,6 +20,11 @@ const SortHero = () => {
   const [sortedElements, setSortedElements] = useState([]);
   const [speed, setSpeed] = useState(800);
   const [isPaused, setIsPaused] = useState(false);
+  const [showQuiz, setShowQuiz] = useState(false);
+  const [showChallenge, setShowChallenge] = useState(false);
+  const [showPerformance, setShowPerformance] = useState(false);
+  const [showSkills, setShowSkills] = useState(false);
+  const [showCurriculum, setShowCurriculum] = useState(false);
   const intervalRef = useRef(null);
 
   const algorithmInfo = {
@@ -22,6 +32,8 @@ const SortHero = () => {
       name: "Bubble Sort",
       complexity: "O(n²)",
       description: "Compares adjacent elements and swaps if they're in wrong order",
+      realWorld: "Used in computer graphics for simple animations, educational purposes, and small datasets",
+      whenToUse: "Small datasets (< 50 elements), educational demonstrations, or when simplicity matters more than efficiency",
       steps: [
         "1. Compare first two adjacent elements",
         "2. If left > right, swap them",
@@ -33,6 +45,8 @@ const SortHero = () => {
       name: "Selection Sort", 
       complexity: "O(n²)",
       description: "Finds minimum element and places it at the beginning",
+      realWorld: "Used in embedded systems with limited memory, small datasets, and when memory writes are expensive",
+      whenToUse: "Small datasets, memory-constrained environments, or when minimizing memory writes is important",
       steps: [
         "1. Find the minimum element in unsorted portion",
         "2. Swap it with the first unsorted element",
@@ -44,6 +58,8 @@ const SortHero = () => {
       name: "Insertion Sort",
       complexity: "O(n²)",
       description: "Builds sorted array one element at a time",
+      realWorld: "Used in online algorithms, small datasets, and as subroutine in hybrid algorithms like Timsort",
+      whenToUse: "Small datasets, nearly sorted data, or when data arrives incrementally",
       steps: [
         "1. Take next element from unsorted portion",
         "2. Compare with elements in sorted portion",
@@ -55,6 +71,8 @@ const SortHero = () => {
       name: "Merge Sort",
       complexity: "O(n log n)", 
       description: "Divides array into halves, sorts them, then merges",
+      realWorld: "Used in external sorting, stable sorting requirements, and as foundation for more complex algorithms",
+      whenToUse: "Large datasets, when stability is required, or external sorting scenarios",
       steps: [
         "1. Divide array into two halves",
         "2. Recursively sort both halves",
@@ -181,6 +199,95 @@ const SortHero = () => {
               <li key={index}>{step}</li>
             ))}
           </ol>
+        </div>
+        
+        <div className="algorithm-applications">
+          <h4>Real-World Applications:</h4>
+          <p>{algorithmInfo[algorithm].realWorld}</p>
+          <h4>When to Use:</h4>
+          <p>{algorithmInfo[algorithm].whenToUse}</p>
+        </div>
+        
+        <div className="quiz-section">
+          <div className="learning-tools">
+            <button 
+              className="btn btn-primary quiz-toggle" 
+              onClick={() => setShowQuiz(!showQuiz)}
+            >
+              {showQuiz ? "Hide Quiz" : "Test Your Knowledge"}
+            </button>
+            
+            <button 
+              className="btn btn-secondary challenge-toggle" 
+              onClick={() => setShowChallenge(!showChallenge)}
+            >
+              {showChallenge ? "Hide Challenge" : "Algorithm Challenge"}
+            </button>
+            
+            <button 
+              className="btn btn-accent performance-toggle" 
+              onClick={() => setShowPerformance(!showPerformance)}
+            >
+              {showPerformance ? "Hide Performance" : "Performance Compare"}
+            </button>
+            
+            <button 
+              className="btn btn-success skills-toggle" 
+              onClick={() => setShowSkills(!showSkills)}
+            >
+              {showSkills ? "Hide Skills" : "Track Progress"}
+            </button>
+            
+            <button 
+              className="btn btn-info curriculum-toggle" 
+              onClick={() => setShowCurriculum(!showCurriculum)}
+            >
+              {showCurriculum ? "Hide Curriculum" : "Learning Path"}
+            </button>
+          </div>
+          
+          {showQuiz && (
+            <div className="quiz-container">
+              <AlgorithmQuiz 
+                algorithm={algorithm} 
+                onComplete={(score) => console.log(`Quiz completed with score: ${score}%`)}
+              />
+            </div>
+          )}
+          
+          {showChallenge && (
+            <div className="challenge-container">
+              <AlgorithmChallenge 
+                algorithm={algorithm} 
+                array={array}
+                onComplete={(result) => console.log('Challenge completed:', result)}
+              />
+            </div>
+          )}
+          
+          {showPerformance && (
+            <div className="performance-container">
+              <PerformanceComparison 
+                algorithms={algorithmInfo}
+                arrays={[array]}
+              />
+            </div>
+          )}
+          
+          {showSkills && (
+            <div className="skills-container">
+              <SkillTracker />
+            </div>
+          )}
+          
+          {showCurriculum && (
+            <div className="curriculum-container">
+              <CurriculumProgression 
+                onSkillUnlock={(skill) => console.log('Skill unlocked:', skill)}
+                onLevelComplete={(level) => console.log('Level completed:', level)}
+              />
+            </div>
+          )}
         </div>
       </div>
 
