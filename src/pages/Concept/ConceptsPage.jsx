@@ -55,6 +55,27 @@ const ConceptsPage = () => {
       examples: ['BFS', 'DFS', 'Dijkstra', 'Kruskal\'s'],
       color: '#06b6d4',
     },
+    {
+      concept: 'Search Algorithms',
+      notation: 'O(log n)',
+      explanation: 'Efficient methods for finding elements in data structures',
+      examples: ['Binary Search', 'Linear Search', 'Interpolation Search'],
+      color: '#ec4899',
+    },
+    {
+      concept: 'String Algorithms',
+      notation: 'Pattern Matching',
+      explanation: 'Advanced techniques for text processing and pattern matching',
+      examples: ['KMP Algorithm', 'Rabin-Karp', 'Palindromes'],
+      color: '#f97316',
+    },
+    {
+      concept: 'Mathematical Algorithms',
+      notation: 'Number Theory',
+      explanation: 'Computational mathematics for cryptography and number problems',
+      examples: ['GCD/LCM', 'Prime Numbers', 'Modular Arithmetic'],
+      color: '#8b5cf6',
+    },
   ];
 
   const complexityLevels = [
@@ -86,6 +107,15 @@ const ConceptsPage = () => {
           break;
         case 'Graph Algorithms':
           navigate('/concepts/graph-algorithms');
+          break;
+        case 'Search Algorithms':
+          navigate('/concepts/search-algorithms');
+          break;
+        case 'String Algorithms':
+          navigate('/concepts/string-algorithms');
+          break;
+        case 'Mathematical Algorithms':
+          navigate('/concepts/mathematical-algorithms');
           break;
         default:
           navigate(`/concepts/${conceptName.toLowerCase().replace(' ', '-')}`);
