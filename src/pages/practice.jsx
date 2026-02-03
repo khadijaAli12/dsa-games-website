@@ -12,18 +12,18 @@ const DSAPractice = () => {
   const codeEditorRef = useRef(null);
 
   const topics = [
-    { id: 'arrays', name: 'Arrays', icon: '📊' },
-    { id: 'strings', name: 'Strings', icon: '📝' },
-    { id: 'linkedlist', name: 'Linked Lists', icon: '🔗' },
-    { id: 'stacks', name: 'Stacks & Queues', icon: '📚' },
-    { id: 'trees', name: 'Trees', icon: '🌳' },
-    { id: 'graphs', name: 'Graphs', icon: '🕸️' },
-    { id: 'sorting', name: 'Sorting', icon: '↕️' },
-    { id: 'searching', name: 'Searching', icon: '🔍' },
-    { id: 'dp', name: 'Dynamic Programming', icon: '🧩' },
-    { id: 'greedy', name: 'Greedy', icon: '💰' },
-    { id: 'backtracking', name: 'Backtracking', icon: '🔄' },
-    { id: 'general', name: 'General DSA', icon: '🎯' }
+    { id: 'arrays', name: 'Arrays', icon: 'A' },
+    { id: 'strings', name: 'Strings', icon: 'S' },
+    { id: 'linkedlist', name: 'Linked Lists', icon: 'L' },
+    { id: 'stacks', name: 'Stacks & Queues', icon: 'Q' },
+    { id: 'trees', name: 'Trees', icon: 'T' },
+    { id: 'graphs', name: 'Graphs', icon: 'G' },
+    { id: 'sorting', name: 'Sorting', icon: 'S' },
+    { id: 'searching', name: 'Searching', icon: 'S' },
+    { id: 'dp', name: 'Dynamic Programming', icon: 'D' },
+    { id: 'greedy', name: 'Greedy', icon: 'G' },
+    { id: 'backtracking', name: 'Backtracking', icon: 'B' },
+    { id: 'general', name: 'General DSA', icon: 'G' }
   ];
 
   const difficulties = [
@@ -119,7 +119,7 @@ const DSAPractice = () => {
       const problem = problems[Math.floor(Math.random() * problems.length)];
       setCurrentProblem(problem);
       
-      return `🎯 **${problem.title}**
+      return `**${problem.title}**
 
 **Problem Description:**
 ${problem.description}
@@ -594,12 +594,12 @@ Would you like me to provide a specific problem from this list?`;
     // Simulate code execution
     setChatHistory(prev => [...prev, {
       type: 'system',
-      message: `🏃‍♂️ **Code Execution Simulation:**
+      message: `**Code Execution Simulation:**
 
 Your C++ code has been analyzed:
-✅ Syntax appears correct
-✅ Logic flow looks good
-✅ Consider adding more test cases
+- Syntax appears correct
+- Logic flow looks good
+- Consider adding more test cases
 
 **Note:** This is a simulation. For actual execution, copy code to your local C++ environment.
 
@@ -631,30 +631,30 @@ Your C++ code has been analyzed:
          <Navbar />
       <style>{`
         :root {
---primary-color:rgb(167, 167, 226);
---secondary-color: #8b0426;
---accent-color:rgb(217, 211, 233);
---success-color:rgb(49, 66, 61);
+--primary-color: #3b82f6;
+--secondary-color: #1d4ed8;
+--accent-color: #60a5fa;
+--success-color: #10b981;
 --warning-color: #f59e0b;
 --error-color: #ef4444;
 
---background:rgb(202, 196, 224);
---surface: linear-gradient(135deg, rgb(220, 221, 228) 0%, #e3e2e4 50%, #d8d5d8 100%);
---surface-hover: #633c3c;
---surface-dark: #f8f0f0;
---border: #ece9e9;
---border-light: #ece7e7;
+--background: linear-gradient(135deg, #f0f9ff 0%, #e6f7ff 100%);
+--surface: #ffffff;
+--surface-hover: #f8fafc;
+--surface-dark: #f1f5f9;
+--border: #e2e8f0;
+--border-light: #cbd5e1;
 
---text-primary: #000000;
---text-secondary: #000000;
---text-muted: #0a0a0aff;
---text-white: #070606;
---text-accent: #2123a1;
+--text-primary: #1e293b;
+--text-secondary: #334155;
+--text-muted: #64748b;
+--text-white: #f8fafc;
+--text-accent: #3b82f6;
 
---gradient-primary: linear-gradient(140deg,rgb(202, 197, 197) 0%,rgb(138, 125, 125) 100%);
---gradient-secondary: linear-gradient(135deg, #9826a5 0%, #f5576c 100%);
---gradient-accent: linear-gradient(135deg, #1a706a 0%, #610b26 100%);
---gradient-hero: linear-gradient(135deg, #0a133b 0%, #322242 50%, #3f1444 100%);
+--gradient-primary: linear-gradient(140deg, #4f46e5 0%, #7c3aed 100%);
+--gradient-secondary: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+--gradient-accent: linear-gradient(135deg, #10b981 0%, #059669 100%);
+--gradient-hero: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
 
 --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
 --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -724,6 +724,11 @@ Your C++ code has been analyzed:
           margin-bottom: 1rem;
           color: var(--text-white);
           text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+          text-align: center;
         }
 
         .practice-header p {
@@ -786,13 +791,17 @@ Your C++ code has been analyzed:
           color: var(--text-primary);
           transition: all 0.3s ease;
           width: 100%;
+          cursor: pointer;
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
         }
-
+        
         .topic-select:focus {
           border-color: var(--primary-color);
-          box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+          box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
           outline: none;
         }
+
+
 
         .difficulty-grid {
           display: grid;
@@ -809,9 +818,15 @@ Your C++ code has been analyzed:
           position: relative;
           overflow: hidden;
           width: 100%;
-          background: white;
+          background: var(--surface);
           color: var(--text-primary);
           cursor: pointer;
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        .difficulty-btn:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.1);
         }
 
         .difficulty-btn::before {
@@ -829,10 +844,7 @@ Your C++ code has been analyzed:
           left: 100%;
         }
 
-        .difficulty-btn:hover {
-          transform: translateY(-2px);
-          box-shadow: var(--shadow-lg);
-        }
+
 
         .difficulty-btn.active-success {
           background: var(--success-color);
@@ -1109,20 +1121,22 @@ Your C++ code has been analyzed:
         }
 
         .message-user .message-bubble {
-          background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+          background: linear-gradient(135deg, var(--primary-color) 0%, #2563eb 100%);
           color: var(--text-white);
+          border-bottom-right-radius: 0;
         }
 
         .message-ai .message-bubble {
           background: var(--surface);
-          border: 2px solid var(--border);
+          border: 1px solid var(--border);
           color: var(--text-primary);
+          border-bottom-left-radius: 0;
         }
 
         .message-system .message-bubble {
           background: linear-gradient(135deg, var(--success-color) 0%, #059669 100%);
           color: var(--text-white);
-          border: 2px solid var(--success-color);
+          border: 1px solid var(--success-color);
         }
 
         .message-header {
@@ -1182,13 +1196,16 @@ Your C++ code has been analyzed:
           color: var(--text-primary);
           transition: all 0.3s ease;
           flex: 1;
+          box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
         }
-
+        
         .chat-input:focus {
           border-color: var(--primary-color);
-          box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1);
+          box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1), inset 0 2px 4px rgba(0, 0, 0, 0.05);
           outline: none;
         }
+
+
 
         .send-btn {
           background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
@@ -1332,7 +1349,7 @@ Your C++ code has been analyzed:
         <div className="practice-header">
           <div className="header-content">
             <div className="header-badge">INTELLIGENT AI ASSISTANT</div>
-            <h1>🧠 Advanced DSA AI Coach</h1>
+            <h1>Advanced DSA AI Coach</h1>
             <p>Your Personal AI Tutor for Data Structures & Algorithms Mastery</p>
           </div>
         </div>
@@ -1353,7 +1370,7 @@ Your C++ code has been analyzed:
                   >
                     {topics.map(topic => (
                       <option key={topic.id} value={topic.id}>
-                        {topic.icon} {topic.name}
+                        [{topic.icon}] {topic.name}
                       </option>
                     ))}
                   </select>
@@ -1386,7 +1403,7 @@ Your C++ code has been analyzed:
                         setTimeout(() => handleSendMessage(), 100);
                       }}
                     >
-                      🎲 Get Problem
+                      Get Problem
                     </button>
                     <button 
                       className="quick-btn quick-btn-info"
@@ -1395,7 +1412,7 @@ Your C++ code has been analyzed:
                         setTimeout(() => handleSendMessage(), 100);
                       }}
                     >
-                      💡 Need Hint
+                      Need Hint
                     </button>
                     <button 
                       className="quick-btn quick-btn-secondary"
@@ -1404,13 +1421,13 @@ Your C++ code has been analyzed:
                         setTimeout(() => handleSendMessage(), 100);
                       }}
                     >
-                      📋 Get Approach
+                      Get Approach
                     </button>
                     <button 
                       className="quick-btn quick-btn-warning"
                       onClick={clearChat}
                     >
-                      🗑️ Clear Session
+                      Clear Chat
                     </button>
                   </div>
                 </div>
@@ -1424,7 +1441,7 @@ Your C++ code has been analyzed:
                     marginTop: '1rem'
                   }}>
                     <h6 style={{ margin: '0 0 0.5rem 0', color: '#0369a1', fontWeight: '700' }}>
-                      🎯 Current Problem
+                      Active Problem
                     </h6>
                     <p style={{ margin: 0, fontSize: '0.9rem', color: '#0c4a6e' }}>
                       {currentProblem.title}
@@ -1437,7 +1454,7 @@ Your C++ code has been analyzed:
             <div className="chat-card">
               <div className="chat-header">
                 <h5>
-                  💬 AI Learning Assistant - {topics.find(t => t.id === selectedTopic)?.name}
+                  AI Learning Assistant - {topics.find(t => t.id === selectedTopic)?.name}
                   <span className="difficulty-badge">
                     {difficulties.find(d => d.id === selectedDifficulty)?.name}
                   </span>
@@ -1449,13 +1466,13 @@ Your C++ code has been analyzed:
                   className={`tab-btn ${!showCodeEditor ? 'active' : ''}`}
                   onClick={() => setShowCodeEditor(false)}
                 >
-                  💬 Chat
+                  Chat
                 </button>
                 <button
                   className={`tab-btn ${showCodeEditor ? 'active' : ''}`}
                   onClick={() => setShowCodeEditor(true)}
                 >
-                  💻 Code Editor
+                  Code Editor
                 </button>
               </div>
 
@@ -1463,7 +1480,7 @@ Your C++ code has been analyzed:
                 <div className="chat-body">
                   {chatHistory.length === 0 && (
                     <div className="welcome-section">
-                      <h4>🚀 Welcome to Advanced DSA AI Coach!</h4>
+                      <h4>Welcome to Advanced DSA AI Coach!</h4>
                       <p>
                         I'm your intelligent AI tutor, ready to help you master Data Structures and Algorithms. 
                         I can provide personalized problems, contextual hints, detailed explanations, and complete code solutions.
@@ -1489,7 +1506,7 @@ Your C++ code has been analyzed:
                     <div key={index} className={`${chat.type === 'user' ? 'message-user' : chat.type === 'system' ? 'message-system' : 'message-ai'} fade-in`}>
                       <div className="message-bubble">
                         <div className="message-header">
-                          {chat.type === 'user' ? '👤 You' : chat.type === 'system' ? '⚡ System' : '🧠 AI Coach'} - {chat.timestamp}
+                          {chat.type === 'user' ? 'You' : chat.type === 'system' ? 'System' : 'AI Coach'} - {chat.timestamp}
                         </div>
                         <div className="message-content">
                           {chat.message}
@@ -1523,13 +1540,13 @@ Your C++ code has been analyzed:
                       className="code-btn code-btn-run"
                       onClick={runCode}
                     >
-                      ▶️ Analyze Code
+                      Analyze Code
                     </button>
                     <button 
                       className="code-btn code-btn-clear"
                       onClick={() => setCode('// Write your C++ solution here\n#include <iostream>\n#include <vector>\nusing namespace std;\n\nint main() {\n    // Your code here\n    return 0;\n}')}
                     >
-                      🗑️ Clear Code
+                      Clear Code
                     </button>
                   </div>
                 </div>
@@ -1554,7 +1571,7 @@ Your C++ code has been analyzed:
                     {isLoading ? (
                       <div className="spinner" style={{ width: '16px', height: '16px' }}></div>
                     ) : (
-                      '🚀 Send'
+                      'Send'
                     )}
                   </button>
                 </div>

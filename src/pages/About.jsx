@@ -6,7 +6,7 @@ const About = () => {
     <div className="about-page">
       <div className="about-header">
         <h1>About DSA Games</h1>
-        <p>Making algorithm learning fun and interactive</p>
+        <p>Transforming algorithm learning through interactive engagement</p>
       </div>
 
       <div className="about-content">
@@ -87,19 +87,19 @@ const About = () => {
           <h2>Why Choose DSA Games?</h2>
           <div className="benefits-list">
             <div className="benefit">
-              <h4>🎯 Practical Learning</h4>
+              <h4>Practical Learning</h4>
               <p>Apply theoretical knowledge through interactive exercises</p>
             </div>
             <div className="benefit">
-              <h4>⏱️ Time Efficient</h4>
+              <h4>Time Efficient</h4>
               <p>Learn faster with visual aids and hands-on practice</p>
             </div>
             <div className="benefit">
-              <h4>🧠 Better Retention</h4>
+              <h4>Better Retention</h4>
               <p>Remember concepts longer through active engagement</p>
             </div>
             <div className="benefit">
-              <h4>🎓 Interview Ready</h4>
+              <h4>Interview Ready</h4>
               <p>Prepare for technical interviews with practical experience</p>
             </div>
           </div>

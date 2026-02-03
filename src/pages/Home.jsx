@@ -170,44 +170,6 @@ const Home = () => {
       </div>
 
       <style jsx>{`   
-:root {
---primary-color: #7f80baff;
---secondary-color: #8b0426;
---accent-color: #8b5cf6;
---success-color: #10b981;
---warning-color: #f59e0b;
---error-color: #ef4444;
-
---background: #aea2e2ff;
---surface: linear-gradient(135deg, #616576ff 0%, #322242 50%, #3f1444 100%);
---surface-hover: #633c3c;
---surface-dark: #f8f0f0;
---border: #ece9e9;
---border-light: #ece7e7;
-
---text-primary: #000000;
---text-secondary: #000000;
---text-muted: #0a0a0aff;
---text-white: #070606;
---text-accent: #2123a1;
-
---gradient-primary: linear-gradient(140deg, #6e2020ff 0%, #050404 100%);
---gradient-secondary: linear-gradient(135deg, #9826a5 0%, #f5576c 100%);
---gradient-accent: linear-gradient(135deg, #1a706a 0%, #610b26 100%);
---gradient-hero: linear-gradient(135deg, #0a133b 0%, #322242 50%, #3f1444 100%);
-
---shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
---shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
---shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
---shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
---shadow-colored: 0 10px 25px -3px rgb(102 102 241 / 0.2);
-
---radius-sm: 0.375rem;
---radius-md: 0.5rem;
---radius-lg: 0.75rem;
---radius-xl: 1rem;
---radius-2xl: 1.5rem;
-}
         * {
           margin: 0;
           padding: 0;
@@ -233,7 +195,7 @@ const Home = () => {
           display: flex;
           align-items: center;
           padding: 4rem 2rem;
-          background: linear-gradient(135deg, #8db5ddff 0%, #f6f7f8ff 100%);
+          background: linear-gradient(135deg, var(--primary-100) 0%, var(--neutral-50) 100%);
         }
 
         .hero-content {
@@ -446,14 +408,14 @@ const Home = () => {
         }
 
         .access-card.primary {
-          background: var(--gradient-primary);
-          color: var(--text-white);
+          background: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-600) 100%);
+          color: var(--text-inverse);
           border: none;
         }
 
         .access-card.primary h3,
         .access-card.primary p {
-          color: var(--text-white);
+          color: var(--text-inverse);
         }
 
         .card-icon {
@@ -487,7 +449,7 @@ const Home = () => {
         }
 
         .access-card.primary .card-cta {
-          color: var(--text-white);
+          color: var(--text-inverse);
           background: rgba(255, 255, 255, 0.2);
           padding: 0.75rem 1.5rem;
           border-radius: var(--radius-md);
@@ -506,8 +468,7 @@ const Home = () => {
         /* Features Section */
         .features-section {
           padding: 5rem 2rem;
-          // background: var(--background);
-          background:  linear-gradient(135deg, #8db5ddff 0%, #f6f7f8ff 100%);
+          background:  linear-gradient(135deg, var(--primary-100) 0%, var(--neutral-50) 100%);
         }
 
         .features-grid {
@@ -550,8 +511,8 @@ const Home = () => {
         /* CTA Section */
         .cta-section {
           padding: 5rem 2rem;
-          background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-          color: var(--text-white);
+          background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-800) 100%);
+          color: var(--text-inverse);
         }
 
         .cta-content {
@@ -580,8 +541,8 @@ const Home = () => {
         }
 
         .cta-buttons .primary-btn {
-          background: var(--text-white);
-          color: var(--primary-color);
+          background: var(--text-inverse);
+          color: var(--primary-600);
         }
 
         .cta-buttons .primary-btn:hover {

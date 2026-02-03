@@ -463,10 +463,10 @@ function fibonacciOptimal(n) {
 
       <style>{`
         .time-complexity-container {
-          background: #f8fafc;
+          background: var(--surface);
           min-height: 100vh;
-          color: #1e293b;
-          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+          color: var(--text-primary);
+          font-family: var(--font-primary);
         }
 
         .time-complexity-page {
@@ -491,25 +491,25 @@ function fibonacciOptimal(n) {
 
         .hero-badge {
           display: inline-block;
-          background: #3b82f6;
-          color: white;
+          background: var(--primary-500);
+          color: var(--text-inverse);
           padding: 0.5rem 1rem;
-          border-radius: 20px;
+          border-radius: var(--radius-full);
           font-size: 0.875rem;
           font-weight: 500;
-          margin-bottom: 1rem;
+          margin-bottom: var(--spacing-md);
         }
 
         .hero-section h1 {
           font-size: 2.5rem;
           font-weight: 700;
-          color: #1e293b;
-          margin-bottom: 1rem;
+          color: var(--text-primary);
+          margin-bottom: var(--spacing-md);
         }
 
         .hero-section p {
           font-size: 1.125rem;
-          color: #64748b;
+          color: var(--text-secondary);
           max-width: 600px;
           margin: 0 auto;
           line-height: 1.6;
@@ -528,18 +528,18 @@ function fibonacciOptimal(n) {
         }
 
         .content-grid {
-          background: white;
-          border-radius: 12px;
-          padding: 2rem;
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-          border: 1px solid #e2e8f0;
+          background: var(--background);
+          border-radius: var(--radius-lg);
+          padding: var(--spacing-lg);
+          box-shadow: var(--shadow-sm);
+          border: 1px solid var(--border);
         }
 
         .content-text p {
           font-size: 1.125rem;
-          color: #475569;
+          color: var(--text-secondary);
           line-height: 1.6;
-          margin-bottom: 2rem;
+          margin-bottom: var(--spacing-lg);
         }
 
         .info-cards {
@@ -549,21 +549,21 @@ function fibonacciOptimal(n) {
         }
 
         .info-card {
-          padding: 1.5rem;
-          background: #f8fafc;
-          border-radius: 8px;
-          border: 1px solid #e2e8f0;
+          padding: var(--spacing-lg);
+          background: var(--surface);
+          border-radius: var(--radius-md);
+          border: 1px solid var(--border);
         }
 
         .info-card h3 {
           font-size: 1.125rem;
           font-weight: 600;
-          color: #1e293b;
-          margin-bottom: 0.5rem;
+          color: var(--text-primary);
+          margin-bottom: var(--spacing-xs);
         }
 
         .info-card p {
-          color: #64748b;
+          color: var(--text-secondary);
           font-size: 0.875rem;
           line-height: 1.5;
         }
@@ -621,15 +621,15 @@ function fibonacciOptimal(n) {
         }
 
         .filter-btn {
-          padding: 0.5rem 1rem;
-          border-radius: 20px;
+          padding: var(--spacing-sm) var(--spacing-md);
+          border-radius: var(--radius-full);
           font-size: 0.875rem;
           font-weight: 500;
-          background: #f3f4f6;
-          color: #374151;
-          border: 1px solid #e2e8f0;
+          background: var(--surface-secondary);
+          color: var(--text-secondary);
+          border: 1px solid var(--border);
           cursor: pointer;
-          transition: all 0.2s;
+          transition: all var(--transition-fast);
         }
 
         .filter-btn:hover {
@@ -637,9 +637,9 @@ function fibonacciOptimal(n) {
         }
 
         .filter-btn.active {
-          background: #3b82f6;
-          color: white;
-          border-color: #3b82f6;
+          background: var(--primary-500);
+          color: var(--text-inverse);
+          border-color: var(--primary-500);
         }
 
         .complexity-cards {
@@ -648,11 +648,11 @@ function fibonacciOptimal(n) {
         }
 
         .complexity-card {
-          background: white;
-          border: 1px solid #e2e8f0;
-          border-radius: 12px;
-          padding: 2rem;
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+          background: var(--background);
+          border: 1px solid var(--border);
+          border-radius: var(--radius-lg);
+          padding: var(--spacing-lg);
+          box-shadow: var(--shadow-sm);
         }
 
         .complexity-header {
@@ -671,17 +671,17 @@ function fibonacciOptimal(n) {
         .complexity-notation {
           font-size: 1.25rem;
           font-weight: 700;
-          color: #1e293b;
+          color: var(--text-primary);
         }
 
         .complexity-name {
           font-size: 1.125rem;
-          color: #64748b;
+          color: var(--text-secondary);
         }
 
         .complexity-description {
-          color: #64748b;
-          margin-bottom: 1.5rem;
+          color: var(--text-secondary);
+          margin-bottom: var(--spacing-lg);
           line-height: 1.6;
         }
 
@@ -721,19 +721,19 @@ function fibonacciOptimal(n) {
         }
 
         .code-block {
-          background: #1e293b;
-          border-radius: 8px;
+          background: var(--neutral-800);
+          border-radius: var(--radius-md);
           overflow: hidden;
         }
 
         .code-header {
-          background: #334155;
-          padding: 0.75rem 1rem;
-          border-bottom: 1px solid #475569;
+          background: var(--neutral-700);
+          padding: var(--spacing-sm) var(--spacing-md);
+          border-bottom: 1px solid var(--neutral-500);
         }
 
         .code-title {
-          color: #cbd5e1;
+          color: var(--neutral-200);
           font-size: 0.875rem;
           font-weight: 500;
           font-family: 'SF Mono', Monaco, 'Cascadia Code', monospace;
@@ -741,8 +741,8 @@ function fibonacciOptimal(n) {
 
         .code-block pre {
           background: transparent;
-          color: #e2e8f0;
-          padding: 1rem;
+          color: var(--neutral-200);
+          padding: var(--spacing-md);
           margin: 0;
           overflow-x: auto;
           font-size: 0.875rem;
@@ -754,11 +754,11 @@ function fibonacciOptimal(n) {
         }
 
         .quiz-container {
-          background: white;
-          border-radius: 12px;
-          padding: 2rem;
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-          border: 1px solid #e2e8f0;
+          background: var(--background);
+          border-radius: var(--radius-lg);
+          padding: var(--spacing-lg);
+          box-shadow: var(--shadow-sm);
+          border: 1px solid var(--border);
         }
 
         .quiz-progress {
@@ -804,13 +804,13 @@ function fibonacciOptimal(n) {
 
         .option-button {
           text-align: left;
-          padding: 1rem;
-          border-radius: 8px;
-          border: 2px solid #e2e8f0;
-          background-color: white;
+          padding: var(--spacing-md);
+          border-radius: var(--radius-md);
+          border: 2px solid var(--border);
+          background-color: var(--background);
           cursor: pointer;
-          transition: all 0.2s;
-          color: #374151;
+          transition: all var(--transition-fast);
+          color: var(--text-secondary);
         }
 
         .option-button:hover {
@@ -819,9 +819,9 @@ function fibonacciOptimal(n) {
         }
 
         .option-button.selected {
-          border-color: #3b82f6;
-          background-color: #dbeafe;
-          color: #1d4ed8;
+          border-color: var(--primary-500);
+          background-color: var(--primary-100);
+          color: var(--primary-700);
         }
 
         .quiz-navigation {
@@ -832,27 +832,27 @@ function fibonacciOptimal(n) {
         }
 
         .nav-btn {
-          padding: 0.75rem 1.5rem;
-          border-radius: 8px;
+          padding: var(--spacing-sm) var(--spacing-lg);
+          border-radius: var(--radius-md);
           font-weight: 500;
           border: none;
           cursor: pointer;
-          transition: all 0.2s;
+          transition: all var(--transition-fast);
         }
 
         .nav-btn.primary {
-          background: #3b82f6;
-          color: white;
+          background: var(--primary-500);
+          color: var(--text-inverse);
         }
 
         .nav-btn.primary:hover {
-          background: #2563eb;
+          background: var(--primary-600);
         }
 
         .nav-btn.secondary {
-          background: #f3f4f6;
-          color: #374151;
-          border: 1px solid #d1d5db;
+          background: var(--surface-secondary);
+          color: var(--text-secondary);
+          border: 1px solid var(--border-medium);
         }
 
         .nav-btn.secondary:hover {
@@ -865,12 +865,12 @@ function fibonacciOptimal(n) {
         }
 
         .nav-btn.success {
-          background: #10b981;
-          color: white;
+          background: var(--success-color);
+          color: var(--text-inverse);
         }
 
         .nav-btn.success:hover {
-          background: #059669;
+          background: var(--success-color);
         }
 
         .nav-btn.large {
@@ -879,19 +879,19 @@ function fibonacciOptimal(n) {
         }
 
         .results-container {
-          background: white;
-          border-radius: 12px;
-          padding: 2rem;
-          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-          border: 1px solid #e2e8f0;
+          background: var(--background);
+          border-radius: var(--radius-lg);
+          padding: var(--spacing-lg);
+          box-shadow: var(--shadow-sm);
+          border: 1px solid var(--border);
         }
 
         .results-header {
           text-align: center;
-          background: #f8fafc;
-          padding: 2rem;
-          border-radius: 8px;
-          margin-bottom: 2rem;
+          background: var(--surface);
+          padding: var(--spacing-lg);
+          border-radius: var(--radius-md);
+          margin-bottom: var(--spacing-lg);
         }
 
         .results-header h3 {
@@ -904,8 +904,8 @@ function fibonacciOptimal(n) {
         .results-score {
           font-size: 2.5rem;
           font-weight: 700;
-          color: #3b82f6;
-          margin-bottom: 0.5rem;
+          color: var(--primary-500);
+          margin-bottom: var(--spacing-xs);
         }
 
         .results-percentage {
