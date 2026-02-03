@@ -20,6 +20,7 @@ DSA Games is not your average algorithm learning platform. It's a **gamified**, 
 
 - **Practice with Real Challenges**  
   Solve coding challenges and implement algorithms in our interactive playground.
+<<<<<<< HEAD
 
 ---
 
@@ -34,10 +35,26 @@ DSA Games is not your average algorithm learning platform. It's a **gamified**, 
 ✅ **Professional design system** with consistent UI/UX  
 ✅ **Accessibility-focused** with proper semantic HTML and keyboard navigation  
 ✅ Built with **React 19 + Vite + Zustand + React Router + Framer Motion**
+=======
+>>>>>>> 32b7dcea139a3da6d45b3532512b2c9e491c3ad5
 
 ---
 
-## 🚀 Getting Started
+##  Features
+
+**Step-by-step visualizations** of sorting, graph, and other algorithms  
+ **Interactive games** that teach DSA concepts through engaging gameplay  
+ **Comprehensive concept pages** covering time/space complexity, data structures, and algorithm design  
+ **18+ interactive games** across 10 different learning paths  
+ **100+ coding challenges** to test your skills  
+ **Responsive design** for desktop & mobile  
+ **Professional design system** with consistent UI/UX  
+ **Accessibility-focused** with proper semantic HTML and keyboard navigation  
+ Built with **React 19 + Vite + Zustand + React Router + Framer Motion**
+
+---
+
+##  Getting Started
 
 ### Prerequisites
 
@@ -64,7 +81,7 @@ npm run dev
 
 4. Open your browser and navigate to `http://localhost:5175` (or the port shown in your terminal)
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 - **React 19** - UI framework
 - **Vite** - Build tool and dev server
@@ -75,6 +92,7 @@ npm run dev
 - **Recharts** - Data visualization
 - **CSS Variables** - Consistent design system
 
+<<<<<<< HEAD
 ## 🎯 Available Games & Concepts
 
 ### Interactive Games (18+)
@@ -97,6 +115,30 @@ npm run dev
 ---
 
 ## 📊 Project Structure
+=======
+##  Available Games & Concepts
+
+### Interactive Games (18+)
+ **Sorting Games**: SortHero - Master different sorting algorithms
+ **Graph Games**: GraphWars, MazeEscape - Explore graph algorithms
+ **Data Structure Games**: TreeClimber, StackAttack, QueueQuest, HeapHeroes
+ **Algorithm Games**: DPDungeon, RecursionPortal, StringMaster
+ **Array Games**: ArrayExplorer - Visualize array operations
+ **Advanced Games**: BitmaskDungeon, CoinQuest, HashMapHeist, NetworkHacker, SlidingWindowHunter, RegexRunner
+
+### Core Concepts Covered
+ **Time & Space Complexity**: Interactive visualizations and complexity analysis
+ **Sorting Algorithms**: Bubble, Selection, Insertion, Merge, Quick, Heap, Counting, Radix, Shell sorts
+ **Data Structures**: Arrays, Linked Lists, Stacks, Queues, Trees, Graphs, Hash Maps
+ **Algorithm Design**: Divide & Conquer, Dynamic Programming, Greedy Algorithms
+ **Graph Algorithms**: DFS, BFS, Shortest Path, MST, Topological Sort
+ **String Algorithms**: Pattern Matching, KMP, Rabin-Karp
+ **Mathematical Algorithms**: Number Theory, Combinatorics, Geometry
+
+---
+
+##  Project Structure
+>>>>>>> 32b7dcea139a3da6d45b3532512b2c9e491c3ad5
 
 ```
 src/
@@ -109,6 +151,7 @@ src/
 └── hooks/             # Custom React hooks
 ```
 
+<<<<<<< HEAD
 ## 🎨 Design System
 
 The project implements a comprehensive design system using CSS variables:
@@ -122,6 +165,21 @@ The project implements a comprehensive design system using CSS variables:
 ---
 
 ## 🚀 Deployment
+=======
+##  Design System
+
+The project implements a comprehensive design system using CSS variables:
+ **Color Palette**: Tiered colors (50-900) for primary, secondary, and neutral shades
+ **Typography**: Consistent font sizes and weights using Inter font family
+ **Spacing**: Systematic spacing with xs, sm, md, lg, xl, 2xl tiers
+ **Shadows**: Depth and hierarchy with sm, md, lg, xl shadow tiers
+ **Borders**: Consistent border radius system
+ **Transitions**: Smooth animations with fast, normal, slow timing
+
+---
+
+##  Deployment
+>>>>>>> 32b7dcea139a3da6d45b3532512b2c9e491c3ad5
 
 The project is deployed on Vercel with:
 - Automatic builds from GitHub
@@ -129,7 +187,11 @@ The project is deployed on Vercel with:
 - Optimized assets and code splitting
 - Fast loading times
 
+<<<<<<< HEAD
 ## 🤝 Contributing
+=======
+##  Contributing
+>>>>>>> 32b7dcea139a3da6d45b3532512b2c9e491c3ad5
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
@@ -137,6 +199,7 @@ The project is deployed on Vercel with:
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
+<<<<<<< HEAD
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
@@ -144,3 +207,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 Made with ❤️ for developers who love to learn!
+=======
+
+## Contact
+
+Gmail: khadijaali5858@gmail.com
+
+---
+
+## THANKS.
+>>>>>>> 32b7dcea139a3da6d45b3532512b2c9e491c3ad5
