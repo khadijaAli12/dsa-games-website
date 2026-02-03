@@ -16,7 +16,7 @@ const GamesPage = () => {
       description: 'Master array manipulation and sorting algorithms through interactive games',
       level: 'Beginner',
       color: '#6366f1',
-      icon: '📊',
+      icon: '',
       games: [
         {
           name: 'Sort Hero',
@@ -44,7 +44,7 @@ const GamesPage = () => {
       description: 'Explore tree structures and graph algorithms with visual gameplay',
       level: 'Intermediate',
       color: '#10b981',
-      icon: '🌲',
+      icon: '',
       games: [
         {
           name: 'Maze Escape',
@@ -81,7 +81,7 @@ const GamesPage = () => {
       description: 'Break down complex problems into optimal subproblems',
       level: 'Advanced',
       color: '#8b5cf6',
-      icon: '🧩',
+      icon: '',
       games: [
         {
           name: 'DP Dungeon',
@@ -100,7 +100,7 @@ const GamesPage = () => {
       description: 'Build and manipulate fundamental data structures',
       level: 'Beginner',
       color: '#f59e0b',
-      icon: '🏗️',
+      icon: '',
       games: [
         {
           name: 'Stack Attack',
@@ -137,7 +137,7 @@ const GamesPage = () => {
       description: 'Master bitwise operations and bit manipulation techniques',
       level: 'Intermediate',
       color: '#8b5cf6',
-      icon: '⚡',
+      icon: '',
       games: [
         {
           name: 'Bitmask Dungeon',
@@ -156,7 +156,7 @@ const GamesPage = () => {
       description: 'Learn optimization through greedy approach techniques',
       level: 'Intermediate',
       color: '#f59e0b',
-      icon: '💰',
+      icon: '',
       games: [
         {
           name: 'Coin Quest',
@@ -175,7 +175,7 @@ const GamesPage = () => {
       description: 'Efficient data storage and retrieval using hash functions',
       level: 'Intermediate',
       color: '#06b6d4',
-      icon: '🔑',
+      icon: '',
       games: [
         {
           name: 'HashMap Heist',
@@ -194,7 +194,7 @@ const GamesPage = () => {
       description: 'Connect components and manage disjoint sets efficiently',
       level: 'Advanced',
       color: '#ef4444',
-      icon: '🔗',
+      icon: '',
       games: [
         {
           name: 'Network Hacker',
@@ -213,7 +213,7 @@ const GamesPage = () => {
       description: 'Master recursive thinking and backtracking algorithms',
       level: 'Intermediate',
       color: '#10b981',
-      icon: '🔄',
+      icon: '',
       games: [
         {
           name: 'Recursion Portal',
@@ -232,7 +232,7 @@ const GamesPage = () => {
       description: 'Efficient subarray and substring problems using sliding window technique',
       level: 'Intermediate',
       color: '#8b5cf6',
-      icon: '📏',
+      icon: '',
       games: [
         {
           name: 'Sliding Window Hunter',
@@ -251,7 +251,7 @@ const GamesPage = () => {
       description: 'Master string manipulation and pattern matching algorithms',
       level: 'Intermediate',
       color: '#ec4899',
-      icon: '🔍',
+      icon: '',
       games: [
         {
           name: 'String Master',
@@ -270,7 +270,7 @@ const GamesPage = () => {
       description: 'Advanced pattern recognition and regular expressions',
       level: 'Intermediate',
       color: '#f97316',
-      icon: '🏃‍♂️',
+      icon: '',
       games: [
         {
           name: 'Regex Runner',
@@ -377,7 +377,7 @@ const GamesPage = () => {
             {/* Search Bar */}
             <div className="search-container">
               <div className="search-box">
-                <span className="search-icon">🔍</span>
+                <svg className="search-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
                 <input
                   type="text"
                   placeholder="Search games, concepts, or descriptions..."
@@ -390,7 +390,7 @@ const GamesPage = () => {
                     className="clear-search"
                     onClick={() => setSearchQuery('')}
                   >
-                    ✕
+                    ×
                   </button>
                 )}
               </div>
@@ -489,7 +489,7 @@ const GamesPage = () => {
               <div key={categoryIndex} className="category-section">
                 <div className="category-header" style={{ '--category-color': category.color }}>
                   <div className="category-info">
-                    <div className="category-icon">{category.icon}</div>
+                    <div className="category-icon"></div>
                     <div className="category-details">
                       <h3>{category.category}</h3>
                       <p>{category.description}</p>
@@ -524,7 +524,7 @@ const GamesPage = () => {
                         
                         <div className="game-footer">
                           <div className="game-stats">
-                            <span>⭐ {game.rating}</span>
+                            <span>★ {game.rating}</span>
                             <span>{game.players} players</span>
                           </div>
                           <button className="play-btn">
@@ -557,44 +557,7 @@ const GamesPage = () => {
         </section>
       </div>
       <style jsx>{`
-        :root {
---primary-color: #7f80baff;
---secondary-color: #8b0426;
---accent-color: #8b5cf6;
---success-color: #10b981;
---warning-color: #f59e0b;
---error-color: #ef4444;
-
---background: #aea2e2ff;
---surface: linear-gradient(135deg, rgb(220, 221, 228) 0%, #e3e2e4 50%, #d8d5d8 100%);
---surface-hover: #633c3c;
---surface-dark: #f8f0f0;
---border: #ece9e9;
---border-light: #ece7e7;
-
---text-primary: #000000;
---text-secondary: #000000;
---text-muted: #0a0a0aff;
---text-white: #070606;
---text-accent: #2123a1;
-
---gradient-primary: linear-gradient(140deg, #6e2020ff 0%, #050404 100%);
---gradient-secondary: linear-gradient(135deg, #9826a5 0%, #f5576c 100%);
---gradient-accent: linear-gradient(135deg, #1a706a 0%, #610b26 100%);
---gradient-hero: linear-gradient(135deg, #0a133b 0%, #322242 50%, #3f1444 100%);
-
---shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
---shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
---shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
---shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
---shadow-colored: 0 10px 25px -3px rgb(102 102 241 / 0.2);
-
---radius-sm: 0.375rem;
---radius-md: 0.5rem;
---radius-lg: 0.75rem;
---radius-xl: 1rem;
---radius-2xl: 1.5rem;
-}
+  
         * {
           margin: 0;
           padding: 0;
@@ -602,7 +565,7 @@ const GamesPage = () => {
         }
 
         .games-container {
-          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+          font-family: var(--font-primary);
           line-height: 1.6;
           color: var(--text-primary);
           background: var(--background);
@@ -615,8 +578,8 @@ const GamesPage = () => {
 
         /* Hero Section */
         .games-hero {
-          padding: 4rem 2rem;
-          background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+          padding: var(--spacing-xl) var(--spacing-lg);
+          background: linear-gradient(135deg, var(--primary-50) 0%, var(--neutral-100) 100%);
           text-align: center;
         }
 
@@ -627,36 +590,36 @@ const GamesPage = () => {
 
         .hero-badge {
           display: inline-block;
-          background: var(--primary-color);
-          color: var(--text-white);
-          padding: 0.375rem 0.75rem;
+          background: var(--primary-600);
+          color: var(--text-inverse);
+          padding: var(--spacing-xs) var(--spacing-sm);
           border-radius: var(--radius-md);
           font-size: 0.8rem;
           font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.025em;
-          margin-bottom: 1.5rem;
+          margin-bottom: var(--spacing-lg);
         }
 
         .games-hero h1 {
           font-size: clamp(2.5rem, 5vw, 3.5rem);
           font-weight: 800;
-          margin-bottom: 1.5rem;
+          margin-bottom: var(--spacing-lg);
           color: var(--text-primary);
         }
 
         .games-hero p {
           font-size: 1.125rem;
           color: var(--text-secondary);
-          margin-bottom: 2rem;
+          margin-bottom: var(--spacing-xl);
           line-height: 1.7;
         }
 
         .hero-stats {
           display: flex;
           justify-content: center;
-          gap: 3rem;
-          margin-top: 2rem;
+          gap: var(--spacing-2xl);
+          margin-top: var(--spacing-xl);
         }
 
         .hero-stat {
@@ -667,18 +630,18 @@ const GamesPage = () => {
           display: block;
           font-size: 2rem;
           font-weight: 700;
-          color: var(--primary-color);
+          color: var(--primary-600);
         }
 
         .stat-label {
           font-size: 0.875rem;
-          color: var(--text-muted);
+          color: var(--text-secondary);
           font-weight: 500;
         }
 
         /* Filter Section */
         .filter-section {
-          padding: 3rem 2rem;
+          padding: var(--spacing-2xl) var(--spacing-lg);
           background: var(--surface);
           border-bottom: 1px solid var(--border);
         }
@@ -705,9 +668,9 @@ const GamesPage = () => {
         }
 
         .results-count {
-          background: var(--primary-color);
-          color: var(--text-white);
-          padding: 0.5rem 1rem;
+          background: var(--primary-500);
+          color: var(--text-inverse);
+          padding: var(--spacing-sm) var(--spacing-md);
           border-radius: var(--radius-md);
           font-weight: 600;
           font-size: 0.9rem;
@@ -735,23 +698,23 @@ const GamesPage = () => {
 
         .search-input {
           width: 100%;
-          padding: 1rem 3rem 1rem 3rem;
+          padding: var(--spacing-md) var(--spacing-xl) var(--spacing-md) var(--spacing-xl);
           border: 2px solid var(--border);
           border-radius: var(--radius-lg);
           font-size: 1rem;
           background: var(--background);
           color: var(--text-primary);
-          transition: all 0.2s ease;
+          transition: all var(--transition-fast);
         }
 
         .search-input:focus {
           outline: none;
-          border-color: var(--primary-color);
-          box-shadow: 0 0 0 3px rgba(127, 128, 186, 0.1);
+          border-color: var(--primary-500);
+          box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
         }
 
         .search-input::placeholder {
-          color: var(--text-muted);
+          color: var(--text-secondary);
         }
 
         .clear-search {
@@ -806,54 +769,54 @@ const GamesPage = () => {
         .category-filters .filter-btn, .difficulty-filters .filter-btn {
           display: flex;
           align-items: center;
-          gap: 0.5rem;
+          gap: var(--spacing-sm);
           background: var(--background);
           border: 2px solid var(--border);
           border-radius: var(--radius-lg);
-          padding: 0.6rem 1.2rem;
+          padding: var(--spacing-sm) var(--spacing-md);
           font-weight: 500;
           color: var(--text-secondary);
           cursor: pointer;
-          transition: all 0.2s ease;
+          transition: all var(--transition-fast);
           font-size: 0.9rem;
         }
 
         .category-filters .filter-btn:hover, .difficulty-filters .filter-btn:hover {
-          border-color: var(--primary-color);
-          color: var(--primary-color);
-          transform: translateY(-1px);
+          border-color: var(--primary-500);
+          color: var(--primary-500);
+          transform: translateY(calc(-1 * var(--spacing-xs)));
         }
 
         .category-filters .filter-btn.active, .difficulty-filters .filter-btn.active {
-          background: var(--category-color, var(--primary-color));
-          color: var(--text-white);
-          border-color: var(--category-color, var(--primary-color));
+          background: var(--category-color, var(--primary-500));
+          color: var(--text-inverse);
+          border-color: var(--category-color, var(--primary-500));
         }
 
         .filter-btn {
           display: flex;
           align-items: center;
-          gap: 0.5rem;
+          gap: var(--spacing-sm);
           background: var(--background);
           border: 2px solid var(--border);
           border-radius: var(--radius-lg);
-          padding: 0.75rem 1.25rem;
+          padding: var(--spacing-sm) var(--spacing-md);
           font-weight: 500;
           color: var(--text-secondary);
           cursor: pointer;
-          transition: all 0.2s ease;
+          transition: all var(--transition-fast);
         }
 
         .filter-btn:hover {
-          border-color: var(--primary-color);
-          color: var(--primary-color);
-          transform: translateY(-1px);
+          border-color: var(--primary-500);
+          color: var(--primary-500);
+          transform: translateY(calc(-1 * var(--spacing-xs)));
         }
 
         .filter-btn.active {
-          background: var(--category-color, var(--primary-color));
-          color: var(--text-white);
-          border-color: var(--category-color, var(--primary-color));
+          background: var(--category-color, var(--primary-500));
+          color: var(--text-inverse);
+          border-color: var(--category-color, var(--primary-500));
         }
 
         .filter-icon {
@@ -862,7 +825,7 @@ const GamesPage = () => {
 
         /* Featured Section */
         .featured-section {
-          padding: 4rem 2rem;
+          padding: var(--spacing-xl) var(--spacing-lg);
           background: var(--background);
         }
 
@@ -875,7 +838,7 @@ const GamesPage = () => {
           font-size: clamp(2rem, 4vw, 2.5rem);
           font-weight: 700;
           color: var(--text-primary);
-          margin-bottom: 0.75rem;
+          margin-bottom: var(--spacing-sm);
         }
 
         .section-header p {
@@ -888,14 +851,14 @@ const GamesPage = () => {
           margin: 0 auto;
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-          gap: 2rem;
+          gap: var(--spacing-lg);
         }
 
         .featured-card {
           background: var(--surface);
           border: 1px solid var(--border);
           border-radius: var(--radius-xl);
-          padding: 2rem;
+          padding: var(--spacing-lg);
           cursor: pointer;
           transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
           position: relative;
@@ -916,7 +879,7 @@ const GamesPage = () => {
         }
 
         .featured-card:hover {
-          transform: translateY(-10px) scale(1.02);
+          transform: translateY(calc(-1 * var(--spacing-md))) scale(1.02);
           box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
           border-color: var(--warning-color);
         }
@@ -929,26 +892,26 @@ const GamesPage = () => {
           font-size: 1.6rem;
           font-weight: 800;
           color: var(--text-primary);
-          margin-bottom: 1rem;
-          transition: all 0.3s ease;
+          margin-bottom: var(--spacing-md);
+          transition: all var(--transition-normal);
         }
 
         .featured-card:hover .game-content h4 {
           color: var(--warning-color);
-          transform: translateX(5px);
+          transform: translateX(var(--spacing-xs));
         }
 
         .featured-card .game-content p {
           color: var(--text-secondary);
           line-height: 1.7;
-          margin-bottom: 1.5rem;
+          margin-bottom: var(--spacing-lg);
           font-size: 1.05rem;
         }
 
         .game-meta {
           display: flex;
-          gap: 1rem;
-          margin-bottom: 1.5rem;
+          gap: var(--spacing-md);
+          margin-bottom: var(--spacing-lg);
           flex-wrap: wrap;
         }
 
@@ -972,36 +935,24 @@ const GamesPage = () => {
         }
 
         .play-btn {
-          background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
-          color: var(--text-white);
+          background: linear-gradient(135deg, var(--primary-600), var(--secondary-600));
+          color: var(--text-inverse);
           border: none;
-          padding: 1rem 2rem;
+          padding: var(--spacing-md) var(--spacing-xl);
           border-radius: var(--radius-lg);
           font-weight: 700;
           font-size: 1.1rem;
-          transition: all 0.3s ease;
+          transition: all var(--transition-normal);
           width: 100%;
           box-shadow: var(--shadow-md);
         }
 
         .play-btn:hover {
-          transform: translateY(-2px) scale(1.05);
+          transform: translateY(calc(-1 * var(--spacing-xs))) scale(1.05);
           box-shadow: var(--shadow-lg);
-          background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+          background: linear-gradient(135deg, var(--primary-700), var(--primary-600));
         }
 
-        .featured-badge {
-          position: absolute;
-          top: 1rem;
-          right: 1rem;
-          background: linear-gradient(45deg, #ffd700, #ffed4e);
-          color: var(--text-primary);
-          padding: 0.25rem 0.75rem;
-          border-radius: var(--radius-sm);
-          font-size: 0.75rem;
-          font-weight: 600;
-          text-transform: uppercase;
-        }
 
         .game-header {
           display: flex;
@@ -1088,13 +1039,13 @@ const GamesPage = () => {
         }
 
         .play-btn:hover {
-          background: var(--secondary-color);
-          transform: translateY(-1px);
+          background: var(--primary-600);
+          transform: translateY(calc(-1 * var(--spacing-xs)));
         }
 
         /* Games Section */
         .games-section {
-          padding: 4rem 2rem;
+          padding: var(--spacing-xl) var(--spacing-lg);
           background: var(--surface);
         }
 
@@ -1138,6 +1089,10 @@ const GamesPage = () => {
           color: var(--text-white);
         }
 
+        .category-header .category-icon:empty {
+          display: none;
+        }
+
         .category-details h3 {
           font-size: 1.5rem;
           font-weight: 700;
@@ -1163,15 +1118,15 @@ const GamesPage = () => {
         .games-grid {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-          gap: 1.5rem;
+          gap: var(--spacing-lg);
         }
 
         .game-card {
           background: var(--background);
           border: 1px solid var(--border);
           border-radius: var(--radius-lg);
-          padding: 1.5rem;
-          transition: all 0.3s ease;
+          padding: var(--spacing-lg);
+          transition: all var(--transition-normal);
           cursor: pointer;
           position: relative;
           overflow: hidden;
@@ -1179,9 +1134,9 @@ const GamesPage = () => {
         }
 
         .game-card:hover {
-          transform: translateY(-6px);
+          transform: translateY(calc(-1 * var(--spacing-sm)));
           box-shadow: var(--shadow-xl);
-          border-color: var(--primary-color);
+          border-color: var(--primary-500);
         }
 
         .game-card::before {
@@ -1205,18 +1160,18 @@ const GamesPage = () => {
           font-size: 1.3rem;
           font-weight: 700;
           color: var(--text-primary);
-          margin-bottom: 0.75rem;
-          transition: color 0.2s ease;
+          margin-bottom: var(--spacing-sm);
+          transition: color var(--transition-fast);
         }
 
         .game-card:hover .game-content h4 {
-          color: var(--primary-color);
+          color: var(--primary-500);
         }
 
         .game-card .game-content p {
           color: var(--text-secondary);
           line-height: 1.6;
-          margin-bottom: 1.25rem;
+          margin-bottom: var(--spacing-md);
           font-size: 0.95rem;
         }
 
@@ -1249,8 +1204,8 @@ const GamesPage = () => {
           display: flex;
           justify-content: space-between;
           align-items: center;
-          padding-top: 1rem;
-          border-top: 1px solid var(--border-light);
+          padding-top: var(--spacing-md);
+          border-top: 1px solid var(--border-medium);
         }
 
         .game-stats {
@@ -1271,19 +1226,19 @@ const GamesPage = () => {
         }
 
         .game-footer .play-btn {
-          background: var(--primary-color);
-          color: var(--text-white);
+          background: var(--primary-500);
+          color: var(--text-inverse);
           border: none;
-          padding: 0.6rem 1.25rem;
+          padding: var(--spacing-sm) var(--spacing-md);
           border-radius: var(--radius-md);
           font-weight: 600;
           font-size: 0.9rem;
-          transition: all 0.2s ease;
+          transition: all var(--transition-fast);
         }
 
         .game-footer .play-btn:hover {
-          background: var(--secondary-color);
-          transform: translateY(-1px) scale(1.05);
+          background: var(--primary-600);
+          transform: translateY(calc(-1 * var(--spacing-xs))) scale(1.05);
           box-shadow: var(--shadow-md);
         }
 
@@ -1307,11 +1262,11 @@ const GamesPage = () => {
 
         .game-card .game-content h4 {
           font-size: 1.25rem;
-          margin-bottom: 0.75rem;
+          margin-bottom: var(--spacing-sm);
         }
 
         .game-card .game-content p {
-          margin-bottom: 1rem;
+          margin-bottom: var(--spacing-md);
           font-size: 0.95rem;
         }
 
@@ -1347,7 +1302,7 @@ const GamesPage = () => {
 
         .game-stats {
           display: flex;
-          gap: 1rem;
+          gap: var(--spacing-md);
           font-size: 0.875rem;
         }
 
@@ -1362,7 +1317,7 @@ const GamesPage = () => {
 
         .game-footer .play-btn {
           background: none;
-          color: var(--primary-color);
+          color: var(--primary-500);
           border: none;
           padding: 0;
           font-weight: 600;
@@ -1371,16 +1326,16 @@ const GamesPage = () => {
         }
 
         .game-footer .play-btn:hover {
-          color: var(--secondary-color);
-          background: none;
-          transform: translateX(2px);
+          color: var(--primary-600);
+          background: var(--primary-100);
+          transform: translateX(var(--spacing-xs));
         }
 
         /* CTA Section */
         .cta-section {
-          padding: 5rem 2rem;
-          background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-          color: var(--text-white);
+          padding: var(--spacing-2xl) var(--spacing-lg);
+          background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-800) 100%);
+          color: var(--text-inverse);
         }
 
         .cta-content {
@@ -1397,86 +1352,86 @@ const GamesPage = () => {
 
         .cta-content p {
           font-size: 1.125rem;
-          margin-bottom: 2.5rem;
+          margin-bottom: var(--spacing-xl);
           opacity: 0.9;
         }
 
         .cta-buttons {
           display: flex;
-          gap: 1rem;
+          gap: var(--spacing-md);
           justify-content: center;
           flex-wrap: wrap;
         }
 
         /* Button Styles */
         .primary-btn {
-          background: var(--primary-color);
-          color: var(--text-white);
-          padding: 0.875rem 1.75rem;
+          background: var(--primary-500);
+          color: var(--text-inverse);
+          padding: var(--spacing-sm) var(--spacing-lg);
           border-radius: var(--radius-md);
           font-weight: 600;
           font-size: 1rem;
-          transition: all 0.2s ease;
+          transition: all var(--transition-fast);
           border: none;
           cursor: pointer;
         }
 
         .primary-btn:hover {
-          background: var(--secondary-color);
-          transform: translateY(-2px);
+          background: var(--primary-600);
+          transform: translateY(calc(-1 * var(--spacing-xs)));
           box-shadow: var(--shadow-lg);
         }
 
         .primary-btn.large {
-          padding: 1rem 2rem;
+          padding: var(--spacing-md) var(--spacing-xl);
           font-size: 1.1rem;
         }
 
         .secondary-btn {
           background: transparent;
           color: var(--text-primary);
-          padding: 0.875rem 1.75rem;
+          padding: var(--spacing-sm) var(--spacing-lg);
           border: 2px solid var(--border);
           border-radius: var(--radius-md);
           font-weight: 600;
           font-size: 1rem;
-          transition: all 0.2s ease;
+          transition: all var(--transition-fast);
           cursor: pointer;
         }
 
         .secondary-btn:hover {
-          border-color: var(--primary-color);
-          color: var(--primary-color);
-          transform: translateY(-2px);
+          border-color: var(--primary-500);
+          color: var(--primary-500);
+          transform: translateY(calc(-1 * var(--spacing-xs)));
         }
 
         .secondary-btn.large {
-          padding: 1rem 2rem;
+          padding: var(--spacing-md) var(--spacing-xl);
           font-size: 1.1rem;
         }
 
         .cta-buttons .primary-btn {
-          background: var(--text-white);
-          color: var(--primary-color);
+          background: var(--text-inverse);
+          color: var(--primary-500);
         }
 
         .cta-buttons .primary-btn:hover {
           background: var(--surface);
-          transform: translateY(-2px);
+          transform: translateY(calc(-1 * var(--spacing-xs)));
           box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
 
         .cta-buttons .secondary-btn {
           background: transparent;
-          color: var(--text-white);
+          color: var(--text-inverse);
           border: 2px solid rgba(255, 255, 255, 0.3);
         }
 
         .cta-buttons .secondary-btn:hover {
           background: rgba(255, 255, 255, 0.1);
-          border-color: var(--text-white);
-          color: var(--text-white);
-          transform: translateY(-2px);
+          border-color: var(--text-inverse);
+          color: var(--text-inverse);
+          transform: translateY(calc(-1 * var(--spacing-xs)));
         }
 
         /* Responsive Design */

@@ -7,27 +7,27 @@ const Home = () => {
   const navigate = useNavigate();
 
   const quickStats = [
-    { number: "12", label: "Interactive Games" },
-    { number: "7", label: "Categories" },
-    { number: "50+", label: "Algorithms" }
+    { number: "18", label: "Interactive Games" },
+    { number: "10", label: "Learning Paths" },
+    { number: "100+", label: "Coding Challenges" }
   ];
 
   const learningFeatures = [
     {
       title: 'Interactive Visualizations',
-      description: 'See algorithms in action with step-by-step visual explanations'
+      description: 'Visualize algorithms in action with step-by-step animated demonstrations'
     },
     {
       title: 'Gamified Learning',
-      description: 'Master concepts through engaging games and challenges'
+      description: 'Master concepts through engaging challenges and interactive games'
     },
     {
       title: 'Real-time Practice',
-      description: 'Code and test algorithms in our interactive playground'
+      description: 'Implement and test algorithms in our live coding playground'
     },
     {
       title: 'Progress Tracking',
-      description: 'Monitor your learning journey and concept mastery'
+      description: 'Track your learning journey and measure concept mastery'
     }
   ];
 
@@ -53,16 +53,16 @@ const Home = () => {
               </h1>
 
               <p className="hero-subtitle">
-                Learn data structures and algorithms through interactive visualizations,
-                practical examples, and guided problem-solving exercises.
+                Master computer science fundamentals through interactive visualizations,
+                gamified learning experiences, and hands-on coding challenges.
               </p>
 
               <div className="hero-actions">
-                <button className="primary-btn" onClick={() => handleNavigation('/learn')}>
+                <button className="primary-btn" onClick={() => handleNavigation('/concepts')}>
                   Start Learning
                 </button>
-                <button className="secondary-btn" onClick={() => handleNavigation('/concepts')}>
-                  Explore Concepts
+                <button className="secondary-btn" onClick={() => handleNavigation('/games')}>
+                  Explore Games
                 </button>
               </div>
 
@@ -80,10 +80,10 @@ const Home = () => {
               <div className="algorithm-demo">
                 <div className="demo-title">Binary Search Visualization</div>
                 <div className="array-visualization">
-                  {[1, 3, 5, 7, 9, 11, 13, 15].map((num, index) => (
+                  {[2, 5, 8, 12, 16, 23, 38, 45].map((num, index) => (
                     <div
                       key={index}
-                      className={`array-element ${index === 4 ? 'active' : ''}`}
+                      className={`array-element ${index === 5 ? 'active' : ''}`}
                     >
                       {num}
                     </div>
@@ -109,7 +109,7 @@ const Home = () => {
             <div className="access-card primary" onClick={() => handleNavigation('/games')}>
 
               <h3>Interactive Games</h3>
-              <p>Learn through engaging gameplay across 7 different categories</p>
+              <p>Master concepts through engaging gameplay across multiple learning paths</p>
               <div className="card-cta">
                 Play Games →
               </div>
@@ -118,7 +118,7 @@ const Home = () => {
             <div className="access-card" onClick={() => handleNavigation('/concepts')}>
 
               <h3>Core Concepts</h3>
-              <p>Master fundamental concepts with visual explanations</p>
+              <p>Deep dive into algorithms and data structures with detailed explanations</p>
               <div className="card-cta">
                 Learn Concepts →
               </div>
@@ -126,8 +126,8 @@ const Home = () => {
 
             <div className="access-card" onClick={() => handleNavigation('/practice')}>
 
-              <h3>Code Practice</h3>
-              <p>Practice implementations in our interactive playground</p>
+              <h3>Coding Practice</h3>
+              <p>Solve challenges and implement algorithms in our interactive playground</p>
               <div className="card-cta">
                 Start Coding →
               </div>
@@ -155,8 +155,8 @@ const Home = () => {
         {/* Call to Action */}
         <section className="cta-section">
           <div className="cta-content">
-            <h2>Ready to Master DSA?</h2>
-            <p>Join thousands of students building strong algorithmic thinking skills</p>
+            <h2>Start Your Learning Journey</h2>
+            <p>Join thousands of developers mastering algorithms and data structures</p>
             <div className="cta-buttons">
               <button className="primary-btn large" onClick={() => handleNavigation('/games')}>
                 Start with Games
@@ -209,27 +209,27 @@ const Home = () => {
 
         .hero-badge {
           display: inline-block;
-          background: var(--primary-color);
-          color: var(--text-white);
-          padding: 0.375rem 0.75rem;
+          background: var(--primary-600);
+          color: var(--text-inverse);
+          padding: var(--spacing-xs) var(--spacing-sm);
           border-radius: var(--radius-md);
           font-size: 0.8rem;
           font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.025em;
-          margin-bottom: 1.5rem;
+          margin-bottom: var(--spacing-lg);
         }
 
         .hero-title {
           font-size: clamp(2.5rem, 5vw, 3.5rem);
           font-weight: 800;
           line-height: 1.1;
-          margin-bottom: 1.5rem;
+          margin-bottom: var(--spacing-lg);
           color: var(--text-primary);
         }
 
         .highlight {
-          color: var(--primary-color);
+          color: var(--primary-600);
           position: relative;
         }
 
@@ -247,36 +247,38 @@ const Home = () => {
         .hero-subtitle {
           font-size: 1.125rem;
           color: var(--text-secondary);
-          margin-bottom: 2rem;
+          margin-bottom: var(--spacing-xl);
           line-height: 1.7;
         }
 
         .hero-actions {
           display: flex;
-          gap: 1rem;
-          margin-bottom: 3rem;
+          gap: var(--spacing-md);
+          margin-bottom: var(--spacing-2xl);
         }
 
         .hero-stats {
           display: flex;
-          gap: 2rem;
+          gap: var(--spacing-xl);
         }
 
         .stat {
           display: flex;
           flex-direction: column;
           align-items: center;
+          text-align: center;
         }
 
         .stat-number {
-          font-size: 1.5rem;
+          font-size: 1.75rem;
           font-weight: 700;
-          color: var(--primary-color);
+          color: var(--primary-600);
+          margin-bottom: var(--spacing-xs);
         }
 
         .stat-label {
           font-size: 0.875rem;
-          color: var(--text-muted);
+          color: var(--text-secondary);
           font-weight: 500;
         }
 
@@ -284,7 +286,7 @@ const Home = () => {
           background: var(--background);
           border: 1px solid var(--border);
           border-radius: var(--radius-lg);
-          padding: 2rem;
+          padding: var(--spacing-lg);
           box-shadow: var(--shadow-xl);
         }
 
@@ -292,15 +294,15 @@ const Home = () => {
           font-size: 1rem;
           font-weight: 600;
           color: var(--text-primary);
-          margin-bottom: 1.5rem;
+          margin-bottom: var(--spacing-lg);
           text-align: center;
         }
 
         .array-visualization {
           display: flex;
-          gap: 0.5rem;
+          gap: var(--spacing-sm);
           justify-content: center;
-          margin-bottom: 1.5rem;
+          margin-bottom: var(--spacing-lg);
         }
 
         .array-element {
@@ -314,25 +316,25 @@ const Home = () => {
           justify-content: center;
           font-weight: 600;
           color: var(--text-primary);
-          transition: all 0.3s ease;
+          transition: all var(--transition-normal);
         }
 
         .array-element.active {
-          background: var(--primary-color);
-          color: var(--text-white);
-          border-color: var(--primary-color);
+          background: var(--primary-500);
+          color: var(--text-inverse);
+          border-color: var(--primary-500);
           transform: scale(1.1);
         }
 
         .complexity-info {
           display: flex;
           justify-content: space-around;
-          gap: 1rem;
+          gap: var(--spacing-md);
         }
 
         .complexity-info span {
           background: var(--surface);
-          padding: 0.5rem 1rem;
+          padding: var(--spacing-sm) var(--spacing-md);
           border-radius: var(--radius-sm);
           font-size: 0.875rem;
           font-weight: 500;
@@ -342,14 +344,14 @@ const Home = () => {
         /* Section Headers */
         .section-header {
           text-align: center;
-          margin-bottom: 3rem;
+          margin-bottom: var(--spacing-2xl);
         }
 
         .section-header h2 {
           font-size: clamp(2rem, 4vw, 2.5rem);
           font-weight: 700;
           color: var(--text-primary);
-          margin-bottom: 0.75rem;
+          margin-bottom: var(--spacing-sm);
         }
 
         .section-header p {
@@ -361,7 +363,7 @@ const Home = () => {
 
         /* Quick Access Section */
         .quick-access-section {
-          padding: 5rem 2rem;
+          padding: var(--spacing-2xl) var(--spacing-lg);
           background: var(--surface);
         }
 
@@ -370,16 +372,16 @@ const Home = () => {
           margin: 0 auto;
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-          gap: 2rem;
+          gap: var(--spacing-lg);
         }
 
         .access-card {
           background: var(--background);
           border: 1px solid var(--border);
           border-radius: var(--radius-lg);
-          padding: 2.5rem;
+          padding: var(--spacing-xl);
           text-align: center;
-          transition: all 0.3s ease;
+          transition: all var(--transition-normal);
           position: relative;
           overflow: hidden;
           cursor: pointer;
@@ -398,9 +400,9 @@ const Home = () => {
         }
 
         .access-card:hover {
-          transform: translateY(-8px);
+          transform: translateY(calc(-1 * var(--spacing-sm)));
           box-shadow: var(--shadow-xl);
-          border-color: var(--primary-color);
+          border-color: var(--primary-500);
         }
 
         .access-card:hover::before {
@@ -426,48 +428,48 @@ const Home = () => {
         .access-card h3 {
           font-size: 1.5rem;
           font-weight: 700;
-          margin-bottom: 1rem;
+          margin-bottom: var(--spacing-md);
           color: var(--text-primary);
         }
 
         .access-card p {
           color: var(--text-secondary);
-          margin-bottom: 2rem;
+          margin-bottom: var(--spacing-lg);
           line-height: 1.6;
         }
 
         .card-cta {
-          color: var(--primary-color);
+          color: var(--primary-500);
           text-decoration: none;
           font-weight: 600;
           font-size: 1.1rem;
-          transition: all 0.2s ease;
+          transition: all var(--transition-fast);
           display: inline-flex;
           align-items: center;
-          gap: 0.5rem;
+          gap: var(--spacing-sm);
           cursor: pointer;
         }
 
         .access-card.primary .card-cta {
           color: var(--text-inverse);
           background: rgba(255, 255, 255, 0.2);
-          padding: 0.75rem 1.5rem;
+          padding: var(--spacing-sm) var(--spacing-lg);
           border-radius: var(--radius-md);
           backdrop-filter: blur(10px);
         }
 
         .card-cta:hover {
-          transform: translateX(4px);
+          transform: translateX(var(--spacing-sm));
         }
 
         .access-card.primary .card-cta:hover {
           background: rgba(255, 255, 255, 0.3);
-          transform: translateY(-2px);
+          transform: translateY(calc(-1 * var(--spacing-xs)));
         }
 
         /* Features Section */
         .features-section {
-          padding: 5rem 2rem;
+          padding: var(--spacing-2xl) var(--spacing-lg);
           background:  linear-gradient(135deg, var(--primary-100) 0%, var(--neutral-50) 100%);
         }
 
@@ -476,18 +478,18 @@ const Home = () => {
           margin: 0 auto;
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-          gap: 2rem;
+          gap: var(--spacing-lg);
         }
 
         .feature-card {
           text-align: center;
-          padding: 2rem 1.5rem;
+          padding: var(--spacing-lg) var(--spacing-md);
           border-radius: var(--radius-lg);
-          transition: all 0.2s ease;
+          transition: all var(--transition-fast);
         }
 
         .feature-card:hover {
-          transform: translateY(-4px);
+          transform: translateY(calc(-1 * var(--spacing-xs)));
         }
 
         .feature-icon {
@@ -500,7 +502,7 @@ const Home = () => {
           font-size: 1.125rem;
           font-weight: 600;
           color: var(--text-primary);
-          margin-bottom: 0.75rem;
+          margin-bottom: var(--spacing-sm);
         }
 
         .feature-card p {
@@ -510,7 +512,7 @@ const Home = () => {
 
         /* CTA Section */
         .cta-section {
-          padding: 5rem 2rem;
+          padding: var(--spacing-2xl) var(--spacing-lg);
           background: linear-gradient(135deg, var(--primary-600) 0%, var(--primary-800) 100%);
           color: var(--text-inverse);
         }
@@ -524,18 +526,18 @@ const Home = () => {
         .cta-content h2 {
           font-size: clamp(2rem, 4vw, 2.5rem);
           font-weight: 700;
-          margin-bottom: 1rem;
+          margin-bottom: var(--spacing-md);
         }
 
         .cta-content p {
           font-size: 1.125rem;
-          margin-bottom: 2.5rem;
+          margin-bottom: var(--spacing-xl);
           opacity: 0.9;
         }
 
         .cta-buttons {
           display: flex;
-          gap: 1rem;
+          gap: var(--spacing-md);
           justify-content: center;
           flex-wrap: wrap;
         }
@@ -565,14 +567,14 @@ const Home = () => {
 
         /* Button Styles */
         .primary-btn {
-          background: var(--primary-color);
-          color: var(--text-white);
-          padding: 0.875rem 1.75rem;
+          background: var(--primary-600);
+          color: var(--text-inverse);
+          padding: var(--spacing-sm) var(--spacing-lg);
           border-radius: var(--radius-md);
           text-decoration: none;
           font-weight: 600;
           font-size: 1rem;
-          transition: all 0.2s ease;
+          transition: all var(--transition-fast);
           display: inline-flex;
           align-items: center;
           justify-content: center;
@@ -581,26 +583,26 @@ const Home = () => {
         }
 
         .primary-btn:hover {
-          background: var(--secondary-color);
-          transform: translateY(-2px);
+          background: var(--primary-700);
+          transform: translateY(calc(-1 * var(--spacing-xs)));
           box-shadow: var(--shadow-lg);
         }
 
         .primary-btn.large {
-          padding: 1rem 2rem;
+          padding: var(--spacing-md) var(--spacing-xl);
           font-size: 1.1rem;
         }
 
         .secondary-btn {
           background: transparent;
           color: var(--text-primary);
-          padding: 0.875rem 1.75rem;
+          padding: var(--spacing-sm) var(--spacing-lg);
           border: 2px solid var(--border);
           border-radius: var(--radius-md);
           text-decoration: none;
           font-weight: 600;
           font-size: 1rem;
-          transition: all 0.2s ease;
+          transition: all var(--transition-fast);
           display: inline-flex;
           align-items: center;
           justify-content: center;
@@ -608,13 +610,13 @@ const Home = () => {
         }
 
         .secondary-btn:hover {
-          border-color: var(--primary-color);
-          color: var(--primary-color);
-          transform: translateY(-2px);
+          border-color: var(--primary-500);
+          color: var(--primary-500);
+          transform: translateY(calc(-1 * var(--spacing-xs)));
         }
 
         .secondary-btn.large {
-          padding: 1rem 2rem;
+          padding: var(--spacing-md) var(--spacing-xl);
           font-size: 1.1rem;
         }
 

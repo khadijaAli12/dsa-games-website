@@ -49,7 +49,7 @@ const Navbar = () => {
             Practice
           </NavLink>
           <NavLink 
-            to="/playground" 
+            to="/games" 
             className="nav-cta"
             aria-current="page"
           >
