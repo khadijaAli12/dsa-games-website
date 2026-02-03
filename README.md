@@ -64,7 +64,7 @@ npm run dev
 
 4. Open your browser and navigate to `http://localhost:5175` (or the port shown in your terminal)
 
-## 🛠️ Technologies Used
+##  Technologies Used
 
 - **React 19** - UI framework
 - **Vite** - Build tool and dev server
@@ -75,7 +75,7 @@ npm run dev
 - **Recharts** - Data visualization
 - **CSS Variables** - Consistent design system
 
-## 🎯 Available Games & Concepts
+##  Available Games & Concepts
 
 ### Interactive Games (18+)
  **Sorting Games**: SortHero - Master different sorting algorithms
@@ -129,7 +129,7 @@ The project is deployed on Vercel with:
 - Optimized assets and code splitting
 - Fast loading times
 
-## 🤝 Contributing
+##  Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
