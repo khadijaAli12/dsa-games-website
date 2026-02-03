@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Navbar from '../../components/Navbar';
 import './CoinQuestStyles.scss';
 
 const CoinQuest = () => {
@@ -93,6 +94,7 @@ const CoinQuest = () => {
 
   return (
     <div className="coin-quest">
+      <Navbar />
       <h2>🪙 Coin Quest</h2>
       
       <div className="game-info">

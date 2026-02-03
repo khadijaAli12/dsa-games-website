@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Navbar from '../../components/Navbar';
 import './DPDungeonStyles.scss';
 
 const DPDungeon = () => {
@@ -128,6 +129,7 @@ const DPDungeon = () => {
 
   return (
     <div className="dp-dungeon">
+      <Navbar />
       <h2>📦 DP Dungeon</h2>
       
       <div className="game-info">

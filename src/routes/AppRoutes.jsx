@@ -23,11 +23,11 @@ import MazeEscape from '../games/MazeEscape/MazeEscape';
 import GraphWars from '../games/GraphWars/GraphWars';
 import TreeClimber from '../games/TreeClimber/TreeClimber';
 import DPDungeon from '../games/DPDungeon/DPDungeon';
-// import StackAttack from '../games/StackAttack/StackAttack';
-// import QueueQuest from '../games/QueueQuest/QueueQuest';
-// import HeapHeroes from '../games/HeapHeroes/HeapHeroes';
-// import StringMaster from '../games/StringMaster/StringMaster';
-// import RegexRunner from '../games/RegexRunner/RegexRunner';
+import StackAttack from '../games/StackAttack/StackAttack';
+import QueueQuest from '../games/QueueQuest/QueueQuest';
+import HeapHeroes from '../games/HeapHeroes/HeapHeroes';
+import StringMaster from '../games/StringMaster/StringMaster';
+import RegexRunner from '../games/RegexRunner/RegexRunner';
 
 const AppRoutes = () => {
   return (
@@ -62,13 +62,13 @@ const AppRoutes = () => {
       <Route path="/games/dp-dungeon" element={<DPDungeon />} />
       
       {/* Data Structures Games */}
-      {/* <Route path="/games/stack-attack" element={<StackAttack />} /> */}
-      {/* <Route path="/games/queue-quest" element={<QueueQuest />} /> */}
-      {/* <Route path="/games/heap-heroes" element={<HeapHeroes />} /> */}
-      
+      <Route path="/games/stack-attack" element={<StackAttack />} />
+      <Route path="/games/queue-quest" element={<QueueQuest />} />
+      <Route path="/games/heap-heroes" element={<HeapHeroes />} />
+            
       {/* String Algorithm Games */}
-      {/* <Route path="/games/string-master" element={<StringMaster />} /> */}
-      {/* <Route path="/games/regex-runner" element={<RegexRunner />} /> */}
+      <Route path="/games/string-master" element={<StringMaster />} />
+      <Route path="/games/regex-runner" element={<RegexRunner />} />
       <Route path="/practice" element={<DSAPracticeHub />} />
     </Routes>
   );

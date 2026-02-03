@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { sortLogic } from './SortLogic';
 import AlgorithmQuiz from '../../components/AlgorithmQuiz';
+import Navbar from '../../components/Navbar';
 import AlgorithmChallenge from '../../components/AlgorithmChallenge';
 import PerformanceComparison from '../../components/PerformanceComparison';
 import SkillTracker from '../../components/SkillTracker';
@@ -180,6 +181,7 @@ const SortHero = () => {
 
   return (
     <div className="sort-hero">
+      <Navbar />
       <div className="header">
         <h2>Learn Sorting Algorithms</h2>
         <p>Watch how different algorithms sort data step by step</p>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Navbar from '../../components/Navbar';
 import './BitmaskStyles.scss';
 
 const BitmaskDungeon = () => {
@@ -86,6 +87,7 @@ const BitmaskDungeon = () => {
 
   return (
     <div className="bitmask-dungeon">
+      <Navbar />
       <h2>🔑 Bitmask Dungeon</h2>
       
       <div className="game-info">

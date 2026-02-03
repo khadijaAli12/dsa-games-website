@@ -298,19 +298,19 @@ function manachersAlgorithm(s) {
           <h2>Real-World Applications</h2>
           <div className="applications-grid">
             <div className="application-card">
-              <h3>🔍 Text Search Engines</h3>
+              <h3>Text Search Engines</h3>
               <p>Efficient document searching and indexing systems</p>
             </div>
             <div className="application-card">
-              <h3>🧬 Bioinformatics</h3>
+              <h3>Bioinformatics</h3>
               <p>DNA sequence matching and genetic analysis</p>
             </div>
             <div className="application-card">
-              <h3>🛡️ Cybersecurity</h3>
+              <h3>Cybersecurity</h3>
               <p>Pattern detection in network traffic and malware analysis</p>
             </div>
             <div className="application-card">
-              <h3>📄 Document Processing</h3>
+              <h3>Document Processing</h3>
               <p>Plagiarism detection and content analysis</p>
             </div>
           </div>

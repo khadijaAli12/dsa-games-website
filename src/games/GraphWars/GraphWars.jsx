@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Navbar from '../../components/Navbar';
 import './GraphWarsStyles.scss';
 
 const GraphWars = () => {
@@ -176,6 +177,7 @@ const GraphWars = () => {
 
   return (
     <div className="graph-wars">
+      <Navbar />
       <h2>🛣️ Graph Wars</h2>
       
       <div className="game-info">

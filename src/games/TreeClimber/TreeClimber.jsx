@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Navbar from '../../components/Navbar';
 import './TreeClimberStyles.scss';
 
 const TreeClimber = () => {
@@ -334,6 +335,7 @@ const TreeClimber = () => {
 
   return (
     <div className="tree-climber">
+      <Navbar />
       <div className="container">
         <h2 className="title">🌳 Tree Climber - Binary Tree Traversal</h2>
         

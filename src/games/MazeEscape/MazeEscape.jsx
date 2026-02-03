@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Navbar from '../../components/Navbar';
 import './MazeStyles.scss';
 
 const MazeEscape = () => {
@@ -78,6 +79,7 @@ const MazeEscape = () => {
 
   return (
     <div className="maze-escape">
+      <Navbar />
       <h2>Maze Escape</h2>
       <div className="controls">
         <select 

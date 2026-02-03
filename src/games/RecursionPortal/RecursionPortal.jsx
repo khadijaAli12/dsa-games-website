@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Navbar from '../../components/Navbar';
 import './RecursionPortalStyles.scss';
 
 const RecursionPortal = () => {
@@ -79,6 +80,7 @@ const RecursionPortal = () => {
 
   return (
     <div className="recursion-portal">
+      <Navbar />
       <h2>🔄 Recursion Portal</h2>
       
       <div className="game-info">

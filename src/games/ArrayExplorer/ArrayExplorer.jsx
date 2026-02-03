@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { arraySearchLogic } from './ArraySearchLogic';
+import Navbar from '../../components/Navbar';
 import './ArrayExplorerStyles.scss';
 
 const ArrayExplorer = () => {
@@ -275,6 +276,7 @@ const ArrayExplorer = () => {
 
   return (
     <div className="array-explorer">
+      <Navbar />
       <div className="header">
         <h2>🔍 Array Explorer</h2>
         <p>Master search algorithms through interactive exploration</p>

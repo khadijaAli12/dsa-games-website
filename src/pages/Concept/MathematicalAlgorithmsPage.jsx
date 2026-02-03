@@ -309,19 +309,19 @@ function chineseRemainderTheorem(remainders, moduli) {
           <h2>Fundamental Concepts</h2>
           <div className="concepts-grid">
             <div className="concept-card">
-              <h3>🔢 Number Theory</h3>
+              <h3>Number Theory</h3>
               <p>Study of integers and their properties, including divisibility and prime numbers</p>
             </div>
             <div className="concept-card">
-              <h3>🔐 Cryptography</h3>
+              <h3>Cryptography</h3>
               <p>Secure communication using mathematical algorithms and protocols</p>
             </div>
             <div className="concept-card">
-              <h3>⚡ Modular Arithmetic</h3>
+              <h3>Modular Arithmetic</h3>
               <p>Arithmetic system for integers where numbers "wrap around" upon reaching a modulus</p>
             </div>
             <div className="concept-card">
-              <h3>🎲 Randomization</h3>
+              <h3>Randomization</h3>
               <p>Using probability and randomness in algorithm design for efficiency</p>
             </div>
           </div>

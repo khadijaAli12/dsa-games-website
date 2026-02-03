@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Navbar from '../../components/Navbar';
 import './StackSurvivorStyles.scss';
 
 const StackSurvivor = () => {
@@ -118,6 +119,7 @@ const StackSurvivor = () => {
 
   return (
     <div className="stack-survivor">
+      <Navbar />
       <h2>🧮 Stack Survivor</h2>
       
       <div className="game-info">

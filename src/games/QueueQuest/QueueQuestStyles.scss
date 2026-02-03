@@ -1,0 +1,319 @@
+.queue-quest {
+  padding: 2rem;
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e6fffa, #b2f5ea);
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  }
+
+  h2 {
+    text-align: center;
+    color: #234e52;
+    margin-bottom: 1.5rem;
+    font-size: 2.5rem;
+  }
+
+  .game-info {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #38b2ac;
+
+      span {
+        background: #e6fffa;
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
+        border: 2px solid #38b2ac;
+      }
+    }
+  }
+
+  .queue-visualizer {
+    margin: 2rem 0;
+
+    h3 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      color: #234e52;
+    }
+
+    .queue-container {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0;
+    }
+
+    .queue-track {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #4fd1c5;
+      border-radius: 50px;
+      padding: 2rem 1rem;
+      min-height: 100px;
+      overflow-x: auto;
+
+      .queue-entrance {
+        background: #422c52;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
+        font-weight: bold;
+        font-size: 0.9rem;
+        white-space: nowrap;
+      }
+
+      .empty-queue {
+        color: white;
+        font-style: italic;
+        text-align: center;
+        padding: 1rem;
+        font-size: 1.2rem;
+      }
+
+      .queue-element {
+        min-width: 80px;
+        height: 60px;
+        background: #4299e1;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+        font-size: 1rem;
+        border: 2px solid #2b6cb0;
+        transition: all 0.3s ease;
+
+        &.front-element {
+          background: #48bb78;
+          transform: scale(1.1);
+          box-shadow: 0 5px 15px rgba(72, 187, 120, 0.3);
+        }
+
+        &.rear-element {
+          background: #ed8936;
+          transform: scale(1.1);
+          box-shadow: 0 5px 15px rgba(237, 137, 54, 0.3);
+        }
+      }
+
+      .queue-exit {
+        background: #422c52;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
+        font-weight: bold;
+        font-size: 0.9rem;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+
+    .input-section {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+
+      input {
+        padding: 0.75rem 1rem;
+        border: 2px solid #b2f5ea;
+        border-radius: 8px;
+        font-size: 1rem;
+        width: 250px;
+
+        &:focus {
+          outline: none;
+          border-color: #4299e1;
+          box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.1);
+        }
+      }
+
+      .btn-enqueue {
+        padding: 0.75rem 1.5rem;
+        background: #48bb78;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover {
+          background: #38a169;
+          transform: translateY(-2px);
+        }
+      }
+    }
+
+    .operation-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      button {
+        padding: 0.75rem 1.5rem;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        min-width: 100px;
+
+        &.btn-dequeue {
+          background: #e53e3e;
+          color: white;
+
+          &:hover {
+            background: #c53030;
+            transform: translateY(-2px);
+          }
+
+          &:disabled {
+            background: #a0aec0;
+            cursor: not-allowed;
+          }
+        }
+
+        &.btn-front {
+          background: #4299e1;
+          color: white;
+
+          &:hover {
+            background: #3182ce;
+            transform: translateY(-2px);
+          }
+
+          &:disabled {
+            background: #a0aec0;
+            cursor: not-allowed;
+          }
+        }
+
+        &.btn-rear {
+          background: #ed8936;
+          color: white;
+
+          &:hover {
+            background: #dd6b20;
+            transform: translateY(-2px);
+          }
+
+          &:disabled {
+            background: #a0aec0;
+            cursor: not-allowed;
+          }
+        }
+
+        &.btn-reset {
+          background: #718096;
+          color: white;
+
+          &:hover {
+            background: #4a5568;
+            transform: translateY(-2px);
+          }
+        }
+      }
+    }
+  }
+
+  .feedback {
+    text-align: center;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    margin: 1rem 0;
+
+    &.success {
+      background: #c6f6d5;
+      color: #2f855a;
+    }
+
+    &.error {
+      background: #fed7d7;
+      color: #c53030;
+    }
+  }
+
+  .operation-history {
+    margin: 2rem 0;
+
+    h3 {
+      text-align: center;
+      margin-bottom: 1rem;
+      color: #234e52;
+    }
+
+    .history-list {
+      max-height: 150px;
+      overflow-y: auto;
+      border: 1px solid #b2f5ea;
+      border-radius: 8px;
+      padding: 1rem;
+
+      .history-item {
+        padding: 0.5rem;
+        border-bottom: 1px solid #b2f5ea;
+        font-size: 0.9rem;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+
+  .explanation {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    background: #e6fffa;
+    border-radius: 10px;
+    border-left: 4px solid #4fd1c5;
+
+    h3 {
+      color: #234e52;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+
+      li {
+        padding: 0.5rem 0;
+        padding-left: 1.5rem;
+        position: relative;
+
+        &:before {
+          content: "•";
+          position: absolute;
+          left: 0;
+          color: #4fd1c5;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}

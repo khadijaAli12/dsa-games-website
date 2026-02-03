@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Navbar from '../../components/Navbar';
 import './SlidingWindowHunterStyles.scss';
 
 const SlidingWindowHunter = () => {
@@ -108,6 +109,7 @@ const SlidingWindowHunter = () => {
 
   return (
     <div className="sliding-window-hunter">
+      <Navbar />
       <h2>🧩 Sliding Window Hunter</h2>
       
       <div className="game-info">

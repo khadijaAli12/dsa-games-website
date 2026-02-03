@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Navbar from '../../components/Navbar';
 import './NetworkHackerStyles.scss';
 
 const NetworkHacker = () => {
@@ -124,6 +125,7 @@ const NetworkHacker = () => {
 
   return (
     <div className="network-hacker">
+      <Navbar />
       <h2>🌐 Network Hacker</h2>
       
       <div className="game-info">

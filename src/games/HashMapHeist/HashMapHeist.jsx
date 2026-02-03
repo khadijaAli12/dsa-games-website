@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Navbar from '../../components/Navbar';
 import './HashMapHeistStyles.scss';
 
 const HashMapHeist = () => {
@@ -93,6 +94,7 @@ const HashMapHeist = () => {
 
   return (
     <div className="hashmap-heist">
+      <Navbar />
       <h2>🎯 HashMap Heist</h2>
       
       <div className="game-info">
